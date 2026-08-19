@@ -1,0 +1,280 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/navigation";
+import Image from "next/image";
+import { getCart, clearCart, cartTotal, type CartItem } from "@/lib/cart";
+import { Container } from "@/components/ui";
+import PageHero from "@/components/PageHero";
+import { Link } from "@/i18n/navigation";
+
+const FREE_SHIPPING = 1500;
+const SHIPPING_FEE = 30;
+const PAYMENT_METHODS = ["cod", "transfer", "whatsapp"] as const;
+type Payment = (typeof PAYMENT_METHODS)[number];
+
+export type Order = {
+  id: string;
+  createdAt: string;
+  items: CartItem[];
+  customer: { name: string; phone: string; email: string; city: string; address: string; notes: string };
+  payment: Payment;
+  subtotal: number;
+  shipping: number;
+  total: number;
+};
+
+export const ORDERS_KEY = "hh-orders";
+
+function newOrderStamp() {
+  return {
+    id: `HH-${Date.now().toString(36).toUpperCase()}`,
+    createdAt: new Date().toISOString(),
+  };
+}
+
+export default function CheckoutForm() {
+  const t = useTranslations();
+  const router = useRouter();
+  const [items, setItems] = useState<CartItem[]>([]);
+  const [payment, setPayment] = useState<Payment>("cod");
+  const [form, setForm] = useState({ name: "", phone: "", email: "", city: "", address: "", notes: "" });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    function refresh() {
+      setItems(getCart());
+    }
+    refresh();
+    window.addEventListener("hh-cart-updated", refresh);
+    window.addEventListener("storage", refresh);
+    return () => {
+      window.removeEventListener("hh-cart-updated", refresh);
+      window.removeEventListener("storage", refresh);
+    };
+  }, []);
+
+  const subtotal = cartTotal(items);
+  const free = subtotal >= FREE_SHIPPING;
+  const shipping = free ? 0 : SHIPPING_FEE;
+  const total = subtotal + shipping;
+
+  function set<K extends keyof typeof form>(key: K, value: string) {
+    setForm((f) => ({ ...f, [key]: value }));
+    setErrors((e) => {
+      const next = { ...e };
+      delete next[key];
+      return next;
+    });
+  }
+
+  function validate() {
+    const e: Record<string, string> = {};
+    if (!form.name.trim()) e.name = t("checkout.errors.name");
+    if (!/^[+0-9 ()-]{8,20}$/.test(form.phone.trim())) e.phone = t("checkout.errors.phone");
+    if (!form.city.trim()) e.city = t("checkout.errors.city");
+    if (!form.address.trim()) e.address = t("checkout.errors.address");
+    if (items.length === 0) e.cart = t("checkout.errors.cartEmpty");
+    setErrors(e);
+    return Object.keys(e).length === 0;
+  }
+
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!validate()) return;
+    await Promise.resolve();
+    const stamp = newOrderStamp();
+    const order: Order = {
+      ...stamp,
+      items,
+      customer: {
+        name: form.name.trim(),
+        phone: form.phone.trim(),
+        email: form.email.trim(),
+        city: form.city.trim(),
+        address: form.address.trim(),
+        notes: form.notes.trim(),
+      },
+      payment,
+      subtotal,
+      shipping,
+      total,
+    };
+    const existing = JSON.parse(localStorage.getItem(ORDERS_KEY) ?? "[]") as Order[];
+    localStorage.setItem(ORDERS_KEY, JSON.stringify([order, ...existing]));
+    clearCart();
+    router.push(`/confirmation/${order.id}`);
+  }
+
+  const inputCls =
+    "w-full rounded-xl border border-gold/40 bg-white px-4 py-2.5 text-sm text-navy placeholder:text-graytext focus:border-royalblue focus:outline-none focus:ring-2 focus:ring-royalblue/30";
+
+  if (items.length === 0) {
+    return (
+      <>
+        <PageHero eyebrow={t("nav.cart")} title={t("checkout.title")} />
+        <section className="py-16">
+          <Container>
+            <div className="rounded-2xl border border-gold/30 bg-white px-6 py-16 text-center shadow-sm">
+              <p className="font-display text-xl font-semibold text-navy">
+                {t("checkout.errors.cartEmpty")}
+              </p>
+              <Link
+                href="/boutique"
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-7 py-3 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-[#c2ae8d]"
+              >
+                {t("cart.emptyCta")}
+              </Link>
+            </div>
+          </Container>
+        </section>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <PageHero eyebrow={t("nav.cart")} title={t("checkout.title")} />
+      <section className="py-12 sm:py-14">
+        <Container>
+          <form onSubmit={onSubmit} className="grid gap-8 lg:grid-cols-[1.6fr_1fr]" noValidate>
+            <div className="space-y-6">
+              <div className="rounded-2xl border border-gold/30 bg-white p-6 shadow-sm">
+                <h2 className="font-display text-lg font-semibold text-navy">
+                  {t("checkout.contactSection")}
+                </h2>
+                <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label htmlFor="o-name" className="mb-1.5 block text-sm font-semibold text-navy">
+                      {t("checkout.name")} *
+                    </label>
+                    <input id="o-name" value={form.name} onChange={(e) => set("name", e.target.value)} className={inputCls} />
+                    {errors.name && <p className="mt-1 text-xs font-semibold text-red">{errors.name}</p>}
+                  </div>
+                  <div>
+                    <label htmlFor="o-phone" className="mb-1.5 block text-sm font-semibold text-navy">
+                      {t("checkout.phone")} *
+                    </label>
+                    <input id="o-phone" dir="ltr" value={form.phone} onChange={(e) => set("phone", e.target.value)} placeholder="+212 6 00 00 00 00" className={inputCls} />
+                    {errors.phone && <p className="mt-1 text-xs font-semibold text-red">{errors.phone}</p>}
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label htmlFor="o-email" className="mb-1.5 block text-sm font-semibold text-navy">
+                      {t("checkout.email")}
+                    </label>
+                    <input id="o-email" type="email" value={form.email} onChange={(e) => set("email", e.target.value)} className={inputCls} />
+                  </div>
+                  <div>
+                    <label htmlFor="o-city" className="mb-1.5 block text-sm font-semibold text-navy">
+                      {t("checkout.city")} *
+                    </label>
+                    <input id="o-city" value={form.city} onChange={(e) => set("city", e.target.value)} className={inputCls} />
+                    {errors.city && <p className="mt-1 text-xs font-semibold text-red">{errors.city}</p>}
+                  </div>
+                  <div>
+                    <label htmlFor="o-address" className="mb-1.5 block text-sm font-semibold text-navy">
+                      {t("checkout.address")} *
+                    </label>
+                    <input id="o-address" value={form.address} onChange={(e) => set("address", e.target.value)} className={inputCls} />
+                    {errors.address && <p className="mt-1 text-xs font-semibold text-red">{errors.address}</p>}
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label htmlFor="o-notes" className="mb-1.5 block text-sm font-semibold text-navy">
+                      {t("checkout.notes")}
+                    </label>
+                    <textarea id="o-notes" rows={3} value={form.notes} onChange={(e) => set("notes", e.target.value)} className={inputCls} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-gold/30 bg-white p-6 shadow-sm">
+                <h2 className="font-display text-lg font-semibold text-navy">
+                  {t("checkout.paymentSection")}
+                </h2>
+                <div className="mt-5 space-y-3" role="radiogroup" aria-label={t("checkout.paymentSection")}>
+                  {PAYMENT_METHODS.map((key) => (
+                    <label
+                      key={key}
+                      className={`flex cursor-pointer items-start gap-3 rounded-xl border p-4 transition-colors ${
+                        payment === key ? "border-navy bg-lightblue" : "border-gold/40 bg-white hover:border-navy/40"
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="payment"
+                        value={key}
+                        checked={payment === key}
+                        onChange={() => setPayment(key)}
+                        className="mt-0.5 accent-[#1A2744]"
+                      />
+                      <span>
+                        <span className="block text-sm font-bold text-navy">
+                          {t(`checkout.paymentMethods.${key}.title`)}
+                        </span>
+                        <span className="mt-0.5 block text-xs text-graytext">
+                          {t(`checkout.paymentMethods.${key}.desc`)}
+                        </span>
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <aside className="h-fit rounded-2xl border border-gold/30 bg-white p-6 shadow-sm lg:sticky lg:top-24">
+              <h2 className="font-display text-lg font-semibold text-navy">{t("checkout.summary")}</h2>
+              <ul className="mt-4 space-y-3">
+                {items.map((item) => (
+                  <li key={item.id} className="flex items-center gap-3">
+                    <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-lightblue ring-1 ring-gold/40">
+                      <Image src={item.image ?? "/images/products/selle.svg"} alt={item.name} width={48} height={48} className="h-full w-full object-cover" />
+                    </span>
+                    <span className="flex-1">
+                      <span className="block line-clamp-1 text-sm font-semibold text-navy">{item.name}</span>
+                      <span className="text-xs text-graytext">× {item.qty}</span>
+                    </span>
+                    <span className="text-sm font-bold text-navy">
+                      {(item.price * item.qty).toLocaleString("fr-FR")} MAD
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <dl className="mt-5 space-y-2.5 border-t border-gold/30 pt-4 text-sm">
+                <div className="flex justify-between">
+                  <dt className="text-graytext">{t("cart.subtotal")}</dt>
+                  <dd className="font-semibold text-navy">{subtotal.toLocaleString("fr-FR")} MAD</dd>
+                </div>
+                <div className="flex justify-between">
+                  <dt className="text-graytext">{t("cart.shipping")}</dt>
+                  <dd className={`font-semibold ${free ? "text-green" : "text-navy"}`}>
+                    {free ? t("cart.shippingFree") : "30 MAD"}
+                  </dd>
+                </div>
+                <div className="flex justify-between border-t border-gold/30 pt-3">
+                  <dt className="font-semibold text-navy">{t("cart.total")}</dt>
+                  <dd className="font-display text-lg font-semibold text-navy">
+                    {total.toLocaleString("fr-FR")} MAD
+                  </dd>
+                </div>
+              </dl>
+              {errors.cart && <p className="mt-3 text-xs font-semibold text-red">{errors.cart}</p>}
+              <button
+                type="submit"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-gold px-6 py-3.5 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-[#c2ae8d]"
+              >
+                {t("checkout.placeOrder")}
+              </button>
+              <Link
+                href="/panier"
+                className="mt-3 inline-flex w-full items-center justify-center rounded-lg border border-royalblue px-6 py-3 text-sm font-semibold text-royalblue transition-colors hover:bg-lightblue"
+              >
+                {t("checkout.backToCart")}
+              </Link>
+            </aside>
+          </form>
+        </Container>
+      </section>
+    </>
+  );
+}

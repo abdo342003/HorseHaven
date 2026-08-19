@@ -1,0 +1,307 @@
+{
+  "meta": {
+    "title": "Horse Haven — Le refuge pour l'excellence équestre",
+    "description": "Boutique en ligne d'équipement équestre : selles, tapis, bridons, licols, couvertures, soins et vêtements du cavalier. Qualité, conseil et passion du cheval."
+  },
+  "nav": {
+    "home": "Accueil",
+    "shop": "Boutique",
+    "about": "À propos",
+    "contact": "Contact",
+    "menu": "Menu",
+    "cart": "Panier",
+    "langLabel": "Langue"
+  },
+  "topbar": {
+    "delivery": "Livraison rapide partout où vous êtes",
+    "phone": "+33 6 00 00 00 00",
+    "cod": "Paiement à la livraison"
+  },
+  "hero": {
+    "tagline": "Le refuge pour l'excellence équestre",
+    "title": "HORSE HAVEN",
+    "subtitle": "L'excellence à portée de clic",
+    "cta": "Découvrir la boutique",
+    "ctaSecondary": "Nous contacter",
+    "stats": {
+      "delivery": "Livraison 48h",
+      "cod": "Paiement à la livraison",
+      "eu": "Origine UE"
+    }
+  },
+  "home": {
+    "categoriesTitle": "Nos univers",
+    "categoriesSubtitle": "Tout pour le cheval et le cavalier",
+    "featuredTitle": "Produits vedettes",
+    "featuredSubtitle": "Une sélection soignée pour la performance et le confort",
+    "whyTitle": "Pourquoi Horse Haven ?",
+    "whySubtitle": "La qualité, le conseil et la passion du cheval au cœur de notre démarche",
+    "whyItems": {
+      "quality": {
+        "title": "Qualité",
+        "text": "Produits sélectionnés avec soin auprès de marques renommées."
+      },
+      "advice": {
+        "title": "Conseil",
+        "text": "Un accompagnement personnalisé pour choisir le meilleur équipement."
+      },
+      "eu": {
+        "title": "Origine UE",
+        "text": "Marques européennes de référence, importées sans droits de douane."
+      },
+      "passion": {
+        "title": "Passion",
+        "text": "Une équipe passionnée par le monde du cheval et de l'équitation."
+      }
+    },
+    "contactTitle": "Une question ?",
+    "contactText": "Notre équipe est à votre écoute pour vous conseiller dans vos choix.",
+    "contactCta": "Contacter Horse Haven",
+    "categoriesEyebrow": "Explorez nos univers",
+    "featuredEyebrow": "La sélection de la maison",
+    "whyEyebrow": "Notre engagement",
+    "explore": "Explorer",
+    "seeAll": "Voir toute la boutique",
+    "whatsappCta": "Commander sur WhatsApp",
+    "scroll": "Défiler",
+    "valuesEyebrow": "Nos promesses",
+    "values": [
+      "Qualité",
+      "Confort",
+      "Performance",
+      "Passion"
+    ],
+    "bestsellerEyebrow": "Le favori de la maison",
+    "bestsellerTitle": "Selle d’entrée de gamme",
+    "bestsellerText": "La selle la plus demandée de la boutique. Confort optimal pour le cavalier et le cheval, fabrication soignée, prête pour tous vos objectifs.",
+    "bestsellerBullets": [
+      "Cuir souple et résistant",
+      "Arçon adapté aux chevaux de travail",
+      "Livraison 48h — paiement à la livraison"
+    ],
+    "bestsellerCta": "Découvrir la selle",
+    "testimonialsEyebrow": "Ils nous font confiance",
+    "testimonialsTitle": "Les cavaliers en parlent",
+    "testimonialsSubtitle": "Trois retours de clients, du Maroc à la France.",
+    "testimonials": [
+      {
+        "name": "Yassine El Amrani",
+        "city": "Casablanca",
+        "quote": "Qualité au rendez-vous et paiement à la livraison, exactement comme promis. Je recommande."
+      },
+      {
+        "name": "Salma Benjelloun",
+        "city": "Rabat",
+        "quote": "Mon tapis de selle est arrivé en 48h, emballage soigné. Le service client est aux petits soins."
+      },
+      {
+        "name": "Inès Laurent",
+        "city": "Lyon",
+        "quote": "Une boutique qui connaît les chevaux. Produits authentiques et suivi irréprochable."
+      }
+    ],
+    "instaEyebrow": "@horse_haven.store",
+    "instaTitle": "Nos coulisses",
+    "instaSubtitle": "Astuces équitation, arrivages et coulisses du refuge, chaque semaine.",
+    "instaCta": "Suivre sur Instagram"
+  },
+  "categories": {
+    "equipment": {
+      "name": "Équipement du cheval",
+      "desc": "Tapis techniques, bridons ergonomiques, bottes et protections pour la performance et le confort."
+    },
+    "materials": {
+      "name": "Matériel pour le cheval",
+      "desc": "Selles adaptées à tous les profils, licols et accessoires de qualité, couvertures pour toutes les saisons, produits de soins et de pansage."
+    },
+    "rider": {
+      "name": "Articles de cavalier et d'écurie",
+      "desc": "Tout le nécessaire pour l'équitation du quotidien, le bien-être de votre compagnon, vêtements et protection du cavalier."
+    }
+  },
+  "product": {
+    "addToCart": "Ajouter au panier",
+    "orderWhatsApp": "Commander via WhatsApp",
+    "outOfStock": "En rupture de stock",
+    "inStock": "En stock",
+    "new": "Nouveau",
+    "promo": "Promo",
+    "euOrigin": "Origine UE",
+    "currency": "MAD",
+    "eur": "EUR",
+    "backToShop": "Retour à la boutique",
+    "viewAll": "Voir tout",
+    "searchPlaceholder": "Rechercher un produit…",
+    "noResults": "Aucun produit trouvé.",
+    "sort": "Trier",
+    "sortRelevance": "Pertinence",
+    "sortPriceAsc": "Prix croissant",
+    "sortPriceDesc": "Prix décroissant",
+    "sortNewest": "Nouveautés",
+    "category": "Catégorie",
+    "all": "Tous",
+    "quantity": "Quantité",
+    "waMessage": "Bonjour, je souhaite commander :"
+  },
+  "cart": {
+    "title": "Mon panier",
+    "empty": "Votre panier est vide.",
+    "emptyCta": "Découvrir la boutique",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "shippingFree": "Offerte",
+    "shippingQuote": "Calculée à la commande",
+    "total": "Total",
+    "checkout": "Passer la commande",
+    "continueShopping": "Continuer mes achats",
+    "remove": "Retirer",
+    "freeShippingHint": "Livraison offerte dès {amount} MAD",
+    "item": "article",
+    "items": "articles",
+    "added": "Ajouté au panier"
+  },
+  "checkout": {
+    "title": "Finaliser la commande",
+    "backToCart": "Retour au panier",
+    "contactSection": "Vos coordonnées",
+    "name": "Nom complet",
+    "phone": "Téléphone",
+    "email": "Email (optionnel)",
+    "city": "Ville",
+    "address": "Adresse de livraison",
+    "notes": "Notes (optionnel)",
+    "deliverySection": "Livraison",
+    "paymentSection": "Mode de paiement",
+    "paymentMethods": {
+      "cod": {
+        "title": "Paiement à la livraison (COD)",
+        "desc": "Payez en espèces à la réception de votre colis."
+      },
+      "transfer": {
+        "title": "Virement bancaire",
+        "desc": "Les coordonnées bancaires vous seront envoyées après la commande."
+      },
+      "whatsapp": {
+        "title": "Commande WhatsApp",
+        "desc": "Nous vous contactons sur WhatsApp pour finaliser la commande."
+      }
+    },
+    "summary": "Récapitulatif",
+    "placeOrder": "Confirmer la commande",
+    "errors": {
+      "name": "Veuillez indiquer votre nom.",
+      "phone": "Veuillez indiquer un numéro de téléphone valide.",
+      "city": "Veuillez indiquer votre ville.",
+      "address": "Veuillez indiquer votre adresse.",
+      "cartEmpty": "Votre panier est vide."
+    },
+    "confirm": "Votre commande a bien été enregistrée."
+  },
+  "confirmation": {
+    "title": "Merci pour votre commande !",
+    "orderNumber": "Commande n°",
+    "summary": "Récapitulatif de la commande",
+    "payment": "Paiement",
+    "total": "Total",
+    "tracking": "Suivi sur WhatsApp",
+    "backHome": "Retour à l'accueil",
+    "whatsappMsg": "Bonjour, je viens de passer la commande {order} chez Horse Haven. Pourriez-vous me confirmer sa prise en charge ?"
+  },
+  "footer": {
+    "badges": {
+      "quality": {
+        "title": "Produits de qualité",
+        "text": "Sélectionnés avec soin"
+      },
+      "secure": {
+        "title": "Paiement sécurisé",
+        "text": "100 % sécurisé"
+      },
+      "delivery": {
+        "title": "Livraison rapide",
+        "text": "Partout où vous êtes"
+      },
+      "support": {
+        "title": "Service client",
+        "text": "À votre écoute"
+      }
+    },
+    "shop": "Boutique",
+    "help": "Aide",
+    "contactTitle": "Contact",
+    "shipping": "Livraison & paiement",
+    "privacy": "Confidentialité",
+    "about": "À propos",
+    "contact": "Contact",
+    "rights": "Tous droits réservés.",
+    "tagline": "Le refuge pour l'excellence équestre"
+  },
+  "about": {
+    "title": "À propos de Horse Haven",
+    "missionTitle": "Notre mission",
+    "mission": "Passionnés de chevaux et d'équitation, Horse Haven ouvre ses portes virtuelles pour devenir votre référence incontournable en ligne pour tous vos besoins équestres.",
+    "visionTitle": "Notre vision",
+    "vision": "Horse Haven est né avec une ambition simple et forte : offrir le meilleur pour le cavalier, où la qualité, le conseil et la passion du cheval sont au cœur de notre démarche.",
+    "valuesTitle": "Nos valeurs",
+    "values": [
+      "Qualité",
+      "Conseil",
+      "Passion du cheval",
+      "Sources soigneusement sélectionnées",
+      "Excellence dans la sélection des produits"
+    ],
+    "audienceTitle": "Pour qui ?",
+    "audience": [
+      "Cavaliers amateurs",
+      "Cavaliers professionnels",
+      "Propriétaires de chevaux",
+      "Passionnés du monde équestre"
+    ]
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Notre équipe vous répond rapidement pour vous conseiller dans vos choix.",
+    "formTitle": "Envoyez-nous un message",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer",
+    "sent": "Message envoyé ! Nous vous répondrons rapidement.",
+    "phoneTitle": "Par téléphone",
+    "emailTitle": "Par email",
+    "socialTitle": "Sur les réseaux",
+    "whatsapp": "WhatsApp"
+  },
+  "shippingPage": {
+    "title": "Livraison & paiement",
+    "deliveryTitle": "Livraison",
+    "deliveryText": "Nous livrons partout au Maroc et en France. Les délais de livraison vous sont communiqués lors de la confirmation de commande.",
+    "paymentTitle": "Modes de paiement",
+    "paymentText": "Paiement à la livraison (COD), virement bancaire ou commande via WhatsApp. Le paiement par carte (CMI) arrive prochainement."
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "text": "Vos données personnelles (nom, téléphone, adresse) sont utilisées uniquement pour traiter et livrer vos commandes. Elles ne sont jamais vendues ni partagées avec des tiers, hors transporteurs et prestataires nécessaires à la livraison."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "cta": "Retour à l'accueil"
+  },
+  "common": {
+    "loading": "Chargement…",
+    "error": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "search": {
+    "placeholder": "Rechercher un produit…",
+    "open": "Ouvrir la recherche",
+    "close": "Fermer la recherche",
+    "empty": "Aucun résultat pour votre recherche.",
+    "allResults": "Voir tous les résultats"
+  },
+  "boutique": {
+    "subtitle": "Tout l'équipement pour le cheval, le cavalier et l'écurie — livré partout au Maroc, paiement à la livraison.",
+    "results": "{count, plural, one {# produit} other {# produits}}",
+    "related": "Voir aussi"
+  }
+}

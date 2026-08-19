@@ -1,0 +1,307 @@
+{
+  "meta": {
+    "title": "Horse Haven — The refuge for equestrian excellence",
+    "description": "Online equestrian store: saddles, numnahs, bridles, halters, blankets, grooming products and rider clothing. Quality, advice and passion for horses."
+  },
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Menu",
+    "cart": "Cart",
+    "langLabel": "Language"
+  },
+  "topbar": {
+    "delivery": "Fast delivery wherever you are",
+    "phone": "+33 6 00 00 00 00",
+    "cod": "Cash on delivery"
+  },
+  "hero": {
+    "tagline": "The refuge for equestrian excellence",
+    "title": "HORSE HAVEN",
+    "subtitle": "Excellence at your fingertips",
+    "cta": "Discover the shop",
+    "ctaSecondary": "Contact us",
+    "stats": {
+      "delivery": "48h delivery",
+      "cod": "Cash on delivery",
+      "eu": "EU origin"
+    }
+  },
+  "home": {
+    "categoriesTitle": "Our universes",
+    "categoriesSubtitle": "Everything for horse and rider",
+    "featuredTitle": "Featured products",
+    "featuredSubtitle": "A carefully curated selection for performance and comfort",
+    "whyTitle": "Why Horse Haven?",
+    "whySubtitle": "Quality, advice and passion for horses at the heart of everything we do",
+    "whyItems": {
+      "quality": {
+        "title": "Quality",
+        "text": "Products carefully selected from renowned brands."
+      },
+      "advice": {
+        "title": "Advice",
+        "text": "Personal support to choose the best equipment."
+      },
+      "eu": {
+        "title": "EU origin",
+        "text": "Reference European brands, imported duty-free."
+      },
+      "passion": {
+        "title": "Passion",
+        "text": "A team passionate about the world of horses."
+      }
+    },
+    "contactTitle": "A question?",
+    "contactText": "Our team is here to help you make the right choice.",
+    "contactCta": "Contact Horse Haven",
+    "categoriesEyebrow": "Explore our worlds",
+    "featuredEyebrow": "The house selection",
+    "whyEyebrow": "Our commitment",
+    "explore": "Explore",
+    "seeAll": "View the whole shop",
+    "whatsappCta": "Order on WhatsApp",
+    "scroll": "Scroll",
+    "valuesEyebrow": "Our promises",
+    "values": [
+      "Quality",
+      "Comfort",
+      "Performance",
+      "Passion"
+    ],
+    "bestsellerEyebrow": "House favorite",
+    "bestsellerTitle": "Entry-level saddle",
+    "bestsellerText": "The most requested saddle in the shop. Optimal comfort for rider and horse, careful craftsmanship, ready for all your goals.",
+    "bestsellerBullets": [
+      "Soft, durable leather",
+      "Tree suited to working horses",
+      "48h delivery — cash on delivery"
+    ],
+    "bestsellerCta": "Discover the saddle",
+    "testimonialsEyebrow": "They trust us",
+    "testimonialsTitle": "Riders talk about us",
+    "testimonialsSubtitle": "Three reviews from our customers, from Morocco to France.",
+    "testimonials": [
+      {
+        "name": "Yassine El Amrani",
+        "city": "Casablanca",
+        "quote": "Quality on point and cash on delivery, exactly as promised. I recommend it."
+      },
+      {
+        "name": "Salma Benjelloun",
+        "city": "Rabat",
+        "quote": "My saddle pad arrived in 48h, carefully packaged. Customer service is top-notch."
+      },
+      {
+        "name": "Inès Laurent",
+        "city": "Lyon",
+        "quote": "A shop that truly knows horses. Authentic products and flawless follow-up."
+      }
+    ],
+    "instaEyebrow": "@horse_haven.store",
+    "instaTitle": "Behind the scenes",
+    "instaSubtitle": "Riding tips, new arrivals and behind the scenes of the refuge, every week.",
+    "instaCta": "Follow on Instagram"
+  },
+  "categories": {
+    "equipment": {
+      "name": "Horse equipment",
+      "desc": "Technical numnahs, ergonomic bridles, boots and protections for performance and comfort."
+    },
+    "materials": {
+      "name": "Horse materials",
+      "desc": "Saddles for every rider, quality halters and accessories, blankets for all seasons, care and grooming products."
+    },
+    "rider": {
+      "name": "Rider & stable items",
+      "desc": "Everything for everyday riding, your companion's well-being, rider clothing and protection."
+    }
+  },
+  "product": {
+    "addToCart": "Add to cart",
+    "orderWhatsApp": "Order via WhatsApp",
+    "outOfStock": "Out of stock",
+    "inStock": "In stock",
+    "new": "New",
+    "promo": "Promo",
+    "euOrigin": "EU origin",
+    "currency": "MAD",
+    "eur": "EUR",
+    "backToShop": "Back to shop",
+    "viewAll": "View all",
+    "searchPlaceholder": "Search a product…",
+    "noResults": "No products found.",
+    "sort": "Sort",
+    "sortRelevance": "Relevance",
+    "sortPriceAsc": "Price: low to high",
+    "sortPriceDesc": "Price: high to low",
+    "sortNewest": "Newest",
+    "category": "Category",
+    "all": "All",
+    "quantity": "Quantity",
+    "waMessage": "Hello, I would like to order:"
+  },
+  "cart": {
+    "title": "My cart",
+    "empty": "Your cart is empty.",
+    "emptyCta": "Discover the shop",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingFree": "Free",
+    "shippingQuote": "Calculated at checkout",
+    "total": "Total",
+    "checkout": "Checkout",
+    "continueShopping": "Continue shopping",
+    "remove": "Remove",
+    "freeShippingHint": "Free shipping from {amount} MAD",
+    "item": "item",
+    "items": "items",
+    "added": "Added to cart"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "backToCart": "Back to cart",
+    "contactSection": "Your details",
+    "name": "Full name",
+    "phone": "Phone",
+    "email": "Email (optional)",
+    "city": "City",
+    "address": "Delivery address",
+    "notes": "Notes (optional)",
+    "deliverySection": "Delivery",
+    "paymentSection": "Payment method",
+    "paymentMethods": {
+      "cod": {
+        "title": "Cash on delivery (COD)",
+        "desc": "Pay in cash when you receive your order."
+      },
+      "transfer": {
+        "title": "Bank transfer",
+        "desc": "Bank details will be sent to you after ordering."
+      },
+      "whatsapp": {
+        "title": "WhatsApp order",
+        "desc": "We contact you on WhatsApp to finalize your order."
+      }
+    },
+    "summary": "Order summary",
+    "placeOrder": "Confirm order",
+    "errors": {
+      "name": "Please enter your name.",
+      "phone": "Please enter a valid phone number.",
+      "city": "Please enter your city.",
+      "address": "Please enter your address.",
+      "cartEmpty": "Your cart is empty."
+    },
+    "confirm": "Your order has been registered."
+  },
+  "confirmation": {
+    "title": "Thank you for your order!",
+    "orderNumber": "Order n°",
+    "summary": "Order summary",
+    "payment": "Payment",
+    "total": "Total",
+    "tracking": "Track on WhatsApp",
+    "backHome": "Back to home",
+    "whatsappMsg": "Hello, I just placed order {order} at Horse Haven. Could you confirm you received it?"
+  },
+  "footer": {
+    "badges": {
+      "quality": {
+        "title": "Quality products",
+        "text": "Carefully selected"
+      },
+      "secure": {
+        "title": "Secure payment",
+        "text": "100% secure"
+      },
+      "delivery": {
+        "title": "Fast delivery",
+        "text": "Wherever you are"
+      },
+      "support": {
+        "title": "Customer service",
+        "text": "At your service"
+      }
+    },
+    "shop": "Shop",
+    "help": "Help",
+    "contactTitle": "Contact",
+    "shipping": "Shipping & payment",
+    "privacy": "Privacy policy",
+    "about": "About us",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "tagline": "The refuge for equestrian excellence"
+  },
+  "about": {
+    "title": "About Horse Haven",
+    "missionTitle": "Our mission",
+    "mission": "Passionate about horses and riding, Horse Haven opens its virtual doors to become your go-to online reference for all your equestrian needs.",
+    "visionTitle": "Our vision",
+    "vision": "Horse Haven was born with a simple, strong ambition: to offer the best for the rider, with quality, advice and passion for horses at the heart of our approach.",
+    "valuesTitle": "Our values",
+    "values": [
+      "Quality",
+      "Advice",
+      "Passion for horses",
+      "Carefully curated sources",
+      "Excellence in product selection"
+    ],
+    "audienceTitle": "Who is it for?",
+    "audience": [
+      "Amateur riders",
+      "Professional riders",
+      "Horse owners",
+      "Equestrian enthusiasts"
+    ]
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Our team replies quickly to help you with your choices.",
+    "formTitle": "Send us a message",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "sent": "Message sent! We will reply shortly.",
+    "phoneTitle": "By phone",
+    "emailTitle": "By email",
+    "socialTitle": "On social media",
+    "whatsapp": "WhatsApp"
+  },
+  "shippingPage": {
+    "title": "Shipping & payment",
+    "deliveryTitle": "Shipping",
+    "deliveryText": "We deliver throughout Morocco and France. Delivery times are communicated when your order is confirmed.",
+    "paymentTitle": "Payment methods",
+    "paymentText": "Cash on delivery (COD), bank transfer or WhatsApp order. Card payment (CMI) coming soon."
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "text": "Your personal data (name, phone, address) is used only to process and deliver your orders. It is never sold or shared with third parties, except carriers required for delivery."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or has been moved.",
+    "cta": "Back to home"
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong. Please try again."
+  },
+  "search": {
+    "placeholder": "Search products…",
+    "open": "Open search",
+    "close": "Close search",
+    "empty": "No results for your search.",
+    "allResults": "View all results"
+  },
+  "boutique": {
+    "subtitle": "Everything for horse, rider and stable — delivered across Morocco, cash on delivery.",
+    "results": "{count, plural, one {# product} other {# products}}",
+    "related": "You may also like"
+  }
+}
