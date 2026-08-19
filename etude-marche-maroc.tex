@@ -1,0 +1,390 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[default]{sourcesanspro}
+\usepackage[scaled=0.95]{inconsolata}
+\usepackage{textcomp}
+\usepackage[margin=2.1cm]{geometry}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{multicol}
+\setlength{\headheight}{16pt}
+
+\linespread{1.04}
+\setlength{\emergencystretch}{2em}
+
+% ----- Palette Horse Haven -----
+\definecolor{navy}{HTML}{1A2744}
+\definecolor{royalblue}{HTML}{2B5A83}
+\definecolor{lightblue}{HTML}{F2F6FB}
+\definecolor{gold}{HTML}{D4C5A9}
+\definecolor{green}{HTML}{006B3F}
+\definecolor{red}{HTML}{CC3333}
+\definecolor{graytext}{HTML}{667788}
+
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+
+% ----- En-tête / pied de page -----
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{navy}\textbf{Horse Haven}}
+\fancyhead[R]{\small\color{graytext}Étude de marché --- Maroc --- Août 2026}
+\fancyfoot[C]{\footnotesize\color{graytext}Page \thepage\ sur \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\headrule}{\color{gold}\hrule width\headwidth height 0.8pt}
+
+% ----- Titres -----
+\titleformat{\section}
+  {\Large\bfseries\color{navy}}
+  {\thesection.}
+  {0.6em}
+  {}
+  [\vspace{-0.3em}\textcolor{gold}{\rule{\textwidth}{1.6pt}}]
+\titlespacing*{\section}{0pt}{5mm}{2.5mm}
+
+\titleformat{\subsection}
+  {\large\bfseries\color{royalblue}}
+  {\thesubsection}
+  {0.6em}
+  {}
+\titlespacing*{\subsection}{0pt}{4mm}{1.5mm}
+
+% ----- Listes -----
+\setlist[itemize]{leftmargin=5mm, itemsep=0.6mm, label=\textcolor{royalblue}{\small\raisebox{0.6pt}{\textbullet}}}
+\setlist[enumerate]{leftmargin=6mm, itemsep=1mm, label=\textcolor{navy}{\bfseries\arabic*.}}
+
+% ----- Tableaux -----
+\renewcommand{\arraystretch}{1.25}
+\arrayrulecolor{navy}
+\rowcolors{2}{lightblue!45}{white}
+
+% ----- Boîtes -----
+\newtcolorbox{actionbox}{title={\faLightbulb\ Action recommandée}, colback=green!7, colframe=green, coltitle=white, colbacktitle=green, boxrule=0.9pt, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable, fonttitle=\small\bfseries}
+\newtcolorbox{warnbox}{title={\faExclamationTriangle\ Risques à anticiper}, colback=red!6, colframe=red, coltitle=white, colbacktitle=red, boxrule=0.9pt, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable, fonttitle=\small\bfseries}
+\newtcolorbox{keybox}{title={\faKey\ Point clé}, colback=lightblue, colframe=royalblue, coltitle=white, colbacktitle=royalblue, boxrule=0.9pt, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable, fonttitle=\small\bfseries}
+\newtcolorbox{formulabox}{title={\faCalculator\ Mécanique fiscale}, colback=white, colframe=navy, coltitle=white, colbacktitle=navy, boxrule=0.9pt, arc=1.5mm, left=4mm, right=4mm, top=2mm, bottom=2mm, fonttitle=\small\bfseries}
+
+% ----- En-tête de tableau -----
+\newcommand{\thead}[1]{\textcolor{white}{\textbf{#1}}}
+
+\begin{document}
+
+% ================= EN-TÊTE =================
+\noindent
+\begin{tcolorbox}[colback=navy, colframe=navy, boxrule=0pt, arc=3mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\centering
+{\color{white}\LARGE\faHorse\ \ \textsc{Horse Haven}}\\[2mm]
+{\color{gold}\Large\bfseries Étude de marché --- Maroc}\\[1mm]
+{\color{white!70!royalblue}\itshape Données réelles \& scénarios concrets}
+\end{tcolorbox}
+
+\vspace{2mm}
+\noindent
+\begin{tcolorbox}[colback=lightblue, colframe=royalblue, boxrule=0.6pt, arc=2mm, left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
+{\small\color{graytext} Compilée à partir de sources publiques : SOREC, Le360, MAP, Oxford Business Group, UNESCO, FRMSE, CMI, ANRT, HCP, Research \& Markets, douane.gov.ma --- \textbf{Août 2026}}
+\end{tcolorbox}
+
+% ================= 1. SECTEUR ÉQUIN =================
+\section{Le secteur équin marocain --- Chiffres clés}
+
+{\small
+\noindent
+\begin{tabular}{L{4.6cm} L{7.4cm} L{3.5cm}}
+\toprule
+\rowcolor{navy}
+\thead{Indicateur} & \thead{Valeur} & \thead{Source}\\
+\midrule
+\textbf{Cheptel équin national} & \textbf{$\sim$170\,000 chevaux} & SOREC / fiches projets\\
+\textbf{Contribution au PIB} & \textbf{0,6\,\% ($\sim$6 milliards MAD/an)} & Min. Agriculture / Le360 (2024)\\
+\textbf{Emplois directs \& indirects} & \textbf{30\,000+} & Le360 (2024)\\
+\textbf{Naissances annuelles (5 races)} & \textbf{$\sim$4\,300} (+30\,\% depuis 2011) & SOREC / LesEco\\
+\textbf{Cavaliers recensés} & \textbf{$\sim$20\,000} & Fiches projets\\
+\textbf{Centres / clubs équestres} & \textbf{150+} sur tout le territoire & MesLoisirs.ma (2026)\\
+\textbf{Courses hippiques / an} & \textbf{2\,400 à 3\,000} sur 7 hippodromes & SOREC / OBG\\
+\textbf{Troupes de Tbourida} & \textbf{$\sim$1\,000} nationales ; 330+ au championnat & UNESCO / FRMSE\\
+\textbf{Chevaux dédiés Tbourida} & \textbf{$\sim$5\,900} & FRMSE (2025)\\
+\textbf{Manifestations équestres / an} & \textbf{2\,400+} & Min. Agriculture\\
+\textbf{Races principales} & Barbe, Arabe-Barbe, Pur-sang arabe, PS anglais, Anglo-arabe & SOREC\\
+\bottomrule
+\end{tabular}}
+
+\subsection{Infrastructure SOREC (organisme public, créé en 2003)}
+\begin{itemize}
+  \item 7 hippodromes, 5 haras nationaux (El Jadida, Bouznika, Meknès, Oujda, Marrakech)
+  \item 43 stations de monte, 300 étalons, 13\,000 juments saillies/an
+  \item Centre National d'Insémination Artificielle Équine de Bouznika --- 1\textsuperscript{er} d'Afrique du Nord, agréé UE
+  \item 200 professionnels au service des éleveurs ; application d'identification «~Faras~»
+\end{itemize}
+
+% ================= 2. SCÉNARIOS RÉELS =================
+\section{Scénarios réels --- Là où se trouvent les clients}
+
+\subsection{\faFlag\ Salon du Cheval d'El Jadida (événement phare)}
+\begin{itemize}
+  \item \textbf{16\textsuperscript{e} édition, 30 sept. -- 5 oct. 2025 : $\sim$150\,000 visiteurs} (2024 : 160\,000+ ; 200\,000 attendus en 2025)
+  \item $\sim$50 pays, 700+ cavaliers, 1\,100 chevaux, 600+ journalistes
+  \item Sous le Haut Patronage de SM le Roi Mohammed VI ; ouvert par le Prince Héritier Moulay El Hassan
+  \item Compétitions clés : Grand Prix SM le Roi (CSO), Grand Prix SM le Roi (Tbourida), Coupe des Champions Barbes, Arabe-Barbes, «~Title Show~» pur-sang arabes (nouveau Cat. A en 2025)
+  \item Thème 2025 : «~Le bien-être du cheval~» --- le bien-être animal comme angle marketing
+\end{itemize}
+
+\begin{actionbox}
+Exposer au Salon (village exposants) ou sponsoriser un espace ; 150\,000 clients potentiels réunis 6 jours en octobre.
+\end{actionbox}
+
+\subsection{\faUsers\ Tbourida / Fantasia (patrimoine immatériel UNESCO depuis 2021)}
+\begin{itemize}
+  \item $\sim$1\,000 troupes au niveau national ; 330+ au championnat ; 5\,900 chevaux dédiés
+  \item Festival Fête du Trône 2025 à Rabat : \textbf{500 cavaliers, 50+ sorbas}, 4 jours complets
+  \item Festival de Sidi Rahal (13\textsuperscript{e} éd., 2025) : 42 sorbas, \textbf{800+ chevaux/cavaliers, $\sim$30\,000 visiteurs}
+  \item Festival d'Ain Chkef / Moulay Yacoub : 42 sorbas, 600 chevaux
+  \item Trophée Hassan II de Tbourida (Rabat, juin) : 24 sorbas d'élite (18 séniors + 6 juniors)
+\end{itemize}
+
+\begin{actionbox}
+Les sorbas ont besoin de : selles, étuis de fusil, harnachements traditionnels, couvertures, produits de pansage. Partenariats avec les mokaddems (chefs de troupe) pour commandes groupées.
+\end{actionbox}
+
+\subsection{\faTrophy\ Courses hippiques (7 hippodromes)}
+\begin{itemize}
+  \item 2\,400 à 3\,000 courses/an ; 2\,852 chevaux en course en 2016 (+31\,\% vs 2015) ; $\sim$12 partants/course
+  \item $\rightarrow$ Propriétaires et entraîneurs achètent : couvertures d'écurie, bandages, compléments alimentaires, produits de pansage.
+\end{itemize}
+
+\subsection{\faGraduationCap\ Écoles \& clubs d'équitation (150+ centres)}
+\begin{itemize}
+  \item Prix réels (MesLoisirs.ma 2026) : cours 200--500 MAD/h ; abonnement mensuel 2\,000--4\,000 MAD
+  \item Clubs : Royal Club Équestre Marrakech, Casa Anfa (fondé en 1912), Bouskoura, Mohammedia, Mamora, Rabat/Témara, Fès, Meknès, Agadir, Essaouira (Diabat), Taroudant, Ifrane
+  \item Clubs de polo : Marrakech (Royal Polo Club, Jnan Amar), Rabat --- initiation 500--1\,500 MAD/séance, écuries de 40 chevaux
+\end{itemize}
+
+\begin{actionbox}
+Approvisionner les clubs en sellerie, équipement cavalier (casques, bottes, chaps), matériel d'écurie. Les clubs = acheteurs récurrents en volume (B2B2C).
+\end{actionbox}
+
+\subsection{\faSuitcase\ Tourisme équestre (nouveau et en croissance)}
+\begin{itemize}
+  \item Ifrane : \textbf{181 km d'itinéraires balisés} inaugurés en mai 2026 (région Fès-Meknès + coopération Centre-Val de Loire, 1,4~M~MAD investis) --- 1\textsuperscript{er} itinéraire national de tourisme équestre
+  \item Objectif : $\sim$230 km avec boucles ; guides en formation avec la FFE/FITE
+  \item Prix : balade 1h 150--600 MAD ; trek Atlas 3--7 jours 2\,500--20\,000 MAD
+\end{itemize}
+
+\begin{actionbox}
+Vendre du matériel de randonnée (chemises anti-mouches, guêtres de transport, selles de bât) + les opérateurs touristiques comme clients B2B.
+\end{actionbox}
+
+% ================= 3. E-COMMERCE =================
+\section{La réalité du e-commerce au Maroc}
+
+{\small
+\noindent
+\begin{tabular}{L{5.2cm} L{6.6cm} L{3.7cm}}
+\toprule
+\rowcolor{navy}
+\thead{Indicateur} & \thead{Valeur} & \thead{Source}\\
+\midrule
+\textbf{Paiements e-commerce 2025} & \textbf{18 milliards MAD (+34\,\% vs 2024)} & CMI / Wafir (2026)\\
+\textbf{Acheteurs en ligne 2025} & \textbf{6,8 millions (+278\,\% vs 2020)} = 24\,\% des adultes & Wafir\\
+\textbf{Panier moyen} & \textbf{380 MAD} & Wafir\\
+\textbf{Fréquence d'achat} & \textbf{4,2 fois/an/acheteur} & Wafir\\
+\textbf{Paiements 2025} & Carte \textbf{47\,\%}, COD \textbf{38\,\%}, M-wallet \textbf{12\,\%}, virement 3\,\% & CMI\\
+\textbf{Part du mobile} & \textbf{73\,\%} des transactions (vs 38\,\% en 2020) & Wafir\\
+\textbf{Marché total 2025} & 3,17 Mds \$US ; prévision 3,51 Mds \$US en 2029 & Research \& Markets\\
+\textbf{Croissance} & +25 à 30\,\%/an depuis 5 ans & amine.ma / CMI\\
+\textbf{Pénétration smartphone} & \textbf{87\,\%} & ANRT 2025\\
+\textbf{Social commerce} & \textbf{62\,\%} utilisent les boutiques IG/TikTok /mois & amine.ma 2026\\
+\textbf{Top plateformes} & Jumia (28\,\%), Marjane (18\,\%), Glovo (12\,\%), JaJa (8\,\%), Carrefour (6\,\%) & Wafir\\
+\bottomrule
+\end{tabular}}
+
+\subsection{\faShoppingCart\ Ce que cela implique pour Horse Haven}
+\begin{itemize}
+  \item \textbf{La livraison contre remboursement reste incontournable (38\,\%)} : proposer COD + paiement carte CMI
+  \item \textbf{Mobile-first} : la boutique doit être optimisée mobile (73\,\% des transactions)
+  \item \textbf{M-wallets en hausse (12\,\%)} : envisager l'intégration de portefeuilles mobiles
+  \item \textbf{Le social commerce est massif (62\,\%)} : vendre via Instagram/TikTok est un comportement standard
+  \item \textbf{Panier moyen 380 MAD} = les produits à 200--600 MAD se vendent le mieux ; les gros achats (selles 3\,000+ MAD) nécessitent des options de paiement en plusieurs fois
+  \item Les niches verticales (comme l'équitation) sont à \textbf{faible densité concurrentielle} --- «~grand ouvert~» selon amine.ma
+\end{itemize}
+
+% ================= 4. IMPORTATION =================
+\section{Coûts d'importation --- Scénario chiffré réel (douane)}
+
+\begin{formulabox}
+\begin{tabular}{@{}l@{\hspace{0.8em}}l@{}}
+\texttt{Valeur CIF} & = FOB + Fret + Assurance\\
+\texttt{Droit d'Importation (DI)} & = CIF $\times$ taux (0 à 30\,\%)\\
+\texttt{TPF (Taxe Parafiscale)} & = CIF $\times$ 0,25\,\%\\
+\texttt{Base TVA} & = CIF + DI + TPF\\
+\texttt{TVA} & = Base $\times$ 20\,\% (taux normal)\\
+\textbf{Total} & = DI + TPF + TVA\\
+\end{tabular}
+\end{formulabox}
+
+\subsection{\faPercent\ Taux de droits par catégorie (PLF 2026, circulaire ADII 6702/210)}
+{\small
+\noindent
+\begin{tabular}{L{12cm} L{3cm}}
+\toprule
+\rowcolor{navy}
+\thead{Catégorie} & \thead{Taux DI}\\
+\midrule
+Matières premières & 0\,\%\\
+Équipements industriels & 2,5\,\%\\
+Produits semi-finis & 10\,\%\\
+Produits finis courants & \textbf{25\,\%} (sellerie, vêtements, harnachements)\\
+Produits fortement protégés & 30\,\% (textiles possibles)\\
+\bottomrule
+\end{tabular}}
+
+\begin{keybox}
+Les produits d'\textbf{origine UE avec certificat EUR.1 = 0\,\% de droits} (Accord d'Association Maroc-UE 2000). La plupart des marques équestres sont européennes $\rightarrow$ importer de France/Allemagne/Espagne/Italie avec EUR.1 pour supprimer le droit de douane.\\[1mm]
+La TVA à l'import est \textbf{récupérable} si vous êtes assujetti (obligatoire $>$ 2~M~MAD de CA pour le commerce).\\[1mm]
+Fret exemple : conteneur 20 pieds Chine$\rightarrow$Casablanca : 2\,000--6\,000 \$US ; fret aérien = 10--20\,\% du FOB.
+\end{keybox}
+
+\subsection{\faEuroSign\ Exemple chiffré --- import de 5\,000\,\texteuro{} ($\approx$53\,500 MAD) de sellerie depuis la France (avec EUR.1)}
+{\small
+\noindent
+\begin{tabular}{L{9.5cm} L{5cm}}
+\toprule
+\rowcolor{navy}
+\thead{Élément} & \thead{Montant (MAD)}\\
+\midrule
+FOB & 53\,500\\
+Fret + assurance & 4\,500\\
+CIF & 58\,000\\
+DI (0\,\% avec EUR.1) & 0\\
+TPF (0,25\,\%) & 145\\
+Base TVA & 58\,145\\
+TVA import (20\,\%) & 11\,629\\
+\midrule
+\textbf{Total droits et taxes} & \textbf{11\,774} ($\sim$17\,\% du coût débarqué total de 69\,774)\\
+\bottomrule
+\end{tabular}}
+
+Sans EUR.1 (ex. origine Chine) : DI 25\,\% = 14\,500 MAD $\rightarrow$ total $\approx$ 29\,174 MAD ($\sim$50\,\% du CIF). \textbf{Privilégier impérativement les fournisseurs UE.}
+
+% ================= 5. CONCURRENCE =================
+\section{Concurrence réelle --- Qui vend de l'équipement équestre au Maroc}
+
+{\small
+\noindent
+\begin{tabular}{L{4.0cm} L{2.5cm} L{9.0cm}}
+\toprule
+\rowcolor{navy}
+\thead{Acteur} & \thead{Type} & \thead{Observations}\\
+\midrule
+\textbf{Decathlon.ma} & Grande distribution & 16 produits équestres ; tapis de selle 89--349 MAD ; selles promo 1\,999--3\,999 MAD ; uniquement entrée de gamme\\
+\textbf{Maroc Marechalerie SARL} (marechalpro.com) & Spécialiste B2B & Casablanca ; fers, clous, outils de maréchalerie + sellerie limitée (tapis, longe) ; le spécialiste existant le plus proche\\
+\textbf{Cavalor Maroc} (cavalormaroc.com) & Distributeur d'aliments & Marque belge distribuée au Maroc, ex. Juniorix 20~kg = 285 MAD --- un marché premium existe\\
+\textbf{Fibersoil} (Casablanca) & Surfaces équestres & Sables de carrière/manèges pour clubs (B2B infrastructure, pas de retail)\\
+\textbf{Revendeurs Facebook/Instagram} & Informel & Nombreux petits vendeurs via DM + COD --- canal dominant actuel, sans confiance ni garantie\\
+\textbf{Boutiques en ligne UE} (equi-clic.com, cheval-shop.com, equiphorse.com) & Concurrents UE & Livraison au Maroc via fret privé : lent, cher, sans support local\\
+\bottomrule
+\end{tabular}}
+
+\subsection{\faSearch\ Analyse des lacunes $\rightarrow$ positionnement Horse Haven}
+\begin{enumerate}
+  \item \textbf{Aucune boutique en ligne marocaine spécialisée} en équipement équestre n'existe (seulement maréchalerie + aliments)
+  \item Decathlon couvre uniquement l'entrée de gamme ; les pros achètent à l'étranger ou via des revendeurs informels
+  \item La demande B2B (150 clubs, 1\,000 sorbas, 7 hippodromes) n'est pas servie en ligne
+  \item Origine UE + EUR.1 = import sans droits = prix compétitifs face aux revendeurs informels
+  \item L'équitation est une \textbf{niche à faible densité} dans le marché e-commerce qui croît le plus vite d'Afrique
+\end{enumerate}
+
+% ================= 6. PRIX =================
+\section{Repères de prix réels au Maroc (MAD)}
+{\small
+\noindent
+\begin{tabular}{L{8.2cm} L{4.3cm} L{3cm}}
+\toprule
+\rowcolor{navy}
+\thead{Article / Service} & \thead{Fourchette (MAD)} & \thead{Source}\\
+\midrule
+Tapis de selle (numnah) & 89--349 & Decathlon.ma\\
+Selle entrée de gamme (promo) & 1\,999--3\,999 & Decathlon.ma\\
+Aliment : Cavalor Juniorix 20~kg & 285 & cavalormaroc.com\\
+Cours d'équitation 1h & 200--500 & MesLoisirs.ma\\
+Abonnement mensuel club & 2\,000--4\,000 & MesLoisirs.ma\\
+Balade 1h (tourisme) & 150--600 & MesLoisirs.ma\\
+Randonnée week-end & 500--1\,500 & MesLoisirs.ma\\
+Panier e-commerce moyen & 380 & Observatoire Wafir\\
+\bottomrule
+\end{tabular}}
+
+% ================= 7. STRATÉGIE =================
+\section{Stratégie actionnable (basée sur les données)}
+
+\subsection{\faRocket\ Phase 1 --- Lancement (Mois 1--3)}
+\begin{itemize}
+  \item \textbf{Catalogue ciblé} : tapis de selle, bridons, bottes/protections, pansage, chemises anti-mouches (climat chaud : les couvertures d'hiver épaisses = stock mort), vêtements cavalier, casques
+  \item \textbf{Paiements} : carte CMI + \textbf{COD} + commande WhatsApp (comportement dominant)
+  \item \textbf{Boutique mobile-first}, en français + arabe + anglais
+  \item \textbf{Canaux de vente} : boutiques Instagram/TikTok (62\,\% des internautes) + site marchand
+\end{itemize}
+
+\subsection{\faHandshake\ Phase 2 --- B2B (Mois 3--6)}
+\begin{itemize}
+  \item Cibler : 150+ clubs, 1\,000+ sorbas, entraîneurs des 7 hippodromes
+  \item Offres groupées/contrats pour les clubs (sellerie, couvertures, pansage, compléments)
+  \item Participer au \textbf{Salon du Cheval d'El Jadida} (150\,000 visiteurs, octobre) --- stand ou pop-up
+  \item Partenariats avec les marques d'aliments déjà importées au Maroc (ex. Cavalor) en cross-sell
+\end{itemize}
+
+\subsection{\faGem\ Phase 3 --- Tourisme \& premium (Mois 6--12)}
+\begin{itemize}
+  \item Matériel de randonnée pour le nouvel itinéraire d'Ifrane (181 km) et les opérations plage d'Essaouira
+  \item Selles/marques premium pour les clubs de polo (Marrakech, Rabat) et cavaliers pros
+\end{itemize}
+
+\subsection{\faChartLine\ Chiffres clés pour le business plan}
+\begin{keybox}
+\RaggedRight
+\textbf{MAM (marché adressable) :} 170\,000 chevaux $\times$ $\sim$1\,000 MAD/an d'équipement = \textbf{170~M~MAD/an}\\[1mm]
+\textbf{MSC (marché servable) :} 20\,000 cavaliers + 150 clubs + 1\,000 sorbas + propriétaires de chevaux de course\\[1mm]
+\textbf{Croissance :} e-commerce +30\,\%/an ; filière équine croît plus vite que le PIB ; naissances +30\,\% depuis 2011
+\end{keybox}
+
+\begin{warnbox}
+\begin{itemize}
+  \item Droits de douane 25--30\,\% si achat hors UE $\rightarrow$ \textbf{s'approvisionner uniquement en UE (EUR.1 = 0\,\%)}
+  \item COD = friction de trésorerie et risque de retours $\rightarrow$ plafonner le COD sur les gros articles, favoriser la carte CMI (47\,\%)
+  \item Délais d'importation (ports de Casablanca/Tanger Med) $\rightarrow$ stock tampon, transitaire agréé
+  \item Saisonnalité : pics de vente en octobre (Salon) et autour des moussems $\rightarrow$ planifier les promotions
+  \item Sensibilité aux prix : panier moyen 380 MAD $\rightarrow$ points d'entrée de gamme + offre premium pour les pros
+\end{itemize}
+\end{warnbox}
+
+% ================= SOURCES =================
+\section*{Sources}
+{\footnotesize\color{graytext}
+\begin{multicols}{2}
+\raggedcolumns
+\begin{itemize}
+  \item SOREC (sorec.ma) : élevage, courses, infrastructures
+  \item Le360 (oct. 2024) : filière équine 0,6\,\% du PIB, 30\,000 emplois, contrat-programme 1 milliard MAD
+  \item Oxford Business Group : croissance des courses, spectateurs Tbourida
+  \item H24info / Express TV / Le Matin / Aujourd'hui le Maroc (oct. 2025) : 16\textsuperscript{e} Salon du Cheval
+  \item UNESCO (ich.unesco.org) : dossier Tbourida (environ 1\,000 troupes, 330 officielles)
+  \item FRMSE / Barlaman Today : trophées Tbourida, 5\,900 chevaux
+  \item MesLoisirs.ma (2026) : 150+ centres, prix réels des cours et pensions
+  \item FFE / Greenval (mai 2026) : itinéraires équestres d'Ifrane 181 km
+  \item Observatoire Wafir E-commerce (2026) / CMI : paiements, acheteurs, panier moyen
+  \item Research \& Markets (nov. 2025) : marché B2C 3,17 $\rightarrow$ 3,51 Mds \$US
+  \item douane.gov.ma / customsclearance.ma / creationsocietecasablanca.com : calculs d'importation
+  \item Decathlon.ma, marechalpro.com, cavalormaroc.com : prix concurrents
+\end{itemize}
+\end{multicols}}
+
+\end{document}
