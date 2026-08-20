@@ -31,7 +31,7 @@ export function SectionHeading({
           {centered && <span aria-hidden className="h-px w-10 bg-gradient-to-l from-transparent to-gold/70" />}
         </div>
       )}
-      <h2 className="mt-2 font-display text-2xl font-semibold text-navy sm:text-3xl">{title}</h2>
+      <h2 className="mt-2 font-display text-2xl font-semibold text-ivory sm:text-3xl">{title}</h2>
       {(subtitle || centered) && (
         <div className={`mt-3 flex items-center gap-2.5 ${centered ? "justify-center" : ""}`}>
           <span aria-hidden className="h-px w-8 bg-gradient-to-r from-transparent to-gold/70" />
@@ -77,7 +77,7 @@ export function PriceTag({
 }) {
   return (
     <span className={`inline-flex items-baseline gap-2 ${className}`}>
-      <span className="text-lg font-bold text-navy">
+      <span className="text-lg font-bold text-ivory">
         {formatPrice(price, locale)} <span className="text-sm font-semibold text-graytext">MAD</span>
       </span>
       {eur !== undefined && (

@@ -37,7 +37,7 @@ export default function CartToast() {
         <p className="text-sm font-semibold text-white">{t("cart.added")}</p>
         <Link
           href="/panier"
-          className="rounded-lg bg-gold px-3.5 py-1.5 text-xs font-bold uppercase tracking-wide text-navy transition-colors hover:bg-[#c2ae8d]"
+          className="rounded-lg bg-gold px-3.5 py-1.5 text-xs font-bold uppercase tracking-wide text-navy transition-colors hover:bg-goldlight"
         >
           {t("nav.cart")}
         </Link>

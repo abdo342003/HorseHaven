@@ -68,13 +68,13 @@ export default function ShopControls({
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder={t("product.searchPlaceholder")}
           aria-label={t("product.searchPlaceholder")}
-          className="w-full rounded-xl border border-gold/40 bg-white py-2.5 ps-10 pe-4 text-sm text-navy placeholder:text-graytext focus:border-royalblue focus:outline-none focus:ring-2 focus:ring-royalblue/30"
+          className="w-full rounded-xl border border-gold/40 bg-panel py-2.5 ps-10 pe-4 text-sm text-ivory placeholder:text-graytext focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30"
         />
       </form>
       <div className="flex items-center gap-3">
         <label
           htmlFor="sort"
-          className="shrink-0 text-sm font-semibold text-navy"
+          className="shrink-0 text-sm font-semibold text-ivory"
         >
           {t("product.sort")}
         </label>
@@ -87,7 +87,7 @@ export default function ShopControls({
             if (e.target.value !== "relevance") sp.set("sort", e.target.value);
             update(sp.toString());
           }}
-          className="rounded-xl border border-gold/40 bg-white px-3 py-2.5 text-sm text-navy focus:border-royalblue focus:outline-none focus:ring-2 focus:ring-royalblue/30"
+          className="rounded-xl border border-gold/40 bg-panel px-3 py-2.5 text-sm text-ivory focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30"
         >
           <option value="relevance">{t("product.sortRelevance")}</option>
           <option value="priceAsc">{t("product.sortPriceAsc")}</option>

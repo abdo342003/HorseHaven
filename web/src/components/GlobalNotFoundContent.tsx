@@ -50,8 +50,9 @@ export default function GlobalNotFoundContent() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="border-b border-lightblue bg-white">
+      <header className="border-b border-gold/20 bg-navy">
         <div className="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 py-5 sm:px-6">
+          <span className="rounded-lg bg-ivory p-1.5 leading-none ring-1 ring-gold/40">
           <Image
             src="/images/logo-mark.png"
             alt="Horse Haven"
@@ -59,8 +60,9 @@ export default function GlobalNotFoundContent() {
             height={130}
             className="h-14 w-auto"
           />
+        </span>
           <span className="hidden flex-col leading-none lg:flex">
-            <span className="font-display font-semibold tracking-[0.18em] text-navy text-xl">
+            <span className="font-display font-semibold tracking-[0.18em] text-ivory text-xl">
               HORSE HAVEN
             </span>
             <span className="mt-2 text-[10px] font-semibold uppercase tracking-[0.32em] text-graytext">
@@ -72,10 +74,10 @@ export default function GlobalNotFoundContent() {
 
       <main className="flex flex-1 items-center justify-center px-4 py-24">
         <div className="text-center">
-          <p className="font-display text-7xl font-bold text-navy/15 sm:text-8xl">
+          <p className="font-display text-7xl font-bold text-gold/10 sm:text-8xl">
             404
           </p>
-          <h1 className="mt-4 font-display text-3xl font-semibold tracking-wide text-navy">
+          <h1 className="mt-4 font-display text-3xl font-semibold tracking-wide text-ivory">
             {c.title}
           </h1>
           <p className="mx-auto mt-3 max-w-md text-graytext">{c.text}</p>
@@ -88,9 +90,9 @@ export default function GlobalNotFoundContent() {
         </div>
       </main>
 
-      <footer className="border-t border-lightblue bg-white">
+      <footer className="border-t border-gold/20 bg-navy">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 text-center text-xs text-graytext sm:flex-row sm:px-6 sm:text-left">
-          <p className="font-semibold tracking-[0.18em] text-navy">
+          <p className="font-semibold tracking-[0.18em] text-ivory">
             HORSE HAVEN
           </p>
           <p>© {new Date().getFullYear()} Horse Haven</p>

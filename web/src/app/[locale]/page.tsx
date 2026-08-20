@@ -17,10 +17,14 @@ const TESTIMONIALS_AVATARS = [
 ];
 
 const INSTA_IMAGES = [
-  "/images/logo-circle.png",
-  "/images/business-card.png",
-  "/images/hero-gold.png",
-  "/images/hero-dark.png",
+  "/images/instagram/selle.jpg",
+  "/images/instagram/licol.jpg",
+  "/images/instagram/bottes.jpg",
+  "/images/instagram/casque.jpg",
+  "/images/instagram/bridon.jpg",
+  "/images/instagram/guetres.jpg",
+  "/images/instagram/tapis.jpg",
+  "/images/instagram/chaps.jpg",
 ];
 
 export default async function HomePage({
@@ -49,7 +53,7 @@ export default async function HomePage({
         <section className="relative grid overflow-hidden bg-navy lg:grid-cols-2">
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(212,197,169,0.14),transparent_55%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(201,169,110,0.14),transparent_55%)]"
           />
           <div
             aria-hidden
@@ -57,13 +61,13 @@ export default async function HomePage({
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,transparent_97%,rgba(212,197,169,0.07)_97%)] bg-[length:64px_64px]"
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,transparent_97%,rgba(201,169,110,0.07)_97%)] bg-[length:64px_64px]"
           />
           <div className="relative flex flex-col justify-center px-4 py-16 sm:px-10 lg:py-24 xl:px-16">
             <div className="relative max-w-xl">
               <div
                 style={{ animationDelay: "0ms" }}
-                className="mb-8 inline-block animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none rounded-2xl bg-white p-2.5 shadow-xl"
+                className="mb-8 inline-block animate-[hero-up_1s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none rounded-2xl bg-ivory p-2.5 shadow-xl"
               >
                 <Image
                   src="/images/logo-mark.png"
@@ -76,8 +80,8 @@ export default async function HomePage({
               </div>
 
               <div
-                style={{ animationDelay: "80ms" }}
-                className="flex animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none items-center gap-3"
+                style={{ animationDelay: "120ms" }}
+                className="flex animate-[hero-up_1s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none items-center gap-3"
               >
                 <span
                   aria-hidden
@@ -88,22 +92,22 @@ export default async function HomePage({
                 </p>
               </div>
               <h1
-                style={{ animationDelay: "160ms" }}
-                className="mt-4 animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none bg-gradient-to-r from-white via-[#efe7d8] to-gold bg-clip-text font-display text-4xl font-semibold leading-tight tracking-[0.12em] text-transparent sm:text-5xl xl:text-6xl"
+                style={{ animationDelay: "240ms" }}
+                className="mt-4 animate-[hero-up_1s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none bg-gradient-to-r from-white via-[#efe7d8] to-gold bg-clip-text font-display text-4xl font-semibold leading-tight tracking-[0.12em] text-transparent sm:text-5xl xl:text-6xl"
               >
                 {t("hero.title")}
               </h1>
               <p
-                style={{ animationDelay: "240ms" }}
-                className="mt-4 animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none max-w-md text-lg text-white/80 sm:text-xl"
+                style={{ animationDelay: "360ms" }}
+                className="mt-4 animate-[hero-up_1s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none max-w-md text-lg text-white/80 sm:text-xl"
               >
                 {t("hero.subtitle")}
               </p>
 
               <div
                 aria-hidden
-                style={{ animationDelay: "320ms" }}
-                className="mt-6 flex animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none items-center gap-2.5"
+                style={{ animationDelay: "480ms" }}
+                className="mt-6 flex animate-[hero-up_1s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none items-center gap-2.5"
               >
                 <span className="h-px w-10 bg-gradient-to-r from-transparent to-gold/80" />
                 <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
@@ -111,12 +115,12 @@ export default async function HomePage({
               </div>
 
               <div
-                style={{ animationDelay: "400ms" }}
-                className="mt-10 flex animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none flex-col gap-4 sm:flex-row"
+                style={{ animationDelay: "600ms" }}
+                className="mt-10 flex animate-[hero-up_1s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none flex-col gap-4 sm:flex-row"
               >
                 <Link
                   href="/boutique"
-                  className="inline-flex items-center justify-center rounded-lg bg-gold px-8 py-3.5 text-base font-bold tracking-wide text-navy shadow-[0_0_28px_rgba(212,197,169,0.35)] transition-all duration-300 hover:bg-[#c2ae8d] hover:shadow-[0_0_36px_rgba(212,197,169,0.55)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                  className="inline-flex items-center justify-center rounded-lg bg-gold px-8 py-3.5 text-base font-bold tracking-wide text-navy shadow-[0_0_28px_rgba(201,169,110,0.35)] transition-all duration-300 hover:bg-goldlight hover:shadow-[0_0_36px_rgba(201,169,110,0.55)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 >
                   {t("hero.cta")}
                 </Link>
@@ -129,8 +133,8 @@ export default async function HomePage({
               </div>
 
               <div
-                style={{ animationDelay: "480ms" }}
-                className="mt-12 flex animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none items-center gap-4 border-t border-gold/30 pt-6 sm:gap-6"
+                style={{ animationDelay: "720ms" }}
+                className="mt-12 flex animate-[hero-up_1s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none items-center gap-4 border-t border-gold/30 pt-6 sm:gap-6"
               >
                 {HERO_STATS.map((key, i) => (
                   <div key={key} className="flex items-center gap-4 sm:gap-6">
@@ -148,14 +152,13 @@ export default async function HomePage({
 
           <div className="relative min-h-[300px] lg:min-h-[640px]">
             <Image
-              src="/images/hero/cheval-noir.jpg"
+              src="/images/hero/cheval-noir-duo.jpg"
               alt={t("home.heroAlt")}
               fill
               priority
-              className="object-cover object-[center_30%]"
+              className="animate-[kenburns_16s_ease-in-out_infinite_alternate] object-cover object-[center_30%] motion-reduce:animate-none"
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
-            <div aria-hidden className="absolute inset-0 bg-[#8B7355]/30 mix-blend-color" />
             <div
               aria-hidden
               className="absolute inset-y-0 start-0 hidden w-40 bg-gradient-to-r from-navy to-transparent lg:block"
@@ -176,8 +179,8 @@ export default async function HomePage({
             {saddle && (
               <Link
                 href="/boutique"
-                style={{ animationDelay: "560ms" }}
-                className="group absolute bottom-5 start-5 z-10 flex w-[calc(100%-2.5rem)] max-w-72 animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none items-center gap-4 rounded-xl border border-gold/40 bg-navy/70 p-4 text-white shadow-2xl backdrop-blur-md transition-all duration-300 ease-luxury hover:border-gold/80 hover:bg-navy/85 sm:bottom-7 sm:start-7"
+                style={{ animationDelay: "840ms" }}
+                className="group absolute bottom-5 start-5 z-10 flex w-[calc(100%-2.5rem)] max-w-72 animate-[hero-up_1s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none items-center gap-4 rounded-xl border border-gold/40 bg-navy/70 p-4 text-white shadow-2xl backdrop-blur-md transition-all duration-300 ease-luxury hover:border-gold/80 hover:bg-navy/85 sm:bottom-7 sm:start-7"
               >
                 <span
                   aria-hidden
@@ -225,7 +228,7 @@ export default async function HomePage({
           </a>
         </section>
 
-        <section className="border-b border-gold/30 bg-white py-12">
+        <section className="border-b border-gold/30 bg-panel py-12">
           <Container>
             <Reveal>
               <SectionHeading
@@ -252,7 +255,7 @@ export default async function HomePage({
                 <Link
                   key={cat.slug}
                   href={`/boutique?categorie=${cat.slug}`}
-                  className="group relative overflow-hidden rounded-xl border border-gold/40 bg-white p-6 text-center shadow-sm transition-all duration-300 ease-luxury hover:-translate-y-1 hover:shadow-lg"
+                  className="group relative overflow-hidden rounded-xl border border-gold/40 bg-panel p-6 text-center shadow-sm transition-all duration-300 ease-luxury hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full ring-2 ring-gold/60 transition-transform duration-300 ease-luxury group-hover:scale-105">
                     <Image
@@ -263,13 +266,13 @@ export default async function HomePage({
                       className="h-full w-full object-cover"
                     />
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-navy">
+                  <h3 className="font-display text-lg font-semibold text-ivory">
                     {t(`categories.${cat.slug}.name`)}
                   </h3>
                   <p className="mt-1.5 line-clamp-3 text-sm text-graytext">
                     {t(`categories.${cat.slug}.desc`)}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold transition-colors duration-300 group-hover:text-navy">
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold transition-colors duration-300 group-hover:text-ivory">
                     {t("home.explore")}
                     <svg className="h-4 w-4 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -281,10 +284,10 @@ export default async function HomePage({
           </Container>
         </section>
 
-        <section className="relative overflow-hidden border-y border-gold/30 bg-white py-14 sm:py-16">
+        <section className="relative overflow-hidden border-y border-gold/30 bg-panel py-14 sm:py-16">
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(212,197,169,0.10),transparent_55%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(201,169,110,0.10),transparent_55%)]"
           />
           <Container className="relative">
             <Reveal>
@@ -303,14 +306,14 @@ export default async function HomePage({
             <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-gold/30 bg-gold/30 sm:grid-cols-3">
               {maisonPillars.map((pillar, i) => (
                 <Reveal key={pillar.title} delay={i * 120}>
-                  <div className="flex h-full flex-col items-center bg-white p-8 text-center">
+                  <div className="flex h-full flex-col items-center bg-panel p-8 text-center">
                     <span
                       aria-hidden
-                      className="flex h-10 w-10 rotate-45 items-center justify-center border border-gold/60 bg-lightblue"
+                      className="flex h-10 w-10 rotate-45 items-center justify-center border border-gold/60 bg-gold/10"
                     >
                       <span className="h-2.5 w-2.5 bg-gold" />
                     </span>
-                    <h3 className="mt-5 font-display text-xl font-semibold text-navy">
+                    <h3 className="mt-5 font-display text-xl font-semibold text-ivory">
                       {pillar.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-graytext">
@@ -327,7 +330,7 @@ export default async function HomePage({
           <section className="relative overflow-hidden bg-navy py-14 sm:py-16">
             <div
               aria-hidden
-              className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(212,197,169,0.12),transparent_55%)]"
+              className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(201,169,110,0.12),transparent_55%)]"
             />
             <Container className="relative">
               <div className="grid items-center gap-10 lg:grid-cols-2">
@@ -344,7 +347,7 @@ export default async function HomePage({
                       aria-hidden
                       className="absolute inset-0 bg-navy/20 mix-blend-multiply"
                     />
-                    <span className="absolute start-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-xs font-bold uppercase tracking-wide text-navy shadow-sm">
+                    <span className="absolute start-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-ivory/95 px-3 py-1 text-xs font-bold uppercase tracking-wide text-navy shadow-sm">
                       <svg aria-hidden className="h-3.5 w-3.5 text-gold" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z" />
                       </svg>
@@ -380,7 +383,7 @@ export default async function HomePage({
                     )}
                     <Link
                       href="/boutique"
-                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-7 py-3 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-[#c2ae8d] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-7 py-3 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-goldlight focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                     >
                       {t("home.bestsellerCta")}
                     </Link>
@@ -431,12 +434,12 @@ export default async function HomePage({
               {WHY_ITEMS.map((key, i) => (
                 <div
                   key={key}
-                  className="relative rounded-xl border border-gold/30 bg-white p-6 pt-9 text-center shadow-sm"
+                  className="relative rounded-xl border border-gold/30 bg-panel p-6 pt-9 text-center shadow-sm"
                 >
                   <span className="absolute -top-4 start-1/2 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-full bg-navy font-display text-sm text-gold rtl:translate-x-1/2">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-display text-lg font-semibold text-navy">
+                  <h3 className="font-display text-lg font-semibold text-ivory">
                     {t(`home.whyItems.${key}.title`)}
                   </h3>
                   <p className="mt-2 text-sm text-graytext">
@@ -461,7 +464,7 @@ export default async function HomePage({
             <div className="grid gap-6 md:grid-cols-3">
               {testimonials.map((item, i) => (
                 <Reveal key={item.name} delay={i * 120}>
-                  <figure className="flex h-full flex-col rounded-xl bg-white p-6 shadow-sm">
+                  <figure className="flex h-full flex-col rounded-xl bg-panel p-6 shadow-sm">
                     <div aria-hidden className="flex gap-0.5 text-gold">
                       {Array.from({ length: 5 }).map((_, s) => (
                         <svg key={s} className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -481,7 +484,7 @@ export default async function HomePage({
                         className="h-12 w-12 rounded-full object-cover ring-2 ring-gold/60"
                       />
                       <div>
-                        <p className="text-sm font-bold text-navy">{item.name}</p>
+                        <p className="text-sm font-bold text-ivory">{item.name}</p>
                         <p className="text-xs text-graytext">{item.city}</p>
                       </div>
                     </figcaption>
@@ -492,7 +495,7 @@ export default async function HomePage({
           </Container>
         </section>
 
-        <section className="bg-white py-14 sm:py-16">
+        <section className="bg-panel py-14 sm:py-16">
           <Container>
             <Reveal>
               <SectionHeading
@@ -553,7 +556,7 @@ export default async function HomePage({
         <section className="relative overflow-hidden bg-navy py-14 sm:py-16">
           <div
             aria-hidden
-            className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,197,169,0.12),transparent_55%)]"
+            className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,169,110,0.12),transparent_55%)]"
           />
           <Container className="relative">
             <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-start">

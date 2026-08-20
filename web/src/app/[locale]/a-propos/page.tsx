@@ -45,13 +45,13 @@ export default async function AboutPage({
 
             <div className="space-y-10">
               <div>
-                <h2 className="font-display text-2xl font-semibold text-navy">
+                <h2 className="font-display text-2xl font-semibold text-ivory">
                   {t("about.missionTitle")}
                 </h2>
                 <p className="mt-3 leading-relaxed text-graytext">{t("about.mission")}</p>
               </div>
               <div>
-                <h2 className="font-display text-2xl font-semibold text-navy">
+                <h2 className="font-display text-2xl font-semibold text-ivory">
                   {t("about.visionTitle")}
                 </h2>
                 <p className="mt-3 leading-relaxed text-graytext">{t("about.vision")}</p>
@@ -61,25 +61,25 @@ export default async function AboutPage({
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             <div className="rounded-2xl border border-gold/30 bg-lightblue p-8">
-              <h2 className="font-display text-xl font-semibold text-navy">
+              <h2 className="font-display text-xl font-semibold text-ivory">
                 {t("about.valuesTitle")}
               </h2>
               <ul className="mt-5 space-y-3">
                 {values.map((v) => (
-                  <li key={v} className="flex items-center gap-3 text-navy">
+                  <li key={v} className="flex items-center gap-3 text-ivory">
                     <span aria-hidden className="h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" />
                     {v}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-gold/30 bg-white p-8 shadow-sm">
-              <h2 className="font-display text-xl font-semibold text-navy">
+            <div className="rounded-2xl border border-gold/30 bg-panel p-8 shadow-sm ring-1 ring-white/5">
+              <h2 className="font-display text-xl font-semibold text-ivory">
                 {t("about.audienceTitle")}
               </h2>
               <ul className="mt-5 space-y-3">
                 {audience.map((a) => (
-                  <li key={a} className="flex items-center gap-3 text-navy">
+                  <li key={a} className="flex items-center gap-3 text-ivory">
                     <span aria-hidden className="h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" />
                     {a}
                   </li>

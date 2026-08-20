@@ -34,28 +34,28 @@ export default async function ContactPage({
 
             <div className="space-y-4">
               <div className="rounded-2xl border border-gold/30 bg-lightblue p-6">
-                <h2 className="font-display text-lg font-semibold text-navy">
+                <h2 className="font-display text-lg font-semibold text-ivory">
                   {t("contact.phoneTitle")}
                 </h2>
-                <a href={`tel:${PHONE_MAIN_TEL}`} dir="ltr" className="mt-2 block font-semibold text-royalblue hover:text-navy">
+                <a href={`tel:${PHONE_MAIN_TEL}`} dir="ltr" className="mt-2 block font-semibold text-royalblue hover:text-gold">
                   {PHONE_MAIN}
                 </a>
-                <a href={`tel:${PHONE_SECONDARY_TEL}`} dir="ltr" className="mt-1 block text-sm text-graytext hover:text-navy">
+                <a href={`tel:${PHONE_SECONDARY_TEL}`} dir="ltr" className="mt-1 block text-sm text-graytext hover:text-gold">
                   {PHONE_SECONDARY}
                 </a>
               </div>
 
               <div className="rounded-2xl border border-gold/30 bg-lightblue p-6">
-                <h2 className="font-display text-lg font-semibold text-navy">
+                <h2 className="font-display text-lg font-semibold text-ivory">
                   {t("contact.emailTitle")}
                 </h2>
-                <a href={`mailto:${EMAIL}`} dir="ltr" className="mt-2 block font-semibold text-royalblue hover:text-navy">
+                <a href={`mailto:${EMAIL}`} dir="ltr" className="mt-2 block font-semibold text-royalblue hover:text-gold">
                   {EMAIL}
                 </a>
               </div>
 
               <div className="rounded-2xl border border-gold/30 bg-lightblue p-6">
-                <h2 className="font-display text-lg font-semibold text-navy">
+                <h2 className="font-display text-lg font-semibold text-ivory">
                   {t("contact.socialTitle")}
                 </h2>
                 <div className="mt-3 flex flex-col gap-2">
@@ -72,7 +72,7 @@ export default async function ContactPage({
                     href={INSTAGRAM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-semibold text-royalblue hover:text-navy"
+                    className="inline-flex items-center gap-2 font-semibold text-royalblue hover:text-gold"
                   >
                     <span aria-hidden className="h-1.5 w-1.5 rotate-45 bg-gold" />
                     @horse_haven.store

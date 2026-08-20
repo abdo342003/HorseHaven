@@ -88,7 +88,7 @@ export default async function BoutiquePage({
       <section className="relative overflow-hidden bg-navy py-12 sm:py-14">
         <div
           aria-hidden
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(212,197,169,0.10),transparent_55%)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(201,169,110,0.10),transparent_55%)]"
         />
         <Container className="relative">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold">
@@ -112,8 +112,8 @@ export default async function BoutiquePage({
               href={chipHref(null)}
               className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
                 !category
-                  ? "bg-navy text-white"
-                  : "border border-gold/50 bg-white text-navy hover:border-navy"
+                  ? "bg-gold text-navy"
+                  : "border border-gold/40 bg-panel text-ivory hover:border-gold"
               }`}
             >
               {t("product.all")}
@@ -124,8 +124,8 @@ export default async function BoutiquePage({
                 href={chipHref(cat.slug)}
                 className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
                   category === cat.slug
-                    ? "bg-navy text-white"
-                    : "border border-gold/50 bg-white text-navy hover:border-navy"
+                    ? "bg-gold text-navy"
+                    : "border border-gold/40 bg-panel text-ivory hover:border-gold"
                 }`}
               >
                 {t(`categories.${cat.slug}.name`)}
@@ -138,11 +138,11 @@ export default async function BoutiquePage({
           </p>
 
           {items.length === 0 ? (
-            <div className="rounded-2xl border border-gold/30 bg-white px-6 py-16 text-center shadow-sm">
+            <div className="rounded-2xl border border-gold/30 bg-panel px-6 py-16 text-center shadow-sm">
               <svg aria-hidden className="mx-auto h-10 w-10 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
               </svg>
-              <p className="mt-4 font-semibold text-navy">{t("product.noResults")}</p>
+              <p className="mt-4 font-semibold text-ivory">{t("product.noResults")}</p>
               <Link
                 href="/boutique"
                 className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-royalblue"

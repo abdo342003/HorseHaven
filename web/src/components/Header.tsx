@@ -48,7 +48,7 @@ export default function Header() {
   const compact = scrolled || open;
 
   return (
-    <header className="sticky top-0 z-50 bg-white">
+    <header className="sticky top-0 z-50 bg-navy/95 backdrop-blur-md">
       <div
         className={`grid overflow-hidden transition-[grid-template-rows] duration-300 ease-luxury ${
           scrolled ? "grid-rows-[0fr]" : "grid-rows-[1fr]"
@@ -58,7 +58,7 @@ export default function Header() {
           <div className="relative bg-gradient-to-r from-navy via-[#223354] to-royalblue text-white">
             <div
               aria-hidden
-              className="absolute inset-x-0 bottom-0 h-px animate-[goldflow_7s_ease-in-out_infinite] bg-[linear-gradient(90deg,transparent_0%,rgba(212,197,169,0.75)_50%,transparent_100%)] bg-[length:200%_100%]"
+              className="absolute inset-x-0 bottom-0 h-px animate-[goldflow_7s_ease-in-out_infinite] bg-[linear-gradient(90deg,transparent_0%,rgba(201,169,110,0.75)_50%,transparent_100%)] bg-[length:200%_100%]"
             />
             <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-2.5 text-[11px] sm:px-6">
               <span className="hidden h-2.5 w-2.5 shrink-0 -rotate-45 bg-gold/60 lg:block" aria-hidden />
@@ -126,7 +126,7 @@ export default function Header() {
           <div className="flex shrink-0 items-center md:hidden">
 <button
               type="button"
-              className="rounded-lg p-2 text-navy transition-colors hover:bg-lightblue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-royalblue md:hidden"
+              className="rounded-lg p-2 text-ivory transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold md:hidden"
               onClick={() => setOpen(!open)}
               aria-expanded={open}
               aria-controls="mobile-nav"
@@ -148,19 +148,21 @@ export default function Header() {
               className="hidden h-px flex-1 bg-gradient-to-r from-transparent via-gold/70 to-gold md:block"
             />
             <Link href="/" className="flex items-center gap-4 px-4" onClick={() => setOpen(false)}>
-              <Image
-                src="/images/logo-mark.png"
-                alt="Horse Haven"
-                width={212}
-                height={130}
-                priority
-                className={`w-auto transition-all duration-300 ease-luxury ${
-                  compact ? "h-12" : "h-16"
-                }`}
-              />
+              <span className="rounded-lg bg-ivory p-1.5 leading-none ring-1 ring-gold/40">
+                <Image
+                  src="/images/logo-mark.png"
+                  alt="Horse Haven"
+                  width={212}
+                  height={130}
+                  priority
+                  className={`w-auto transition-all duration-300 ease-luxury ${
+                    compact ? "h-12" : "h-16"
+                  }`}
+                />
+              </span>
               <span className="hidden flex-col leading-none lg:flex">
                 <span
-                  className={`font-display font-semibold tracking-[0.18em] text-navy transition-all duration-300 ease-luxury ${
+                  className={`font-display font-semibold tracking-[0.18em] text-ivory transition-all duration-300 ease-luxury ${
                     compact ? "text-xl" : "text-2xl"
                   }`}
                 >
@@ -181,7 +183,7 @@ export default function Header() {
             <SearchBar />
 
             <div
-              className="flex items-center overflow-hidden rounded-full border border-navy/15 text-xs font-semibold"
+              className="flex items-center overflow-hidden rounded-full border border-gold/25 text-xs font-semibold"
               role="group"
               aria-label={t("nav.langLabel")}
             >
@@ -192,8 +194,8 @@ export default function Header() {
                   locale={locale}
                   className={`px-2.5 py-1.5 transition-colors ${
                     currentLocale === locale
-                      ? "bg-navy text-white"
-                      : "text-graytext hover:bg-lightblue hover:text-navy"
+                      ? "bg-gold text-navy"
+                      : "text-graytext hover:bg-white/10 hover:text-ivory"
                   }`}
                   aria-current={currentLocale === locale ? "page" : undefined}
                 >
@@ -234,9 +236,9 @@ export default function Header() {
             <Link
               key={item.key}
               href={item.href}
-              className={`relative rounded-md px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] transition-colors after:absolute after:inset-x-4 after:-bottom-px after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 after:ease-luxury hover:text-navy hover:after:scale-x-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-royalblue rtl:after:origin-right ${
+              className={`relative rounded-md px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] transition-colors after:absolute after:inset-x-4 after:-bottom-px after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 after:ease-luxury hover:text-gold hover:after:scale-x-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold rtl:after:origin-right ${
                 pathname === item.href
-                  ? "text-navy after:scale-x-100"
+                  ? "text-gold after:scale-x-100"
                   : "text-graytext"
               }`}
             >
@@ -261,8 +263,8 @@ export default function Header() {
                       onClick={() => setOpen(false)}
                       className={`flex items-center rounded-lg px-4 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] transition-colors ${
                         pathname === item.href
-                          ? "bg-lightblue text-navy"
-                          : "text-graytext hover:bg-lightblue/60"
+                          ? "bg-white/10 text-gold"
+                          : "text-graytext hover:bg-white/5"
                       }`}
                     >
                       {t(`nav.${item.key}`)}

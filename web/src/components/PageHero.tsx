@@ -13,7 +13,7 @@ export default function PageHero({
     <section className="relative overflow-hidden bg-navy py-12 sm:py-14">
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(212,197,169,0.10),transparent_55%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(201,169,110,0.10),transparent_55%)]"
       />
       <Container className="relative">
         {eyebrow && (

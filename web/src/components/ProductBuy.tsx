@@ -24,20 +24,20 @@ export default function ProductBuy({
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-4">
-        <span className="text-sm font-semibold text-navy">{t("product.quantity")}</span>
+        <span className="text-sm font-semibold text-ivory">{t("product.quantity")}</span>
         <div className="inline-flex items-center overflow-hidden rounded-lg border border-gold/50">
           <button
             type="button"
             aria-label={t("product.qtyDecrease")}
             disabled={out || qty <= 1}
             onClick={() => setQty((v) => Math.max(1, v - 1))}
-            className="h-10 w-10 text-lg font-bold text-navy transition-colors hover:bg-lightblue disabled:opacity-40"
+            className="h-10 w-10 text-lg font-bold text-ivory transition-colors hover:bg-white/10 disabled:opacity-40"
           >
             −
           </button>
           <span
             aria-live="polite"
-            className="w-12 text-center font-display text-lg font-semibold text-navy"
+            className="w-12 text-center font-display text-lg font-semibold text-ivory"
           >
             {qty}
           </span>
@@ -46,7 +46,7 @@ export default function ProductBuy({
             aria-label={t("product.qtyIncrease")}
             disabled={out || qty >= 99}
             onClick={() => setQty((v) => Math.min(99, v + 1))}
-            className="h-10 w-10 text-lg font-bold text-navy transition-colors hover:bg-lightblue disabled:opacity-40"
+            className="h-10 w-10 text-lg font-bold text-ivory transition-colors hover:bg-white/10 disabled:opacity-40"
           >
             +
           </button>
@@ -73,7 +73,7 @@ export default function ProductBuy({
               qty,
             })
           }
-          className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-gold px-6 py-3.5 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-[#c2ae8d] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:pointer-events-none disabled:opacity-50"
+          className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-gold px-6 py-3.5 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-goldlight focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:pointer-events-none disabled:opacity-50"
         >
           <svg aria-hidden className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 4.6A1 1 0 006 19h11M16 21a1 1 0 100-2 1 1 0 000 2zm-6 0a1 1 0 100-2 1 1 0 000 2z" />

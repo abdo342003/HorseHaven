@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 289,
     priceEur: 27,
-    image: "/images/products/tapis-selle.jpg",
+    image: "/images/products/processed/tapis-selle.jpg",
     description: {
       fr: "Un tapis de selle technique qui conjugue stabilité et respiration. Ses fibres évacuent la transpiration, son anti-glisse fixe la selle sans compromettre le mouvement du cheval — aussi juste à l'entraînement qu'en compétition.",
       ar: "بردعة تقنية تجمع بين الثبات والتهوية. أليافها تُبعد الرطوبة، ووجهها السفلي مانع للانزلاق يثبّت السرج دون أن يعيق حركة الحصان — مناسبة للتدريب والمنافسة على حد سواء.",
@@ -78,7 +78,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 449,
     priceEur: 42,
-    image: "/images/products/bridon.jpg",
+    image: "/images/products/processed/bridon.jpg",
     description: {
       fr: "Un bridon façonné dans un cuir souple, doté d'un montant anatomique qui épouse le contour de la tête du cheval. L'équilibre idéal entre précision de contact et douceur de port.",
       ar: "لجام مُشكَّل من جلد ناعم، بتاج تشريحي يلائم محيط رأس الحصان. توازن مثالي بين دقة التلامس ونعومة الارتداء.",
@@ -117,7 +117,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 199,
     priceEur: 19,
-    image: "/images/products/bottes.jpg",
+    image: "/images/products/processed/bottes.jpg",
     description: {
       fr: "Une paire de bottes de protection en néoprène respirant, avec coque renforcée qui absorbe les chocs. Pensées pour le travail quotidien comme pour les déplacements.",
       ar: "زوج من أحذية الحماية من النيوبرين القابل للتنفس، بقشرة مقواة تمتص الصدمات. مصممة للعمل اليومي وللتنقل.",
@@ -155,7 +155,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 259,
     priceEur: 24,
-    image: "/images/products/guetres.jpg",
+    image: "/images/products/processed/guetres.jpg",
     description: {
       fr: "Guêtres de transport généreusement matelassées, qui enveloppent les membres d'une protection moelleuse pendant le déplacement. La sérénité du transport, du box au van.",
       ar: "أربطة حماية للنقل ببطانة وافرة تلتف حول الأرجل بحماية ناعمة أثناء التنقل. راحة البال من الإسطبل إلى الشاحنة.",
@@ -193,7 +193,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 2499,
     priceEur: 234,
-    image: "/images/products/selle.jpg",
+    image: "/images/products/processed/selle.jpg",
     description: {
       fr: "La selle polyvalente qui a fait la réputation de la Maison. Arçon résistant, assise profonde et cuir confortable : une alliée fidèle pour le travail, la balade et la détente.",
       ar: "السرج متعدد الاستعمالات الذي صنع سمعة الدار. هيكل متين، مقعد عميق وجلد مريح: رفيق وفيّ للعمل والجولات والاسترخاء.",
@@ -232,7 +232,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 179,
     priceEur: 17,
-    image: "/images/products/licol.jpg",
+    image: "/images/products/processed/licol.jpg",
     description: {
       fr: "Un licol en cuir pleine fleur, des boucles nickélées et un réglage précis : l'essentiel, dans sa forme la plus noble, pour accompagner votre cheval au quotidien.",
       ar: "حبل رأس من الجلد الطبيعي، بأبازيم مطلية بالنيكل وضبط دقيق: الأساس في أسمى صوره لمرافقة حصانك يوميًا.",
@@ -270,7 +270,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 329,
     priceEur: 31,
-    image: "/images/products/chemise.jpg",
+    image: "/images/products/processed/chemise.jpg",
     description: {
       fr: "Une chemise anti-mouches respirante qui protège des insectes et des rayons UV, pensée pour les climats chauds. La légèreté d'un vêtement, la sécurité d'une protection.",
       ar: "غطاء مضاد للحشرات قابل للتنفس يحمي من الحشرات والأشعة فوق البنفسجية، مصمم للمناخات الحارة. خفة الملابس وأمان الحماية.",
@@ -309,7 +309,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 149,
     priceEur: 14,
-    image: "/images/products/pansage.jpg",
+    image: "/images/products/processed/pansage.jpg",
     description: {
       fr: "Le rituel du pansage, réuni dans un kit complet : étrille, brosse douce, cure-pied et éponge. Tout le nécessaire pour un soin méticuleux, chaque jour.",
       ar: "طقس العناية بالحصان مجمّعًا في طقم كامل: فرشاة خشنة، فرشاة ناعمة، خطاف حوافر وإسفنجة. كل ما يلزم لعناية دقيقة يوميًا.",
@@ -346,7 +346,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 259,
     priceEur: 24,
-    image: "/images/products/polaire.jpg",
+    image: "/images/products/processed/polaire.jpg",
     description: {
       fr: "Une couverture polaire d'une douceur rare, pour les soirées fraîches et l'après-pansage. Un cocon chaleureux, une finition qui respire la qualité.",
       ar: "غطاء صوفي نادر النعومة، للأمسيات الباردة وبعد التنظيف. دفء مريح وتشطيب يوحي بالجودة.",
@@ -384,7 +384,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 599,
     priceEur: 56,
-    image: "/images/products/casque.jpg",
+    image: "/images/products/processed/casque.jpg",
     description: {
       fr: "Un casque léger, ventilé et certifié CE, taillé pour le confort et la sécurité du cavalier moderne. Protection sans compromis, style sans effort.",
       ar: "خوذة خفيفة جيدة التهوية بمطابقة CE، صُممت لراحة وسلامة الفارس العصري. حماية بلا مساومة وأناقة بلا جهد.",
@@ -423,7 +423,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 799,
     priceEur: 75,
-    image: "/images/products/bottes-cavalier.jpg",
+    image: "/images/products/processed/bottes-cavalier.jpg",
     description: {
       fr: "Des bottes d'équitation en cuir, à tige haute, dont la semelle antidérapante et le maintien travaillé accompagnent chaque foulée. L'élégance du geste, la sûreté de l'assise.",
       ar: "أحذية فروسية من الجلد بساق عالية، نعلها مانع للانزلاق وثباتها المدروس يرافقان كل خطوة. أناقة الحركة وأمان الثبات.",
@@ -462,7 +462,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 349,
     priceEur: 33,
-    image: "/images/products/chaps.jpg",
+    image: "/images/products/processed/chaps.jpg",
     description: {
       fr: "Des chaps en cuir, zippés sur le côté, qui protègent la jambe et affinent la tenue en selle. Un accessoire d'exigence pour le travail comme pour la présentation.",
       ar: "أغطية ساق جلدية بسحاب جانبي، تحمي الساق وتحسّن الثبات في السرج. إكسسوار بالغ الدقة للعمل والعرض على السواء.",
@@ -500,7 +500,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 89,
     priceEur: 8,
-    image: "/images/products/brosse.jpg",
+    image: "/images/products/processed/brosse.jpg",
     description: {
       fr: "La brosse à double face qui simplifie le pansage : poils durs pour décoller, poils doux pour lustrer. Un geste précis, une seule brosse.",
       ar: "الفرشاة ذات الوجهين التي تبسّط العناية: شعر خشن لإزالة الأوساخ وشعر ناعم للتلميع. لمسة دقيقة، فرشاة واحدة.",
@@ -537,7 +537,7 @@ export const PRODUCTS: Product[] = [
     },
     price: 129,
     priceEur: 12,
-    image: "/images/products/porte-bouteille.svg",
+    image: "/images/products/processed/porte-bouteille.svg",
     description: {
       fr: "Un porte-bouteille de selle en cuir, discrètement pensé pour les balades et le tourisme équestre. L'hydratation à portée de main, sans gêner le geste.",
       ar: "حامل زجاجة للسرج من الجلد، مصمم بعناية للجولات والسياحة الفروسية. ترطيب في متناول اليد دون أن يعيق حركتك.",

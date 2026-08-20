@@ -91,24 +91,24 @@ export default async function ProductPage({
       <section className="py-10 sm:py-14">
         <Container>
           <nav aria-label="breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-sm">
-            <Link href="/" className="text-graytext transition-colors hover:text-navy">
+            <Link href="/" className="text-graytext transition-colors hover:text-gold">
               {t("nav.home")}
             </Link>
             <span aria-hidden className="h-1 w-1 rotate-45 bg-gold" />
-            <Link href="/boutique" className="text-graytext transition-colors hover:text-navy">
+            <Link href="/boutique" className="text-graytext transition-colors hover:text-gold">
               {t("nav.shop")}
             </Link>
             <span aria-hidden className="h-1 w-1 rotate-45 bg-gold" />
-            <span className="line-clamp-1 font-semibold text-navy">{product.name[locale]}</span>
+            <span className="line-clamp-1 font-semibold text-ivory">{product.name[locale]}</span>
           </nav>
 
           <div className="grid gap-10 lg:grid-cols-2">
-            <div className="relative aspect-square overflow-hidden rounded-2xl bg-lightblue ring-1 ring-gold/40">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-lightblue ring-1 ring-gold/40">
               <Image
                 src={product.image}
                 alt={product.name[locale]}
                 width={800}
-                height={800}
+                height={1000}
                 priority
                 className="h-full w-full object-cover"
               />
@@ -120,7 +120,7 @@ export default async function ProductPage({
                 </span>
               )}
               {product.inStock && (
-                <span className="absolute end-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-green shadow-sm">
+                <span className="absolute end-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-ivory/95 px-3 py-1 text-xs font-semibold text-green shadow-sm">
                   <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-green" />
                   {t("product.inStock")}
                 </span>
@@ -130,11 +130,11 @@ export default async function ProductPage({
             <div className="flex flex-col">
               <Link
                 href={`/boutique?categorie=${product.category}`}
-                className="text-sm font-semibold uppercase tracking-[0.25em] text-gold transition-colors hover:text-navy"
+                className="text-sm font-semibold uppercase tracking-[0.25em] text-gold transition-colors hover:text-ivory"
               >
                 {t(`categories.${product.category}.name`)}
               </Link>
-              <h1 className="mt-2 font-display text-3xl font-semibold text-navy sm:text-4xl">
+              <h1 className="mt-2 font-display text-3xl font-semibold text-ivory sm:text-4xl">
                 {product.name[locale]}
               </h1>
               <div className="mt-4">
@@ -181,7 +181,7 @@ export default async function ProductPage({
 
           {related.length > 0 && (
             <div className="mt-16">
-              <h2 className="mb-6 font-display text-xl font-semibold text-navy sm:text-2xl">
+              <h2 className="mb-6 font-display text-xl font-semibold text-ivory sm:text-2xl">
                 {t("boutique.related")}
               </h2>
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

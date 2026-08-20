@@ -66,14 +66,14 @@ export default function SearchBar() {
       <div
         className={`hidden items-center overflow-hidden rounded-full border transition-all duration-300 ease-luxury md:flex ${
           open
-            ? "w-72 border-navy/20 bg-lightblue"
+            ? "w-72 border-gold/40 bg-white/5"
             : "w-11 border-transparent bg-transparent"
         }`}
       >
         <button
           type="button"
           onClick={() => setOpen(!open)}
-          className="p-2.5 text-navy transition-colors hover:text-royalblue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-royalblue"
+          className="p-2.5 text-ivory transition-colors hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
           aria-label={t("search.open")}
           aria-expanded={open}
         >
@@ -87,7 +87,7 @@ export default function SearchBar() {
           aria-hidden={!open}
           placeholder={t("search.placeholder")}
           aria-label={t("search.placeholder")}
-          className={`w-full bg-transparent pe-4 text-sm text-ink outline-none placeholder:text-graytext ${
+          className={`w-full bg-transparent pe-4 text-sm text-ivory outline-none placeholder:text-graytext ${
             open ? "opacity-100" : "pointer-events-none opacity-0"
           }`}
         />
@@ -96,7 +96,7 @@ export default function SearchBar() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="rounded-lg p-2 text-navy transition-colors hover:bg-lightblue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-royalblue md:hidden"
+        className="rounded-lg p-2 text-ivory transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold md:hidden"
         aria-label={t("search.open")}
         aria-expanded={open}
       >
@@ -105,22 +105,22 @@ export default function SearchBar() {
 
       {open && (
         <div
-          className="absolute inset-x-0 top-full z-40 mt-0 border-t border-gold/40 bg-white px-4 pb-4 pt-3 shadow-xl md:hidden"
+          className="absolute inset-x-0 top-full z-40 mt-0 border-t border-gold/40 bg-panel px-4 pb-4 pt-3 shadow-xl md:hidden"
           role="search"
         >
-          <div className="flex items-center gap-2 rounded-full border border-navy/20 bg-lightblue px-4">
-            <span className="text-navy">{magIcon}</span>
+          <div className="flex items-center gap-2 rounded-full border border-gold/40 bg-white/5 px-4">
+            <span className="text-ivory">{magIcon}</span>
             <input
               ref={inputRef}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={t("search.placeholder")}
               aria-label={t("search.placeholder")}
-              className="w-full bg-transparent py-3 text-sm text-ink outline-none placeholder:text-graytext"
+              className="w-full bg-transparent py-3 text-sm text-ivory outline-none placeholder:text-graytext"
             />
           </div>
           {q !== "" && (
-            <div className="mt-2 overflow-hidden rounded-xl border border-gold/40 bg-white">
+            <div className="mt-2 overflow-hidden rounded-xl border border-gold/40 bg-panel">
               {results.length > 0 ? (
                 <ul>
                   {results.map((p) => (
@@ -128,7 +128,7 @@ export default function SearchBar() {
                       <Link
                         href={`/boutique/${p.slug}`}
                         onClick={close}
-                        className="flex items-center gap-3 border-b border-gold/20 px-3 py-2.5 transition-colors hover:bg-lightblue"
+                        className="flex items-center gap-3 border-b border-gold/20 px-3 py-2.5 transition-colors hover:bg-white/5"
                       >
                         <Image
                           src={p.image}
@@ -137,7 +137,7 @@ export default function SearchBar() {
                           height={40}
                           className="h-10 w-10 rounded-lg object-cover"
                         />
-                        <span className="flex-1 text-sm font-semibold text-navy">
+                        <span className="flex-1 text-sm font-semibold text-ivory">
                           {p.name[locale]}
                         </span>
                         <span className="text-sm font-semibold text-graytext">
@@ -155,7 +155,7 @@ export default function SearchBar() {
               <Link
                 href={`/boutique?q=${encodeURIComponent(query)}`}
                 onClick={close}
-                className="block px-4 py-2.5 text-center text-sm font-semibold text-navy transition-colors hover:bg-lightblue"
+                className="block px-4 py-2.5 text-center text-sm font-semibold text-ivory transition-colors hover:bg-white/5"
               >
                 {t("search.allResults")}
               </Link>
@@ -166,7 +166,7 @@ export default function SearchBar() {
 
       {open && q !== "" && (
         <div
-          className="absolute end-0 top-full z-40 mt-2 hidden w-96 overflow-hidden rounded-xl border border-gold/40 bg-white shadow-xl md:block"
+          className="absolute end-0 top-full z-40 mt-2 hidden w-96 overflow-hidden rounded-xl border border-gold/40 bg-panel shadow-xl md:block"
           role="search"
         >
           {results.length > 0 ? (
@@ -176,7 +176,7 @@ export default function SearchBar() {
                   <Link
                     href={`/boutique/${p.slug}`}
                     onClick={close}
-                    className="flex items-center gap-3 border-b border-gold/20 px-4 py-3 transition-colors hover:bg-lightblue"
+                    className="flex items-center gap-3 border-b border-gold/20 px-4 py-3 transition-colors hover:bg-white/5"
                   >
                     <Image
                       src={p.image}
@@ -186,7 +186,7 @@ export default function SearchBar() {
                       className="h-11 w-11 rounded-lg object-cover"
                     />
                     <span className="flex-1">
-                      <span className="block text-sm font-semibold text-navy">
+                      <span className="block text-sm font-semibold text-ivory">
                         {p.name[locale]}
                       </span>
                       <span className="block text-xs text-graytext">
@@ -205,7 +205,7 @@ export default function SearchBar() {
           <Link
             href={`/boutique?q=${encodeURIComponent(query)}`}
             onClick={close}
-            className="block border-t border-gold/30 px-4 py-2.5 text-center text-sm font-semibold text-navy transition-colors hover:bg-lightblue"
+            className="block border-t border-gold/30 px-4 py-2.5 text-center text-sm font-semibold text-ivory transition-colors hover:bg-white/5"
           >
             {t("search.allResults")}
           </Link>

@@ -31,13 +31,13 @@ export default async function PrivacyPage({
 
       <section className="py-14 sm:py-16">
         <Container>
-          <div className="mx-auto max-w-3xl rounded-2xl border border-gold/30 bg-white p-8 shadow-sm sm:p-10">
+          <div className="mx-auto max-w-3xl rounded-2xl border border-gold/30 bg-panel p-8 shadow-sm ring-1 ring-white/5 sm:p-10">
             <p className="leading-relaxed text-graytext">{t("privacy.text")}</p>
 
             <div className="mt-8 space-y-8">
               {SECTIONS.map((key) => (
                 <div key={key}>
-                  <h2 className="flex items-center gap-3 font-display text-lg font-semibold text-navy">
+                  <h2 className="flex items-center gap-3 font-display text-lg font-semibold text-ivory">
                     <span aria-hidden className="h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" />
                     {t(`privacy.${key}Title`)}
                   </h2>

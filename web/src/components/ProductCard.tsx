@@ -12,17 +12,17 @@ export default function ProductCard({ product }: { product: Product }) {
   const locale = useLocale() as "fr" | "ar" | "en";
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 ease-luxury hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-gold/60">
+    <div className="group relative flex flex-col overflow-hidden rounded-xl bg-panel shadow-lg ring-1 ring-white/5 transition-all duration-700 ease-luxury hover:-translate-y-1.5 hover:shadow-2xl hover:ring-gold/60 after:absolute after:inset-x-0 after:top-0 after:h-px after:bg-gradient-to-r after:from-transparent after:via-gold/80 after:to-transparent after:opacity-0 after:transition-opacity after:duration-700 after:ease-luxury group-hover:after:opacity-100">
       <Link
         href={`/boutique/${product.slug}`}
-        className="relative block aspect-square overflow-hidden bg-lightblue"
+        className="relative block aspect-[4/5] overflow-hidden bg-lightblue"
       >
         <Image
           src={product.image}
           alt={product.name[locale]}
-          width={600}
-          height={600}
-          className="h-full w-full object-cover transition-transform duration-300 ease-luxury group-hover:scale-105"
+          width={800}
+          height={1000}
+          className="h-full w-full object-cover transition-transform duration-700 ease-luxury group-hover:scale-[1.06]"
         />
         {product.badge && (
           <span className="absolute start-3 top-3">
@@ -32,7 +32,7 @@ export default function ProductCard({ product }: { product: Product }) {
           </span>
         )}
         {product.inStock && (
-          <span className="absolute end-2.5 top-2.5 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-2 py-0.5 text-[11px] font-semibold text-green shadow-sm">
+          <span className="absolute end-2.5 top-2.5 inline-flex items-center gap-1.5 rounded-full bg-ivory/95 px-2 py-0.5 text-[11px] font-semibold text-green shadow-sm">
             <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-green" />
             {t("product.inStock")}
           </span>
@@ -42,7 +42,7 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className="flex flex-1 flex-col p-4">
         <Link
           href={`/boutique/${product.slug}`}
-          className="line-clamp-1 font-display font-semibold text-navy transition-colors hover:text-royalblue"
+          className="line-clamp-1 font-display font-semibold text-ivory transition-colors hover:text-gold"
         >
           {product.name[locale]}
         </Link>
@@ -63,7 +63,7 @@ export default function ProductCard({ product }: { product: Product }) {
                 qty: 1,
               })
             }
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-gold px-3 py-2 text-xs font-bold text-navy shadow-sm transition-all duration-300 ease-luxury hover:bg-[#c2ae8d] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold lg:translate-y-1 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:focus-visible:translate-y-0 lg:focus-visible:opacity-100"
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-gold px-3 py-2 text-xs font-bold text-navy shadow-sm transition-all duration-300 ease-luxury hover:bg-goldlight focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold lg:translate-y-1 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:focus-visible:translate-y-0 lg:focus-visible:opacity-100"
           >
             <svg aria-hidden className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 4.6A1 1 0 006 19h11M16 21a1 1 0 100-2 1 1 0 000 2zm-6 0a1 1 0 100-2 1 1 0 000 2z" />

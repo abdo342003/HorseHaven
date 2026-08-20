@@ -34,11 +34,11 @@ export default async function ShippingPage({
             {CARDS.map((key, i) => (
               <div
                 key={key}
-                className={`rounded-2xl border border-gold/30 p-8 ${i % 2 === 1 ? "bg-lightblue" : "bg-white shadow-sm"}`}
+                className={`rounded-2xl border border-gold/30 p-8 ${i % 2 === 1 ? "bg-lightblue" : "bg-panel shadow-sm"}`}
               >
                 <div className="flex items-center gap-3">
                   <span aria-hidden className="h-1.5 w-1.5 rotate-45 bg-gold" />
-                  <h2 className="font-display text-xl font-semibold text-navy">
+                  <h2 className="font-display text-xl font-semibold text-ivory">
                     {t(`shippingPage.${key}Title`)}
                   </h2>
                 </div>

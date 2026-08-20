@@ -56,11 +56,11 @@ export default function CartView() {
         <PageHero eyebrow={t("nav.cart")} title={t("cart.title")} />
         <section className="py-16">
           <Container>
-            <div className="rounded-2xl border border-gold/30 bg-white px-6 py-16 text-center shadow-sm">
-              <p className="font-display text-xl font-semibold text-navy">{t("cart.empty")}</p>
+            <div className="rounded-2xl border border-gold/30 bg-panel px-6 py-16 text-center shadow-sm">
+              <p className="font-display text-xl font-semibold text-ivory">{t("cart.empty")}</p>
               <Link
                 href="/boutique"
-                className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-7 py-3 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-[#c2ae8d]"
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-7 py-3 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-goldlight"
               >
                 {t("cart.emptyCta")}
               </Link>
@@ -81,7 +81,7 @@ export default function CartView() {
               {items.map((item) => (
                 <li
                   key={item.id}
-                  className="flex gap-4 rounded-2xl border border-gold/30 bg-white p-4 shadow-sm"
+                  className="flex gap-4 rounded-2xl border border-gold/30 bg-panel p-4 shadow-sm"
                 >
                   <Link href={`/boutique/${item.slug}`} className="shrink-0">
                     <span className="relative block h-20 w-20 overflow-hidden rounded-xl bg-lightblue ring-1 ring-gold/40">
@@ -97,11 +97,11 @@ export default function CartView() {
                   <div className="flex flex-1 flex-col">
                     <Link
                       href={`/boutique/${item.slug}`}
-                      className="line-clamp-1 font-semibold text-navy hover:text-royalblue"
+                      className="line-clamp-1 font-semibold text-ivory hover:text-royalblue"
                     >
                       {item.name}
                     </Link>
-                    <p className="mt-0.5 text-sm font-bold text-navy">
+                    <p className="mt-0.5 text-sm font-bold text-ivory">
                       {formatPrice(item.price, locale)}{" "}
                       <span className="text-xs font-semibold text-graytext">MAD</span>
                     </p>
@@ -112,11 +112,11 @@ export default function CartView() {
                           aria-label={t("product.qtyDecrease")}
                           disabled={item.qty <= 1}
                           onClick={() => updateQty(item.id, item.qty - 1)}
-                          className="h-8 w-8 text-base font-bold text-navy transition-colors hover:bg-lightblue disabled:opacity-40"
+                          className="h-8 w-8 text-base font-bold text-ivory transition-colors hover:bg-white/10 disabled:opacity-40"
                         >
                           −
                         </button>
-                        <span className="w-10 text-center text-sm font-semibold text-navy">
+                        <span className="w-10 text-center text-sm font-semibold text-ivory">
                           {item.qty}
                         </span>
                         <button
@@ -124,7 +124,7 @@ export default function CartView() {
                           aria-label={t("product.qtyIncrease")}
                           disabled={item.qty >= 99}
                           onClick={() => updateQty(item.id, item.qty + 1)}
-                          className="h-8 w-8 text-base font-bold text-navy transition-colors hover:bg-lightblue disabled:opacity-40"
+                          className="h-8 w-8 text-base font-bold text-ivory transition-colors hover:bg-white/10 disabled:opacity-40"
                         >
                           +
                         </button>
@@ -142,8 +142,8 @@ export default function CartView() {
               ))}
             </ul>
 
-            <aside className="h-fit rounded-2xl border border-gold/30 bg-white p-6 shadow-sm lg:sticky lg:top-24">
-              <h2 className="font-display text-lg font-semibold text-navy">
+            <aside className="h-fit rounded-2xl border border-gold/30 bg-panel p-6 shadow-sm lg:sticky lg:top-24">
+              <h2 className="font-display text-lg font-semibold text-ivory">
                 {t("checkout.summary")}
               </h2>
               <dl className="mt-4 space-y-2.5 text-sm">
@@ -154,13 +154,13 @@ export default function CartView() {
                       ({items.length} {items.length > 1 ? t("cart.items") : t("cart.item")})
                     </span>
                   </dt>
-                  <dd className="font-semibold text-navy">
+                  <dd className="font-semibold text-ivory">
                     {formatPrice(subtotal, locale)} MAD
                   </dd>
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-graytext">{t("cart.shipping")}</dt>
-                  <dd className={`font-semibold ${free ? "text-green" : "text-navy"}`}>
+                  <dd className={`font-semibold ${free ? "text-green" : "text-ivory"}`}>
                     {free ? t("cart.shippingFree") : `${formatPrice(SHIPPING_FEE, locale)} MAD`}
                   </dd>
                 </div>
@@ -170,8 +170,8 @@ export default function CartView() {
                   </p>
                 )}
                 <div className="flex justify-between border-t border-gold/30 pt-3">
-                  <dt className="font-semibold text-navy">{t("cart.total")}</dt>
-                  <dd className="font-display text-lg font-semibold text-navy">
+                  <dt className="font-semibold text-ivory">{t("cart.total")}</dt>
+                  <dd className="font-display text-lg font-semibold text-ivory">
                     {formatPrice(total, locale)} MAD
                   </dd>
                 </div>
@@ -179,13 +179,13 @@ export default function CartView() {
               <div className="mt-6 flex flex-col gap-3">
                 <Link
                   href="/commande"
-                  className="inline-flex items-center justify-center rounded-lg bg-gold px-6 py-3 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-[#c2ae8d]"
+                  className="inline-flex items-center justify-center rounded-lg bg-gold px-6 py-3 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-goldlight"
                 >
                   {t("cart.checkout")}
                 </Link>
                 <Link
                   href="/boutique"
-                  className="inline-flex items-center justify-center rounded-lg border border-royalblue px-6 py-3 text-sm font-semibold text-royalblue transition-colors hover:bg-lightblue"
+                  className="inline-flex items-center justify-center rounded-lg border border-royalblue px-6 py-3 text-sm font-semibold text-royalblue transition-colors hover:bg-white/10"
                 >
                   {t("cart.continueShopping")}
                 </Link>

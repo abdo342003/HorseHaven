@@ -39,7 +39,7 @@ export default function Footer() {
         <div className="mt-10 grid gap-8 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
-              <span className="rounded-lg bg-white p-1.5 leading-none">
+              <span className="rounded-lg bg-ivory p-1.5 leading-none">
                 <Image src="/images/logo-sm.png" alt="Horse Haven" width={120} height={36} className="h-9 w-auto" />
               </span>
               <span className="flex flex-col leading-tight">

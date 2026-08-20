@@ -1,14 +1,19 @@
 @import "tailwindcss";
 
 @theme inline {
+  --color-ink: #0a0a0a;
+  --color-panel: #111111;
   --color-navy: #1a2744;
-  --color-royalblue: #2b5a83;
-  --color-gold: #d4c5a9;
-  --color-lightblue: #f2f6fb;
-  --color-green: #006b3f;
-  --color-red: #cc3333;
-  --color-graytext: #667788;
-  --color-ink: #334155;
+  --color-royalblue: #3a6ea5;
+  --color-gold: #c9a96e;
+  --color-goldlight: #d4b87a;
+  --color-white: #f5f1e8;
+  --color-ivory: #e8e4de;
+  --color-mist: #8a8a8a;
+  --color-graytext: #8a8a8a;
+  --color-lightblue: #111111;
+  --color-green: #3f9d6c;
+  --color-red: #e05252;
   --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-cinzel), "Times New Roman", serif;
   --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
@@ -16,8 +21,8 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #334155;
+  --background: #0a0a0a;
+  --foreground: #e8e4de;
 }
 
 body {
@@ -46,21 +51,35 @@ body {
   0%,
   100% {
     transform: translateY(0);
-    opacity: 0.4;
+    opacity: 0.25;
   }
   50% {
-    transform: translateY(14px);
-    opacity: 1;
+    transform: translateY(12px);
+    opacity: 0.9;
   }
 }
 
 @keyframes hero-up {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(22px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+::selection {
+  background: rgba(201, 169, 110, 0.35);
+  color: #f5f1e8;
 }
