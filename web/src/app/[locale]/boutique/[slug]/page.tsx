@@ -35,8 +35,31 @@ export default async function ProductPage({
     .filter((p) => p.id !== product.id)
     .slice(0, 4);
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://horsehaven.vercel.app";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name[locale],
+    description: product.description[locale],
+    image: `${siteUrl}${product.image}`,
+    sku: product.id,
+    brand: { "@type": "Brand", name: "Horse Haven" },
+    offers: {
+      "@type": "Offer",
+      url: `${siteUrl}/${locale === "fr" ? "" : `${locale}/`}boutique/${product.slug}`,
+      priceCurrency: "MAD",
+      price: product.price,
+      availability: product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      itemCondition: "https://schema.org/NewCondition",
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="py-10 sm:py-14">
         <Container>
           <nav aria-label="breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-sm">

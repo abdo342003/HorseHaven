@@ -96,6 +96,39 @@ export default async function LocaleLayout({
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://horsehaven.vercel.app";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: "Horse Haven",
+        alternateName:
+          locale === "ar" ? "هورس هافن" : locale === "en" ? "Horse Haven Maroc" : "Horse Haven Maroc",
+        url: siteUrl,
+        email: "hhorsehaven@gmail.com",
+        telephone: "+3368510101",
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+3368510101",
+          contactType: "customer service",
+          areaServed: "MA",
+        },
+      },
+      {
+        "@type": "WebSite",
+        url: siteUrl,
+        name: "Horse Haven",
+        inLanguage: locale,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${siteUrl}/boutique?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      },
+    ],
+  };
+
   return (
     <html
       lang={locale}
@@ -103,6 +136,10 @@ export default async function LocaleLayout({
       className={`${sourceSans.variable} ${cairo.variable} ${cinzel.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <NextIntlClientProvider messages={messages}>
           {children}
           <CartToast />
