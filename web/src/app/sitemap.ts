@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/config";
 import { PRODUCTS } from "@/lib/products";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://horsehaven.store";
 
 const ROUTES = [
   "",
@@ -10,8 +10,6 @@ const ROUTES = [
   "/contact",
   "/livraison-paiement",
   "/confidentialite",
-  "/panier",
-  "/commande",
 ];
 
 function alternates(path: string) {

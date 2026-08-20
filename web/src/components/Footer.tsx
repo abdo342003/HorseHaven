@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { EMAIL, INSTAGRAM_URL, PHONE_MAIN_TEL } from "@/lib/config";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui";
 import Image from "next/image";
@@ -78,7 +79,7 @@ export default function Footer() {
             <h3 className="text-sm font-bold uppercase tracking-widest text-gold">{t("footer.contactTitle")}</h3>
             <ul className="mt-3 space-y-2 text-sm text-white/75">
               <li>
-                <a href="tel:+3368510101" dir="ltr" className="hover:text-gold">
+                <a href={`tel:${PHONE_MAIN_TEL}`} dir="ltr" className="hover:text-gold">
                   +33 6 85 10 1 01
                 </a>
               </li>
@@ -88,12 +89,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:hhorsehaven@gmail.com" className="hover:text-gold" dir="ltr">
-                  hhorsehaven@gmail.com
+                <a href={`mailto:${EMAIL}`} className="hover:text-gold" dir="ltr">
+                  {EMAIL}
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com/horse_haven.store" target="_blank" rel="noopener noreferrer" className="hover:text-gold" dir="ltr">
+                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-gold" dir="ltr">
                   @horse_haven.store
                 </a>
               </li>

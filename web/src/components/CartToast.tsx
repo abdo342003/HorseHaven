@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { CART_EVENT } from "@/lib/cart";
 
 export default function CartToast() {
   const t = useTranslations();
@@ -10,14 +11,16 @@ export default function CartToast() {
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout> | null = null;
-    function show() {
+    function show(e: Event) {
+      const action = (e as CustomEvent<{ action?: string }>).detail?.action;
+      if (action && action !== "add") return;
       setVisible(true);
       if (timer) clearTimeout(timer);
       timer = setTimeout(() => setVisible(false), 2600);
     }
-    window.addEventListener("hh-cart-updated", show);
+    window.addEventListener(CART_EVENT, show);
     return () => {
-      window.removeEventListener("hh-cart-updated", show);
+      window.removeEventListener(CART_EVENT, show);
       if (timer) clearTimeout(timer);
     };
   }, []);

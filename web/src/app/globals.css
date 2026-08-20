@@ -10,7 +10,6 @@
   --color-graytext: #667788;
   --color-ink: #334155;
   --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-arabic: var(--font-cairo), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-cinzel), "Times New Roman", serif;
   --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
   --animate-badge-pop: badge-pop 0.35s var(--ease-luxury);

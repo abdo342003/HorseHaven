@@ -19,9 +19,13 @@ export function getCart(): CartItem[] {
   }
 }
 
-export function saveCart(items: CartItem[]) {
+export const CART_EVENT = "hh-cart-updated";
+
+export type CartAction = "add" | "update" | "remove" | "clear";
+
+export function saveCart(items: CartItem[], action: CartAction = "update") {
   window.localStorage.setItem(CART_KEY, JSON.stringify(items));
-  window.dispatchEvent(new CustomEvent("hh-cart-updated"));
+  window.dispatchEvent(new CustomEvent<{ action: CartAction }>(CART_EVENT, { detail: { action } }));
 }
 
 export function addToCart(item: CartItem) {
@@ -32,7 +36,7 @@ export function addToCart(item: CartItem) {
   } else {
     items.push(item);
   }
-  saveCart(items);
+  saveCart(items, "add");
 }
 
 export function updateQty(id: string, qty: number) {
@@ -41,19 +45,19 @@ export function updateQty(id: string, qty: number) {
   if (item) {
     item.qty = qty;
     if (item.qty <= 0) {
-      saveCart(items.filter((i) => i.id !== id));
+      saveCart(items.filter((i) => i.id !== id), "remove");
       return;
     }
-    saveCart(items);
+    saveCart(items, "update");
   }
 }
 
 export function removeFromCart(id: string) {
-  saveCart(getCart().filter((i) => i.id !== id));
+  saveCart(getCart().filter((i) => i.id !== id), "remove");
 }
 
 export function clearCart() {
-  saveCart([]);
+  saveCart([], "clear");
 }
 
 export function cartTotal(items: CartItem[]) {

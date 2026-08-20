@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { WA_URL } from "@/lib/config";
 import { useTranslations } from "next-intl";
 
 export default function ContactForm() {
@@ -14,7 +15,7 @@ export default function ContactForm() {
     e.preventDefault();
     const text = `Bonjour Horse Haven,\nNom : ${name}\nEmail : ${email || "non renseigné"}\nMessage : ${message}`;
     window.open(
-      `https://wa.me/3368510101?text=${encodeURIComponent(text)}`,
+      `${WA_URL}?text=${encodeURIComponent(text)}`,
       "_blank",
       "noopener,noreferrer",
     );

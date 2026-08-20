@@ -1,8 +1,19 @@
 import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/meta";
 import PageHero from "@/components/PageHero";
 import { Container } from "@/components/ui";
 import Image from "next/image";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: "fr" | "ar" | "en" }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  return pageMetadata(locale, t("about.title"), t("about.description"), "a-propos");
+}
 export default async function AboutPage({
   params,
 }: {

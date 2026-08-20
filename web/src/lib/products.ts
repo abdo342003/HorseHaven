@@ -327,6 +327,12 @@ export const PRODUCTS: Product[] = [
   },
 ];
 
+
+export const BADGE_COLOR: Record<string, "gold" | "green" | "red" | "royalblue"> = {
+  new: "gold",
+  promo: "red",
+  eu: "green",
+};
 export function getProductBySlug(slug: string) {
   return PRODUCTS.find((p) => p.slug === slug);
 }

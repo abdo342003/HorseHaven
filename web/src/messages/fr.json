@@ -72,7 +72,6 @@
       "Passion"
     ],
     "bestsellerEyebrow": "Le favori de la maison",
-    "bestsellerTitle": "Selle d’entrée de gamme",
     "bestsellerText": "La selle la plus demandée de la boutique. Confort optimal pour le cavalier et le cheval, fabrication soignée, prête pour tous vos objectifs.",
     "bestsellerBullets": [
       "Cuir souple et résistant",
@@ -103,7 +102,8 @@
     "instaEyebrow": "@horse_haven.store",
     "instaTitle": "Nos coulisses",
     "instaSubtitle": "Astuces équitation, arrivages et coulisses du refuge, chaque semaine.",
-    "instaCta": "Suivre sur Instagram"
+    "instaCta": "Suivre sur Instagram",
+    "heroAlt": "Cheval alezan sur fond noir"
   },
   "categories": {
     "equipment": {
@@ -141,7 +141,9 @@
     "category": "Catégorie",
     "all": "Tous",
     "quantity": "Quantité",
-    "waMessage": "Bonjour, je souhaite commander :"
+    "waMessage": "Bonjour, je souhaite commander :",
+    "qtyDecrease": "Diminuer la quantité",
+    "qtyIncrease": "Augmenter la quantité"
   },
   "cart": {
     "title": "Mon panier",
@@ -256,7 +258,8 @@
       "Cavaliers professionnels",
       "Propriétaires de chevaux",
       "Passionnés du monde équestre"
-    ]
+    ],
+    "description": "Notre mission, nos valeurs et la passion qui nous animent au service des cavaliers."
   },
   "contact": {
     "title": "Contactez-nous",
@@ -270,18 +273,21 @@
     "phoneTitle": "Par téléphone",
     "emailTitle": "Par email",
     "socialTitle": "Sur les réseaux",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "description": "Une question, une commande, un conseil ? Écrivez-nous ou contactez-nous directement."
   },
   "shippingPage": {
     "title": "Livraison & paiement",
     "deliveryTitle": "Livraison",
     "deliveryText": "Nous livrons partout au Maroc et en France. Les délais de livraison vous sont communiqués lors de la confirmation de commande.",
     "paymentTitle": "Modes de paiement",
-    "paymentText": "Paiement à la livraison (COD), virement bancaire ou commande via WhatsApp. Le paiement par carte (CMI) arrive prochainement."
+    "paymentText": "Paiement à la livraison (COD), virement bancaire ou commande via WhatsApp. Le paiement par carte (CMI) arrive prochainement.",
+    "description": "Délais et frais de livraison au Maroc, modes de paiement disponibles."
   },
   "privacy": {
     "title": "Politique de confidentialité",
-    "text": "Vos données personnelles (nom, téléphone, adresse) sont utilisées uniquement pour traiter et livrer vos commandes. Elles ne sont jamais vendues ni partagées avec des tiers, hors transporteurs et prestataires nécessaires à la livraison."
+    "text": "Vos données personnelles (nom, téléphone, adresse) sont utilisées uniquement pour traiter et livrer vos commandes. Elles ne sont jamais vendues ni partagées avec des tiers, hors transporteurs et prestataires nécessaires à la livraison.",
+    "description": "Notre politique de confidentialité et la protection de vos données."
   },
   "notFound": {
     "title": "Page introuvable",
@@ -302,6 +308,8 @@
   "boutique": {
     "subtitle": "Tout l'équipement pour le cheval, le cavalier et l'écurie — livré partout au Maroc, paiement à la livraison.",
     "results": "{count, plural, one {# produit} other {# produits}}",
-    "related": "Voir aussi"
+    "related": "Voir aussi",
+    "title": "Boutique équestre",
+    "description": "Selles, tapis, bridons, licols, couvertures, soins et vêtements du cavalier. Livraison partout au Maroc et paiement à la livraison."
   }
 }

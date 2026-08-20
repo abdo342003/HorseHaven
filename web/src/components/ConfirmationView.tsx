@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { formatPrice, WA_URL } from "@/lib/config";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { clearCart } from "@/lib/cart";
@@ -10,17 +11,38 @@ import { Container } from "@/components/ui";
 import PageHero from "@/components/PageHero";
 
 export default function ConfirmationView({ orderId }: { orderId: string }) {
+  const locale = useLocale() as "fr" | "ar" | "en";
   const t = useTranslations();
   const [order, setOrder] = useState<Order | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => {
       clearCart();
-      const stored = JSON.parse(localStorage.getItem(ORDERS_KEY) ?? "[]") as Order[];
+      let stored: Order[] = [];
+      try {
+        stored = JSON.parse(localStorage.getItem(ORDERS_KEY) ?? "[]") as Order[];
+      } catch {
+        stored = [];
+      }
       setOrder(stored.find((o) => o.id === orderId) ?? null);
+      setMounted(true);
     }, 0);
     return () => clearTimeout(t);
   }, [orderId]);
+
+  if (!mounted) {
+    return (
+      <>
+        <PageHero eyebrow={t("nav.cart")} title={t("confirmation.title")} />
+        <section className="py-16">
+          <Container>
+            <div className="min-h-[40vh]" />
+          </Container>
+        </section>
+      </>
+    );
+  }
 
   if (!order) {
     return (
@@ -43,7 +65,7 @@ export default function ConfirmationView({ orderId }: { orderId: string }) {
     );
   }
 
-  const waHref = `https://wa.me/3368510101?text=${encodeURIComponent(
+  const waHref = `${WA_URL}?text=${encodeURIComponent(
     t("confirmation.whatsappMsg", { order: order.id }),
   )}`;
 
@@ -75,7 +97,7 @@ export default function ConfirmationView({ orderId }: { orderId: string }) {
                       <span className="text-xs text-graytext">× {item.qty}</span>
                     </span>
                     <span className="text-sm font-bold text-navy">
-                      {(item.price * item.qty).toLocaleString("fr-FR")} MAD
+                      {formatPrice(item.price * item.qty, locale)} MAD
                     </span>
                   </li>
                 ))}
@@ -91,13 +113,13 @@ export default function ConfirmationView({ orderId }: { orderId: string }) {
                 <div className="flex justify-between">
                   <dt className="text-graytext">{t("cart.shipping")}</dt>
                   <dd className={`font-semibold ${order.shipping === 0 ? "text-green" : "text-navy"}`}>
-                    {order.shipping === 0 ? t("cart.shippingFree") : `${order.shipping.toLocaleString("fr-FR")} MAD`}
+                    {order.shipping === 0 ? t("cart.shippingFree") : `${formatPrice(order.shipping, locale)} MAD`}
                   </dd>
                 </div>
                 <div className="flex justify-between border-t border-gold/30 pt-3">
                   <dt className="font-semibold text-navy">{t("confirmation.total")}</dt>
                   <dd className="font-display text-lg font-semibold text-navy">
-                    {order.total.toLocaleString("fr-FR")} MAD
+                    {formatPrice(order.total, locale)} MAD
                   </dd>
                 </div>
               </dl>

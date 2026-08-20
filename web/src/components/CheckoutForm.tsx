@@ -1,15 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { formatPrice, FREE_SHIPPING } from "@/lib/config";
 import { useRouter } from "@/i18n/navigation";
 import Image from "next/image";
-import { getCart, clearCart, cartTotal, type CartItem } from "@/lib/cart";
+import { getCart, clearCart, cartTotal, CART_EVENT, type CartItem } from "@/lib/cart";
 import { Container } from "@/components/ui";
 import PageHero from "@/components/PageHero";
 import { Link } from "@/i18n/navigation";
 
-const FREE_SHIPPING = 1500;
 const SHIPPING_FEE = 30;
 const PAYMENT_METHODS = ["cod", "transfer", "whatsapp"] as const;
 type Payment = (typeof PAYMENT_METHODS)[number];
@@ -35,9 +35,11 @@ function newOrderStamp() {
 }
 
 export default function CheckoutForm() {
+  const locale = useLocale() as "fr" | "ar" | "en";
   const t = useTranslations();
   const router = useRouter();
   const [items, setItems] = useState<CartItem[]>([]);
+  const [mounted, setMounted] = useState(false);
   const [payment, setPayment] = useState<Payment>("cod");
   const [form, setForm] = useState({ name: "", phone: "", email: "", city: "", address: "", notes: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -46,11 +48,15 @@ export default function CheckoutForm() {
     function refresh() {
       setItems(getCart());
     }
+    function onReady() {
+      setMounted(true);
+    }
     refresh();
-    window.addEventListener("hh-cart-updated", refresh);
+    onReady();
+    window.addEventListener(CART_EVENT, refresh);
     window.addEventListener("storage", refresh);
     return () => {
-      window.removeEventListener("hh-cart-updated", refresh);
+      window.removeEventListener(CART_EVENT, refresh);
       window.removeEventListener("storage", refresh);
     };
   }, []);
@@ -75,15 +81,21 @@ export default function CheckoutForm() {
     if (!/^[+0-9 ()-]{8,20}$/.test(form.phone.trim())) e.phone = t("checkout.errors.phone");
     if (!form.city.trim()) e.city = t("checkout.errors.city");
     if (!form.address.trim()) e.address = t("checkout.errors.address");
-    if (items.length === 0) e.cart = t("checkout.errors.cartEmpty");
     setErrors(e);
     return Object.keys(e).length === 0;
   }
 
-  async function onSubmit(e: React.FormEvent) {
+  function loadOrders(): Order[] {
+  try {
+    return JSON.parse(localStorage.getItem(ORDERS_KEY) ?? "[]") as Order[];
+  } catch {
+    return [];
+  }
+}
+
+function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!validate()) return;
-    await Promise.resolve();
     const stamp = newOrderStamp();
     const order: Order = {
       ...stamp,
@@ -101,7 +113,7 @@ export default function CheckoutForm() {
       shipping,
       total,
     };
-    const existing = JSON.parse(localStorage.getItem(ORDERS_KEY) ?? "[]") as Order[];
+    const existing = loadOrders();
     localStorage.setItem(ORDERS_KEY, JSON.stringify([order, ...existing]));
     clearCart();
     router.push(`/confirmation/${order.id}`);
@@ -109,6 +121,19 @@ export default function CheckoutForm() {
 
   const inputCls =
     "w-full rounded-xl border border-gold/40 bg-white px-4 py-2.5 text-sm text-navy placeholder:text-graytext focus:border-royalblue focus:outline-none focus:ring-2 focus:ring-royalblue/30";
+
+  if (!mounted) {
+    return (
+      <>
+        <PageHero eyebrow={t("nav.cart")} title={t("checkout.title")} />
+        <section className="py-16">
+          <Container>
+            <div className="min-h-[40vh]" />
+          </Container>
+        </section>
+      </>
+    );
+  }
 
   if (items.length === 0) {
     return (
@@ -235,7 +260,7 @@ export default function CheckoutForm() {
                       <span className="text-xs text-graytext">× {item.qty}</span>
                     </span>
                     <span className="text-sm font-bold text-navy">
-                      {(item.price * item.qty).toLocaleString("fr-FR")} MAD
+                      {formatPrice(item.price * item.qty, locale)} MAD
                     </span>
                   </li>
                 ))}
@@ -243,7 +268,7 @@ export default function CheckoutForm() {
               <dl className="mt-5 space-y-2.5 border-t border-gold/30 pt-4 text-sm">
                 <div className="flex justify-between">
                   <dt className="text-graytext">{t("cart.subtotal")}</dt>
-                  <dd className="font-semibold text-navy">{subtotal.toLocaleString("fr-FR")} MAD</dd>
+                  <dd className="font-semibold text-navy">{formatPrice(subtotal, locale)} MAD</dd>
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-graytext">{t("cart.shipping")}</dt>
@@ -254,11 +279,10 @@ export default function CheckoutForm() {
                 <div className="flex justify-between border-t border-gold/30 pt-3">
                   <dt className="font-semibold text-navy">{t("cart.total")}</dt>
                   <dd className="font-display text-lg font-semibold text-navy">
-                    {total.toLocaleString("fr-FR")} MAD
+                    {formatPrice(total, locale)} MAD
                   </dd>
                 </div>
               </dl>
-              {errors.cart && <p className="mt-3 text-xs font-semibold text-red">{errors.cart}</p>}
               <button
                 type="submit"
                 className="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-gold px-6 py-3.5 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-[#c2ae8d]"

@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -6,6 +6,7 @@ import Reveal from "@/components/Reveal";
 import ProductCard from "@/components/ProductCard";
 import { Container, SectionHeading } from "@/components/ui";
 import { CATEGORIES, PRODUCTS } from "@/lib/products";
+import { formatPrice, WA_URL, INSTAGRAM_URL } from "@/lib/config";
 import Image from "next/image";
 
 const HERO_STATS = ["delivery", "cod", "eu"] as const;
@@ -24,13 +25,13 @@ const INSTA_IMAGES = [
   "/images/hero-dark.png",
 ];
 
-export default function HomePage({
+export default async function HomePage({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: "fr" | "ar" | "en" }>;
 }) {
-  const locale = (params as unknown as { locale: "fr" | "ar" | "en" }).locale;
-  const t = useTranslations();
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
   const featured = PRODUCTS.filter((p) => p.featured).slice(0, 4);
   const saddle = PRODUCTS.find((p) => p.slug === "selle-entree-de-gamme");
   const testimonials = t.raw("home.testimonials") as {
@@ -107,7 +108,7 @@ export default function HomePage({
           <div className="relative min-h-[300px] lg:min-h-[640px]">
             <Image
               src="/images/hero/cheval-noir.jpg"
-              alt="Cheval alezan sur fond noir"
+              alt={t("home.heroAlt")}
               fill
               priority
               className="object-cover object-[center_30%]"
@@ -242,12 +243,12 @@ export default function HomePage({
                   </ul>
                   <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
                     <span className="font-display text-3xl font-semibold text-gold">
-                      {saddle.price.toLocaleString("fr-FR")}{" "}
+                      {formatPrice(saddle.price, locale)}{" "}
                       <span className="text-base text-white/60">MAD</span>
                     </span>
                     {saddle.priceEur !== undefined && (
                       <span className="text-sm text-white/60">
-                        ≈ {saddle.priceEur.toLocaleString("fr-FR")} €
+                        ≈ {formatPrice(saddle.priceEur, locale)} €
                       </span>
                     )}
                     <Link
@@ -378,7 +379,7 @@ export default function HomePage({
               {INSTA_IMAGES.map((img) => (
                 <a
                   key={img}
-                  href="https://instagram.com/horse_haven.store"
+                  href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={t("home.instaEyebrow")}
@@ -408,7 +409,7 @@ export default function HomePage({
             </div>
             <div className="mt-8 text-center">
               <a
-                href="https://instagram.com/horse_haven.store"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-royalblue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-royalblue"
@@ -437,7 +438,7 @@ export default function HomePage({
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="https://wa.me/3368510101"
+                  href={WA_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-green px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#005632] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green"

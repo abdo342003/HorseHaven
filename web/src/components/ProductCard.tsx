@@ -5,13 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { addToCart } from "@/lib/cart";
 import { Badge, PriceTag } from "@/components/ui";
 import Image from "next/image";
-import type { Product } from "@/lib/products";
-
-const BADGE_COLOR: Record<string, "gold" | "green" | "red" | "royalblue"> = {
-  new: "gold",
-  promo: "red",
-  eu: "green",
-};
+import { BADGE_COLOR, type Product } from "@/lib/products";
 
 export default function ProductCard({ product }: { product: Product }) {
   const t = useTranslations();
@@ -56,7 +50,7 @@ export default function ProductCard({ product }: { product: Product }) {
           {product.description[locale]}
         </p>
         <div className="mt-3 flex items-center justify-between gap-2">
-          <PriceTag price={product.price} eur={product.priceEur} />
+          <PriceTag price={product.price} eur={product.priceEur} locale={locale} />
           <button
             type="button"
             onClick={() =>

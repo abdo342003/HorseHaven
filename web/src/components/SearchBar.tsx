@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { formatPrice } from "@/lib/config";
 import { Link } from "@/i18n/navigation";
 import { PRODUCTS } from "@/lib/products";
 import Image from "next/image";
@@ -82,6 +83,8 @@ export default function SearchBar() {
           ref={inputRef}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          tabIndex={open ? 0 : -1}
+          aria-hidden={!open}
           placeholder={t("search.placeholder")}
           aria-label={t("search.placeholder")}
           className={`w-full bg-transparent pe-4 text-sm text-ink outline-none placeholder:text-graytext ${
@@ -138,7 +141,7 @@ export default function SearchBar() {
                           {p.name[locale]}
                         </span>
                         <span className="text-sm font-semibold text-graytext">
-                          {p.price.toLocaleString("fr-FR")} MAD
+                          {formatPrice(p.price, locale)} MAD
                         </span>
                       </Link>
                     </li>
@@ -187,7 +190,7 @@ export default function SearchBar() {
                         {p.name[locale]}
                       </span>
                       <span className="block text-xs text-graytext">
-                        {p.price.toLocaleString("fr-FR")} MAD
+                        {formatPrice(p.price, locale)} MAD
                       </span>
                     </span>
                   </Link>

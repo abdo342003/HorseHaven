@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { PHONE_MAIN, PHONE_MAIN_TEL } from "@/lib/config";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -96,7 +97,7 @@ export default function Header() {
               />
 
               <a
-                href="tel:+3368510101"
+                href={`tel:${PHONE_MAIN_TEL}`}
                 dir="ltr"
                 className="relative flex items-center gap-2 font-semibold tracking-wide transition-colors after:absolute after:-bottom-1 after:inset-x-0 after:h-px after:origin-center after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:text-gold hover:after:scale-x-100"
               >
@@ -107,7 +108,7 @@ export default function Header() {
                     d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"
                   />
                 </svg>
-                {t("topbar.phone")}
+                {PHONE_MAIN}
               </a>
 
               <span className="hidden h-2.5 w-2.5 shrink-0 -rotate-45 bg-gold/60 lg:block" aria-hidden />

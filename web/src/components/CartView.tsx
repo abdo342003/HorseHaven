@@ -1,28 +1,34 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { formatPrice, FREE_SHIPPING } from "@/lib/config";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import { getCart, updateQty, removeFromCart, cartTotal, type CartItem } from "@/lib/cart";
+import { getCart, updateQty, removeFromCart, cartTotal, CART_EVENT, type CartItem } from "@/lib/cart";
 import { Container } from "@/components/ui";
 import PageHero from "@/components/PageHero";
 
-const FREE_SHIPPING = 1500;
 
 export default function CartView() {
+  const locale = useLocale() as "fr" | "ar" | "en";
   const t = useTranslations();
   const [items, setItems] = useState<CartItem[]>([]);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     function refresh() {
       setItems(getCart());
     }
+    function onReady() {
+      setMounted(true);
+    }
     refresh();
-    window.addEventListener("hh-cart-updated", refresh);
+    onReady();
+    window.addEventListener(CART_EVENT, refresh);
     window.addEventListener("storage", refresh);
     return () => {
-      window.removeEventListener("hh-cart-updated", refresh);
+      window.removeEventListener(CART_EVENT, refresh);
       window.removeEventListener("storage", refresh);
     };
   }, []);
@@ -30,6 +36,19 @@ export default function CartView() {
   const subtotal = cartTotal(items);
   const free = subtotal >= FREE_SHIPPING;
   const total = free ? subtotal : subtotal + 30;
+
+  if (!mounted) {
+    return (
+      <>
+        <PageHero eyebrow={t("nav.cart")} title={t("cart.title")} />
+        <section className="py-16">
+          <Container>
+            <div className="min-h-[40vh]" />
+          </Container>
+        </section>
+      </>
+    );
+  }
 
   if (items.length === 0) {
     return (
@@ -83,14 +102,14 @@ export default function CartView() {
                       {item.name}
                     </Link>
                     <p className="mt-0.5 text-sm font-bold text-navy">
-                      {item.price.toLocaleString("fr-FR")}{" "}
+                      {formatPrice(item.price, locale)}{" "}
                       <span className="text-xs font-semibold text-graytext">MAD</span>
                     </p>
                     <div className="mt-auto flex items-center justify-between pt-2">
                       <div className="inline-flex items-center overflow-hidden rounded-lg border border-gold/50">
                         <button
                           type="button"
-                          aria-label="-1"
+                          aria-label={t("product.qtyDecrease")}
                           disabled={item.qty <= 1}
                           onClick={() => updateQty(item.id, item.qty - 1)}
                           className="h-8 w-8 text-base font-bold text-navy transition-colors hover:bg-lightblue disabled:opacity-40"
@@ -102,7 +121,7 @@ export default function CartView() {
                         </span>
                         <button
                           type="button"
-                          aria-label="+1"
+                          aria-label={t("product.qtyIncrease")}
                           disabled={item.qty >= 99}
                           onClick={() => updateQty(item.id, item.qty + 1)}
                           className="h-8 w-8 text-base font-bold text-navy transition-colors hover:bg-lightblue disabled:opacity-40"
@@ -136,7 +155,7 @@ export default function CartView() {
                     </span>
                   </dt>
                   <dd className="font-semibold text-navy">
-                    {subtotal.toLocaleString("fr-FR")} MAD
+                    {formatPrice(subtotal, locale)} MAD
                   </dd>
                 </div>
                 <div className="flex justify-between">
@@ -147,13 +166,13 @@ export default function CartView() {
                 </div>
                 {!free && (
                   <p className="rounded-lg bg-lightblue px-3 py-2 text-xs text-graytext">
-                    {t("cart.freeShippingHint", { amount: "1 500" })}
+                    {t("cart.freeShippingHint", { amount: formatPrice(FREE_SHIPPING, locale) })}
                   </p>
                 )}
                 <div className="flex justify-between border-t border-gold/30 pt-3">
                   <dt className="font-semibold text-navy">{t("cart.total")}</dt>
                   <dd className="font-display text-lg font-semibold text-navy">
-                    {total.toLocaleString("fr-FR")} MAD
+                    {formatPrice(total, locale)} MAD
                   </dd>
                 </div>
               </dl>

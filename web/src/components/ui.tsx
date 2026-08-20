@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { formatPrice } from "@/lib/config";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`mx-auto w-full max-w-7xl px-4 sm:px-6 ${className}`}>{children}</div>;
@@ -36,47 +37,6 @@ export function SectionHeading({
   );
 }
 
-export function Button({
-  children,
-  href,
-  variant = "primary",
-  className = "",
-  onClick,
-  type,
-  disabled,
-}: {
-  children: ReactNode;
-  href?: string;
-  variant?: "primary" | "gold" | "whatsapp" | "outline" | "ghost";
-  className?: string;
-  onClick?: () => void;
-  type?: "button" | "submit";
-  disabled?: boolean;
-}) {
-  const base =
-    "inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-royalblue disabled:opacity-50 disabled:pointer-events-none";
-  const variants: Record<string, string> = {
-    primary: "bg-navy text-white hover:bg-royalblue",
-    gold: "bg-gold text-navy hover:bg-[#c2ae8d]",
-    whatsapp: "bg-green text-white hover:bg-[#005632]",
-    outline: "border border-royalblue text-royalblue hover:bg-lightblue",
-    ghost: "text-royalblue hover:bg-lightblue",
-  };
-  const cls = `${base} ${variants[variant]} ${className}`;
-  if (href) {
-    return (
-      <a href={href} className={cls}>
-        {children}
-      </a>
-    );
-  }
-  return (
-    <button type={type ?? "button"} onClick={onClick} disabled={disabled} className={cls}>
-      {children}
-    </button>
-  );
-}
-
 export function Badge({
   children,
   color = "gold",
@@ -100,26 +60,24 @@ export function Badge({
 export function PriceTag({
   price,
   eur,
+  locale = "fr",
   className = "",
 }: {
   price: number;
   eur?: number;
+  locale?: "fr" | "ar" | "en";
   className?: string;
 }) {
   return (
     <span className={`inline-flex items-baseline gap-2 ${className}`}>
       <span className="text-lg font-bold text-navy">
-        {price.toLocaleString("fr-FR")} <span className="text-sm font-semibold text-graytext">MAD</span>
+        {formatPrice(price, locale)} <span className="text-sm font-semibold text-graytext">MAD</span>
       </span>
       {eur !== undefined && (
         <span className="text-sm text-graytext">
-          ≈ {eur.toLocaleString("fr-FR")} €
+          ≈ {formatPrice(eur, locale)} €
         </span>
       )}
     </span>
   );
-}
-
-export function formatMAD(n: number) {
-  return `${n.toLocaleString("fr-FR")} MAD`;
 }

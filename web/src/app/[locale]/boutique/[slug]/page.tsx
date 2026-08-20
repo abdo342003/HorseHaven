@@ -1,19 +1,46 @@
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import ProductBuy from "@/components/ProductBuy";
 import ProductCard from "@/components/ProductCard";
 import { Container, Badge, PriceTag } from "@/components/ui";
-import { PRODUCTS, getProductBySlug, getProductsByCategory } from "@/lib/products";
+import { PRODUCTS, getProductBySlug, getProductsByCategory, BADGE_COLOR } from "@/lib/products";
+import { SITE_URL } from "@/lib/config";
 import Image from "next/image";
 
 const HERO_TRUST = ["delivery", "cod", "eu"] as const;
 
-const BADGE_COLOR: Record<string, "gold" | "green" | "red" | "royalblue"> = {
-  new: "gold",
-  promo: "red",
-  eu: "green",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: "fr" | "ar" | "en"; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const product = getProductBySlug(slug);
+  if (!product) return {};
+  const name = product.name[locale];
+  const description = product.description[locale];
+  const base = `${SITE_URL}/${locale === "fr" ? "" : `${locale}/`}boutique/${product.slug}`;
+  return {
+    title: name,
+    description,
+    alternates: {
+      canonical: base,
+      languages: {
+        fr: `${SITE_URL}/boutique/${product.slug}`,
+        ar: `${SITE_URL}/ar/boutique/${product.slug}`,
+        en: `${SITE_URL}/en/boutique/${product.slug}`,
+      },
+    },
+    openGraph: {
+      title: name,
+      description,
+      type: "website",
+      images: [{ url: `${SITE_URL}${product.image}`, width: 900, height: 900 }],
+    },
+  };
+}
 
 export function generateStaticParams() {
   return PRODUCTS.flatMap((p) =>
@@ -35,18 +62,17 @@ export default async function ProductPage({
     .filter((p) => p.id !== product.id)
     .slice(0, 4);
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://horsehaven.vercel.app";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name[locale],
     description: product.description[locale],
-    image: `${siteUrl}${product.image}`,
+    image: `${SITE_URL}${product.image}`,
     sku: product.id,
     brand: { "@type": "Brand", name: "Horse Haven" },
     offers: {
       "@type": "Offer",
-      url: `${siteUrl}/${locale === "fr" ? "" : `${locale}/`}boutique/${product.slug}`,
+      url: `${SITE_URL}/${locale === "fr" ? "" : `${locale}/`}boutique/${product.slug}`,
       priceCurrency: "MAD",
       price: product.price,
       availability: product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
@@ -110,7 +136,7 @@ export default async function ProductPage({
                 {product.name[locale]}
               </h1>
               <div className="mt-4">
-                <PriceTag price={product.price} eur={product.priceEur} className="text-2xl" />
+                <PriceTag price={product.price} eur={product.priceEur} locale={locale} className="text-2xl" />
               </div>
               <p className="mt-5 leading-relaxed text-graytext">
                 {product.description[locale]}

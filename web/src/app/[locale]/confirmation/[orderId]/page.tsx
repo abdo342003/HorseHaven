@@ -1,10 +1,10 @@
 import ConfirmationView from "@/components/ConfirmationView";
 
-export default function ConfirmationPage({
+export default async function ConfirmationPage({
   params,
 }: {
   params: Promise<{ orderId: string }>;
 }) {
-  const { orderId } = params as unknown as { orderId: string };
+  const { orderId } = await params;
   return <ConfirmationView orderId={orderId} />;
 }

@@ -1,15 +1,34 @@
 import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import ShopControls from "@/components/ShopControls";
 import ProductCard from "@/components/ProductCard";
 import { Container } from "@/components/ui";
 import { CATEGORIES, PRODUCTS, type CategorySlug } from "@/lib/products";
+import { SITE_URL } from "@/lib/config";
 
 type SearchParams = {
   q?: string | string[];
   categorie?: string | string[];
   sort?: string | string[];
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: "fr" | "ar" | "en" }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  return {
+    title: t("boutique.title"),
+    description: t("boutique.description"),
+    alternates: {
+      canonical: `${SITE_URL}/${locale === "fr" ? "" : `${locale}/`}boutique`,
+      languages: { fr: `${SITE_URL}/boutique`, ar: `${SITE_URL}/ar/boutique`, en: `${SITE_URL}/en/boutique` },
+    },
+  };
+}
 
 function first(v: string | string[] | undefined) {
   return typeof v === "string" ? v : undefined;

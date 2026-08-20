@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { formatPrice, WA_URL } from "@/lib/config";
 import { addToCart } from "@/lib/cart";
 import type { Product } from "@/lib/products";
 
@@ -16,8 +17,8 @@ export default function ProductBuy({
   const [qty, setQty] = useState(1);
   const out = !product.inStock;
 
-  const waHref = `https://wa.me/3368510101?text=${encodeURIComponent(
-    `${t("product.waMessage")} ${product.name[locale]} ×${qty} — ${product.price.toLocaleString("fr-FR")} MAD`,
+  const waHref = `${WA_URL}?text=${encodeURIComponent(
+    `${t("product.waMessage")} ${product.name[locale]} ×${qty} — ${formatPrice(product.price, locale)} MAD`,
   )}`;
 
   return (
@@ -27,7 +28,7 @@ export default function ProductBuy({
         <div className="inline-flex items-center overflow-hidden rounded-lg border border-gold/50">
           <button
             type="button"
-            aria-label="-1"
+            aria-label={t("product.qtyDecrease")}
             disabled={out || qty <= 1}
             onClick={() => setQty((v) => Math.max(1, v - 1))}
             className="h-10 w-10 text-lg font-bold text-navy transition-colors hover:bg-lightblue disabled:opacity-40"
@@ -42,7 +43,7 @@ export default function ProductBuy({
           </span>
           <button
             type="button"
-            aria-label="+1"
+            aria-label={t("product.qtyIncrease")}
             disabled={out || qty >= 99}
             onClick={() => setQty((v) => Math.min(99, v + 1))}
             className="h-10 w-10 text-lg font-bold text-navy transition-colors hover:bg-lightblue disabled:opacity-40"

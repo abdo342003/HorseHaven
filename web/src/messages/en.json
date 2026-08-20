@@ -72,7 +72,6 @@
       "Passion"
     ],
     "bestsellerEyebrow": "House favorite",
-    "bestsellerTitle": "Entry-level saddle",
     "bestsellerText": "The most requested saddle in the shop. Optimal comfort for rider and horse, careful craftsmanship, ready for all your goals.",
     "bestsellerBullets": [
       "Soft, durable leather",
@@ -103,7 +102,8 @@
     "instaEyebrow": "@horse_haven.store",
     "instaTitle": "Behind the scenes",
     "instaSubtitle": "Riding tips, new arrivals and behind the scenes of the refuge, every week.",
-    "instaCta": "Follow on Instagram"
+    "instaCta": "Follow on Instagram",
+    "heroAlt": "Chestnut horse on a black background"
   },
   "categories": {
     "equipment": {
@@ -141,7 +141,9 @@
     "category": "Category",
     "all": "All",
     "quantity": "Quantity",
-    "waMessage": "Hello, I would like to order:"
+    "waMessage": "Hello, I would like to order:",
+    "qtyDecrease": "Decrease quantity",
+    "qtyIncrease": "Increase quantity"
   },
   "cart": {
     "title": "My cart",
@@ -256,7 +258,8 @@
       "Professional riders",
       "Horse owners",
       "Equestrian enthusiasts"
-    ]
+    ],
+    "description": "Our mission, our values and the passion that drives us in the service of riders."
   },
   "contact": {
     "title": "Contact us",
@@ -270,18 +273,21 @@
     "phoneTitle": "By phone",
     "emailTitle": "By email",
     "socialTitle": "On social media",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "description": "A question, an order, some advice? Write to us or reach out directly."
   },
   "shippingPage": {
     "title": "Shipping & payment",
     "deliveryTitle": "Shipping",
     "deliveryText": "We deliver throughout Morocco and France. Delivery times are communicated when your order is confirmed.",
     "paymentTitle": "Payment methods",
-    "paymentText": "Cash on delivery (COD), bank transfer or WhatsApp order. Card payment (CMI) coming soon."
+    "paymentText": "Cash on delivery (COD), bank transfer or WhatsApp order. Card payment (CMI) coming soon.",
+    "description": "Delivery times and costs in Morocco, available payment methods."
   },
   "privacy": {
     "title": "Privacy policy",
-    "text": "Your personal data (name, phone, address) is used only to process and deliver your orders. It is never sold or shared with third parties, except carriers required for delivery."
+    "text": "Your personal data (name, phone, address) is used only to process and deliver your orders. It is never sold or shared with third parties, except carriers required for delivery.",
+    "description": "Our privacy policy and how we protect your data."
   },
   "notFound": {
     "title": "Page not found",
@@ -302,6 +308,8 @@
   "boutique": {
     "subtitle": "Everything for horse, rider and stable — delivered across Morocco, cash on delivery.",
     "results": "{count, plural, one {# product} other {# products}}",
-    "related": "You may also like"
+    "related": "You may also like",
+    "title": "Equestrian shop",
+    "description": "Saddles, numnahs, bridles, halter, blankets, grooming and rider clothing. Delivery across Morocco, cash on delivery available."
   }
 }
