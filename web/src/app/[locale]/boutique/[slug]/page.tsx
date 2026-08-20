@@ -75,6 +75,7 @@ export default async function ProductPage({
       url: `${SITE_URL}/${locale === "fr" ? "" : `${locale}/`}boutique/${product.slug}`,
       priceCurrency: "MAD",
       price: product.price,
+      priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().slice(0, 10),
       availability: product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       itemCondition: "https://schema.org/NewCondition",
     },

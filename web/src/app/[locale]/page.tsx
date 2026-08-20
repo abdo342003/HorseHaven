@@ -227,7 +227,7 @@ export default async function HomePage({
                 </Reveal>
                 <Reveal delay={120}>
                   <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold">
-                    {t("home.bestsellerEyebrow")}
+                    03 · {t("home.bestsellerEyebrow")}
                   </p>
                   <h2 className="mt-3 font-display text-3xl font-semibold text-white sm:text-4xl">
                     {saddle.name[locale]}

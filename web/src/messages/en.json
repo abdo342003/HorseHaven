@@ -10,7 +10,8 @@
     "contact": "Contact",
     "menu": "Menu",
     "cart": "Cart",
-    "langLabel": "Language"
+    "langLabel": "Language",
+    "checkout": "Checkout"
   },
   "topbar": {
     "delivery": "Fast delivery wherever you are",
@@ -274,7 +275,9 @@
     "emailTitle": "By email",
     "socialTitle": "On social media",
     "whatsapp": "WhatsApp",
-    "description": "A question, an order, some advice? Write to us or reach out directly."
+    "description": "A question, an order, some advice? Write to us or reach out directly.",
+    "waBody": "Hello Horse Haven,\nName: {name}\nEmail: {email}\nMessage: {message}",
+    "waNoEmail": "not provided"
   },
   "shippingPage": {
     "title": "Shipping & payment",
@@ -282,12 +285,24 @@
     "deliveryText": "We deliver throughout Morocco and France. Delivery times are communicated when your order is confirmed.",
     "paymentTitle": "Payment methods",
     "paymentText": "Cash on delivery (COD), bank transfer or WhatsApp order. Card payment (CMI) coming soon.",
-    "description": "Delivery times and costs in Morocco, available payment methods."
+    "description": "Delivery times and costs in Morocco, available payment methods.",
+    "feesTitle": "Delivery fees",
+    "feesText": "Free delivery on orders over 1,500 MAD in Morocco. Below that, a flat 30 MAD fee.",
+    "delaysTitle": "Delivery times",
+    "delaysText": "Casablanca & Rabat: 24-48h · Other Moroccan cities: 2-5 working days · France: 3-7 days."
   },
   "privacy": {
     "title": "Privacy policy",
     "text": "Your personal data (name, phone, address) is used only to process and deliver your orders. It is never sold or shared with third parties, except carriers required for delivery.",
-    "description": "Our privacy policy and how we protect your data."
+    "description": "Our privacy policy and how we protect your data.",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "This site uses no advertising cookies. Only strictly necessary technical items may be stored locally to power the cart.",
+    "retentionTitle": "Data retention",
+    "retentionText": "Order data is kept for as long as needed to process and deliver, then archived for accounting purposes only.",
+    "rightsTitle": "Your rights",
+    "rightsText": "You can request access to, rectification or deletion of your data at any time by contacting us.",
+    "contactTitle": "Contact",
+    "contactText": "For any question about your data, contact us:"
   },
   "notFound": {
     "title": "Page not found",

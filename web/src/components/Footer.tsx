@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { EMAIL, INSTAGRAM_URL, PHONE_MAIN_TEL } from "@/lib/config";
+import { EMAIL, INSTAGRAM_URL, PHONE_MAIN, PHONE_MAIN_TEL, PHONE_SECONDARY, PHONE_SECONDARY_TEL } from "@/lib/config";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui";
 import Image from "next/image";
@@ -80,12 +80,12 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-white/75">
               <li>
                 <a href={`tel:${PHONE_MAIN_TEL}`} dir="ltr" className="hover:text-gold">
-                  +33 6 85 10 1 01
+                  {PHONE_MAIN}
                 </a>
               </li>
               <li>
-                <a href="tel:+337061671" dir="ltr" className="hover:text-gold">
-                  07 06 16 71
+                <a href={`tel:${PHONE_SECONDARY_TEL}`} dir="ltr" className="hover:text-gold">
+                  {PHONE_SECONDARY}
                 </a>
               </li>
               <li>

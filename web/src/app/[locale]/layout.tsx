@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
@@ -78,8 +78,13 @@ export async function generateMetadata({
       images: [{ url: `/opengraph/og-${locale}.png`, width: 1200, height: 630 }],
     },
     robots: { index: true, follow: true },
+    icons: { icon: "/images/favicon-32.png" },
   };
 }
+
+export const viewport: Viewport = {
+  themeColor: "#1A2744",
+};
 
 export default async function LocaleLayout({
   children,

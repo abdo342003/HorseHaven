@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { formatPrice, FREE_SHIPPING } from "@/lib/config";
+import { formatPrice, FREE_SHIPPING, SHIPPING_FEE } from "@/lib/config";
 import { useRouter } from "@/i18n/navigation";
 import Image from "next/image";
 import { getCart, clearCart, cartTotal, CART_EVENT, type CartItem } from "@/lib/cart";
@@ -10,7 +10,6 @@ import { Container } from "@/components/ui";
 import PageHero from "@/components/PageHero";
 import { Link } from "@/i18n/navigation";
 
-const SHIPPING_FEE = 30;
 const PAYMENT_METHODS = ["cod", "transfer", "whatsapp"] as const;
 type Payment = (typeof PAYMENT_METHODS)[number];
 
@@ -86,14 +85,14 @@ export default function CheckoutForm() {
   }
 
   function loadOrders(): Order[] {
-  try {
-    return JSON.parse(localStorage.getItem(ORDERS_KEY) ?? "[]") as Order[];
-  } catch {
-    return [];
+    try {
+      return JSON.parse(localStorage.getItem(ORDERS_KEY) ?? "[]") as Order[];
+    } catch {
+      return [];
+    }
   }
-}
 
-function onSubmit(e: React.FormEvent) {
+  function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!validate()) return;
     const stamp = newOrderStamp();
@@ -125,7 +124,7 @@ function onSubmit(e: React.FormEvent) {
   if (!mounted) {
     return (
       <>
-        <PageHero eyebrow={t("nav.cart")} title={t("checkout.title")} />
+        <PageHero eyebrow={t("nav.checkout")} title={t("checkout.title")} />
         <section className="py-16">
           <Container>
             <div className="min-h-[40vh]" />
@@ -138,7 +137,7 @@ function onSubmit(e: React.FormEvent) {
   if (items.length === 0) {
     return (
       <>
-        <PageHero eyebrow={t("nav.cart")} title={t("checkout.title")} />
+        <PageHero eyebrow={t("nav.checkout")} title={t("checkout.title")} />
         <section className="py-16">
           <Container>
             <div className="rounded-2xl border border-gold/30 bg-white px-6 py-16 text-center shadow-sm">
@@ -160,7 +159,7 @@ function onSubmit(e: React.FormEvent) {
 
   return (
     <>
-      <PageHero eyebrow={t("nav.cart")} title={t("checkout.title")} />
+      <PageHero eyebrow={t("nav.checkout")} title={t("checkout.title")} />
       <section className="py-12 sm:py-14">
         <Container>
           <form onSubmit={onSubmit} className="grid gap-8 lg:grid-cols-[1.6fr_1fr]" noValidate>
@@ -273,7 +272,7 @@ function onSubmit(e: React.FormEvent) {
                 <div className="flex justify-between">
                   <dt className="text-graytext">{t("cart.shipping")}</dt>
                   <dd className={`font-semibold ${free ? "text-green" : "text-navy"}`}>
-                    {free ? t("cart.shippingFree") : "30 MAD"}
+                    {free ? t("cart.shippingFree") : `${formatPrice(SHIPPING_FEE, locale)} MAD`}
                   </dd>
                 </div>
                 <div className="flex justify-between border-t border-gold/30 pt-3">

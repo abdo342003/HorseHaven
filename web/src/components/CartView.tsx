@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { formatPrice, FREE_SHIPPING } from "@/lib/config";
+import { formatPrice, FREE_SHIPPING, SHIPPING_FEE } from "@/lib/config";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getCart, updateQty, removeFromCart, cartTotal, CART_EVENT, type CartItem } from "@/lib/cart";
@@ -35,7 +35,7 @@ export default function CartView() {
 
   const subtotal = cartTotal(items);
   const free = subtotal >= FREE_SHIPPING;
-  const total = free ? subtotal : subtotal + 30;
+  const total = free ? subtotal : subtotal + SHIPPING_FEE;
 
   if (!mounted) {
     return (
@@ -161,7 +161,7 @@ export default function CartView() {
                 <div className="flex justify-between">
                   <dt className="text-graytext">{t("cart.shipping")}</dt>
                   <dd className={`font-semibold ${free ? "text-green" : "text-navy"}`}>
-                    {free ? t("cart.shippingFree") : "30 MAD"}
+                    {free ? t("cart.shippingFree") : `${formatPrice(SHIPPING_FEE, locale)} MAD`}
                   </dd>
                 </div>
                 {!free && (

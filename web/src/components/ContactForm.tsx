@@ -13,7 +13,11 @@ export default function ContactForm() {
 
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const text = `Bonjour Horse Haven,\nNom : ${name}\nEmail : ${email || "non renseigné"}\nMessage : ${message}`;
+    const text = t("contact.waBody", {
+      name,
+      email: email || t("contact.waNoEmail"),
+      message,
+    });
     window.open(
       `${WA_URL}?text=${encodeURIComponent(text)}`,
       "_blank",

@@ -34,7 +34,7 @@ export default function ConfirmationView({ orderId }: { orderId: string }) {
   if (!mounted) {
     return (
       <>
-        <PageHero eyebrow={t("nav.cart")} title={t("confirmation.title")} />
+        <PageHero eyebrow={t("nav.checkout")} title={t("confirmation.title")} />
         <section className="py-16">
           <Container>
             <div className="min-h-[40vh]" />
@@ -71,7 +71,7 @@ export default function ConfirmationView({ orderId }: { orderId: string }) {
 
   return (
     <>
-      <PageHero eyebrow={t("nav.cart")} title={t("confirmation.title")} />
+      <PageHero eyebrow={t("nav.checkout")} title={t("confirmation.title")} />
       <section className="py-12 sm:py-14">
         <Container>
           <div className="mx-auto max-w-2xl">

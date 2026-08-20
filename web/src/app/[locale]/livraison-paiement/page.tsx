@@ -13,6 +13,9 @@ export async function generateMetadata({
   const t = await getTranslations({ locale });
   return pageMetadata(locale, t("shippingPage.title"), t("shippingPage.description"), "livraison-paiement");
 }
+
+const CARDS = ["delivery", "fees", "delays", "payment"] as const;
+
 export default async function ShippingPage({
   params,
 }: {
@@ -28,24 +31,20 @@ export default async function ShippingPage({
       <section className="py-14 sm:py-16">
         <Container>
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-gold/30 bg-white p-8 shadow-sm">
-              <div className="flex items-center gap-3">
-                <span aria-hidden className="h-1.5 w-1.5 rotate-45 bg-gold" />
-                <h2 className="font-display text-xl font-semibold text-navy">
-                  {t("shippingPage.deliveryTitle")}
-                </h2>
+            {CARDS.map((key, i) => (
+              <div
+                key={key}
+                className={`rounded-2xl border border-gold/30 p-8 ${i % 2 === 1 ? "bg-lightblue" : "bg-white shadow-sm"}`}
+              >
+                <div className="flex items-center gap-3">
+                  <span aria-hidden className="h-1.5 w-1.5 rotate-45 bg-gold" />
+                  <h2 className="font-display text-xl font-semibold text-navy">
+                    {t(`shippingPage.${key}Title`)}
+                  </h2>
+                </div>
+                <p className="mt-4 leading-relaxed text-graytext">{t(`shippingPage.${key}Text`)}</p>
               </div>
-              <p className="mt-4 leading-relaxed text-graytext">{t("shippingPage.deliveryText")}</p>
-            </div>
-            <div className="rounded-2xl border border-gold/30 bg-lightblue p-8">
-              <div className="flex items-center gap-3">
-                <span aria-hidden className="h-1.5 w-1.5 rotate-45 bg-gold" />
-                <h2 className="font-display text-xl font-semibold text-navy">
-                  {t("shippingPage.paymentTitle")}
-                </h2>
-              </div>
-              <p className="mt-4 leading-relaxed text-graytext">{t("shippingPage.paymentText")}</p>
-            </div>
+            ))}
           </div>
         </Container>
       </section>

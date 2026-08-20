@@ -10,7 +10,8 @@
     "contact": "Contact",
     "menu": "Menu",
     "cart": "Panier",
-    "langLabel": "Langue"
+    "langLabel": "Langue",
+    "checkout": "Commande"
   },
   "topbar": {
     "delivery": "Livraison rapide partout où vous êtes",
@@ -274,7 +275,9 @@
     "emailTitle": "Par email",
     "socialTitle": "Sur les réseaux",
     "whatsapp": "WhatsApp",
-    "description": "Une question, une commande, un conseil ? Écrivez-nous ou contactez-nous directement."
+    "description": "Une question, une commande, un conseil ? Écrivez-nous ou contactez-nous directement.",
+    "waBody": "Bonjour Horse Haven,\nNom : {name}\nEmail : {email}\nMessage : {message}",
+    "waNoEmail": "non renseigné"
   },
   "shippingPage": {
     "title": "Livraison & paiement",
@@ -282,12 +285,24 @@
     "deliveryText": "Nous livrons partout au Maroc et en France. Les délais de livraison vous sont communiqués lors de la confirmation de commande.",
     "paymentTitle": "Modes de paiement",
     "paymentText": "Paiement à la livraison (COD), virement bancaire ou commande via WhatsApp. Le paiement par carte (CMI) arrive prochainement.",
-    "description": "Délais et frais de livraison au Maroc, modes de paiement disponibles."
+    "description": "Délais et frais de livraison au Maroc, modes de paiement disponibles.",
+    "feesTitle": "Frais de livraison",
+    "feesText": "Livraison offerte dès 1 500 MAD au Maroc. En dessous, frais fixes de 30 MAD.",
+    "delaysTitle": "Délais de livraison",
+    "delaysText": "Casablanca & Rabat : 24-48 h · Autres villes du Maroc : 2 à 5 jours ouvrés · France : 3 à 7 jours."
   },
   "privacy": {
     "title": "Politique de confidentialité",
     "text": "Vos données personnelles (nom, téléphone, adresse) sont utilisées uniquement pour traiter et livrer vos commandes. Elles ne sont jamais vendues ni partagées avec des tiers, hors transporteurs et prestataires nécessaires à la livraison.",
-    "description": "Notre politique de confidentialité et la protection de vos données."
+    "description": "Notre politique de confidentialité et la protection de vos données.",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "Ce site n'utilise pas de cookies publicitaires. Seuls des éléments techniques strictement nécessaires peuvent être stockés localement pour le fonctionnement du panier.",
+    "retentionTitle": "Conservation des données",
+    "retentionText": "Vos données de commande sont conservées le temps nécessaire au traitement et à la livraison, puis archivées uniquement à des fins comptables.",
+    "rightsTitle": "Vos droits",
+    "rightsText": "Vous pouvez demander l'accès, la rectification ou la suppression de vos données à tout moment en nous contactant.",
+    "contactTitle": "Contact",
+    "contactText": "Pour toute question relative à vos données, contactez-nous :"
   },
   "notFound": {
     "title": "Page introuvable",
