@@ -21,9 +21,9 @@
   "hero": {
     "tagline": "The refuge for equestrian excellence",
     "title": "HORSE HAVEN",
-    "subtitle": "Excellence at your fingertips",
-    "cta": "Discover the shop",
-    "ctaSecondary": "Contact us",
+    "subtitle": "Exceptional equipment, curated with exacting standards.",
+    "cta": "Discover the collection",
+    "ctaSecondary": "Write to us",
     "stats": {
       "delivery": "48h delivery",
       "cod": "Cash on delivery",
@@ -32,57 +32,57 @@
   },
   "home": {
     "categoriesTitle": "Our universes",
-    "categoriesSubtitle": "Everything for horse and rider",
-    "featuredTitle": "Featured products",
-    "featuredSubtitle": "A carefully curated selection for performance and comfort",
-    "whyTitle": "Why Horse Haven?",
-    "whySubtitle": "Quality, advice and passion for horses at the heart of everything we do",
+    "categoriesSubtitle": "A curated collection for horse and rider.",
+    "featuredTitle": "The signature selection",
+    "featuredSubtitle": "Pieces chosen for their excellence and comfort.",
+    "whyTitle": "The Horse Haven standard",
+    "whySubtitle": "Three pillars guide every choice we make: exactingness, knowledge, passion.",
     "whyItems": {
       "quality": {
-        "title": "Quality",
-        "text": "Products carefully selected from renowned brands."
+        "title": "Exactingness",
+        "text": "Every piece is chosen for the nobility of its materials and the rigour of its craftsmanship."
       },
       "advice": {
-        "title": "Advice",
-        "text": "Personal support to choose the best equipment."
+        "title": "Knowledge",
+        "text": "Horse experts accompany every choice, with precision and sincerity."
       },
       "eu": {
         "title": "EU origin",
-        "text": "Reference European brands, imported duty-free."
+        "text": "Reference European brands, imported with care and duty-free."
       },
       "passion": {
         "title": "Passion",
-        "text": "A team passionate about the world of horses."
+        "text": "A team that lives by the rhythm of horses and puts its knowledge at the service of your ambitions."
       }
     },
-    "contactTitle": "A question?",
-    "contactText": "Our team is here to help you make the right choice.",
+    "contactTitle": "Advice, or a wish?",
+    "contactText": "Our team answers with exactingness and warmth.",
     "contactCta": "Contact Horse Haven",
     "categoriesEyebrow": "Explore our worlds",
     "featuredEyebrow": "The house selection",
-    "whyEyebrow": "Our commitment",
+    "whyEyebrow": "The spirit of the house",
     "explore": "Explore",
     "seeAll": "View the whole shop",
     "whatsappCta": "Order on WhatsApp",
     "scroll": "Scroll",
     "valuesEyebrow": "Our promises",
     "values": [
-      "Quality",
-      "Comfort",
-      "Performance",
+      "Curated selection",
+      "Craftsmanship",
+      "Exactingness",
       "Passion"
     ],
-    "bestsellerEyebrow": "House favorite",
-    "bestsellerText": "The most requested saddle in the shop. Optimal comfort for rider and horse, careful craftsmanship, ready for all your goals.",
+    "bestsellerEyebrow": "The signature piece",
+    "bestsellerText": "Our emblematic saddle, favoured by demanding riders. Exceptional comfort for horse and rider, a finish built to last through the seasons.",
     "bestsellerBullets": [
-      "Soft, durable leather",
-      "Tree suited to working horses",
+      "Noble, supple, durable leather",
+      "Tree designed for working horses",
       "48h delivery — cash on delivery"
     ],
     "bestsellerCta": "Discover the saddle",
     "testimonialsEyebrow": "They trust us",
     "testimonialsTitle": "Riders talk about us",
-    "testimonialsSubtitle": "Three reviews from our customers, from Morocco to France.",
+    "testimonialsSubtitle": "From Morocco to France, the trust of our riders.",
     "testimonials": [
       {
         "name": "Yassine El Amrani",
@@ -102,22 +102,41 @@
     ],
     "instaEyebrow": "@horse_haven.store",
     "instaTitle": "Behind the scenes",
-    "instaSubtitle": "Riding tips, new arrivals and behind the scenes of the refuge, every week.",
+    "instaSubtitle": "Excellence behind the scenes: craftsmanship, new arrivals and life at the house.",
     "instaCta": "Follow on Instagram",
-    "heroAlt": "Chestnut horse on a black background"
+    "heroAlt": "Chestnut horse on a black background",
+    "maison": {
+      "eyebrow": "The House",
+      "title": "A house of exactingness and passion",
+      "text": "At Horse Haven, every piece of equipment is chosen like an evidence: noble materials, reference brands, and that attention to detail that makes all the difference — for the horse as for the rider.",
+      "pillars": [
+        {
+          "title": "Expert curation",
+          "text": "Every reference is tested by riders before entering the collection."
+        },
+        {
+          "title": "Noble materials",
+          "text": "Leathers, technical textiles and fine finishes, chosen to last."
+        },
+        {
+          "title": "Bespoke service",
+          "text": "Personal advice, fast delivery, cash on delivery."
+        }
+      ]
+    }
   },
   "categories": {
     "equipment": {
       "name": "Horse equipment",
-      "desc": "Technical numnahs, ergonomic bridles, boots and protections for performance and comfort."
+      "desc": "Technical numnahs, ergonomic bridles and protective boots: exactingness in the service of performance."
     },
     "materials": {
       "name": "Horse materials",
-      "desc": "Saddles for every rider, quality halters and accessories, blankets for all seasons, care and grooming products."
+      "desc": "Saddles for every discipline, refined halters, exceptional blankets and meticulous care products."
     },
     "rider": {
       "name": "Rider & stable items",
-      "desc": "Everything for everyday riding, your companion's well-being, rider clothing and protection."
+      "desc": "The rider's elegance and the stable's well-being, from everyday to grand occasions."
     }
   },
   "product": {
@@ -144,7 +163,8 @@
     "quantity": "Quantity",
     "waMessage": "Hello, I would like to order:",
     "qtyDecrease": "Decrease quantity",
-    "qtyIncrease": "Increase quantity"
+    "qtyIncrease": "Increase quantity",
+    "highlights": "Highlights"
   },
   "cart": {
     "title": "My cart",
@@ -264,7 +284,7 @@
   },
   "contact": {
     "title": "Contact us",
-    "subtitle": "Our team replies quickly to help you with your choices.",
+    "subtitle": "Our team answers with exactingness and warmth to guide your choices.",
     "formTitle": "Send us a message",
     "name": "Name",
     "email": "Email",
@@ -321,10 +341,10 @@
     "allResults": "View all results"
   },
   "boutique": {
-    "subtitle": "Everything for horse, rider and stable — delivered across Morocco, cash on delivery.",
+    "subtitle": "The complete collection for horse, rider and stable — delivered across Morocco, with cash on delivery.",
     "results": "{count, plural, one {# product} other {# products}}",
     "related": "You may also like",
     "title": "Equestrian shop",
-    "description": "Saddles, numnahs, bridles, halter, blankets, grooming and rider clothing. Delivery across Morocco, cash on delivery available."
+    "description": "Saddles, numnahs, bridles, halters, blankets, grooming and rider clothing: an exceptional selection, delivered across Morocco with cash on delivery."
   }
 }

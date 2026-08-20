@@ -21,9 +21,9 @@
   "hero": {
     "tagline": "Le refuge pour l'excellence équestre",
     "title": "HORSE HAVEN",
-    "subtitle": "L'excellence à portée de clic",
-    "cta": "Découvrir la boutique",
-    "ctaSecondary": "Nous contacter",
+    "subtitle": "Des équipements d'exception, sélectionnés avec exigence.",
+    "cta": "Découvrir la collection",
+    "ctaSecondary": "Nous écrire",
     "stats": {
       "delivery": "Livraison 48h",
       "cod": "Paiement à la livraison",
@@ -32,57 +32,57 @@
   },
   "home": {
     "categoriesTitle": "Nos univers",
-    "categoriesSubtitle": "Tout pour le cheval et le cavalier",
-    "featuredTitle": "Produits vedettes",
-    "featuredSubtitle": "Une sélection soignée pour la performance et le confort",
-    "whyTitle": "Pourquoi Horse Haven ?",
-    "whySubtitle": "La qualité, le conseil et la passion du cheval au cœur de notre démarche",
+    "categoriesSubtitle": "Une sélection d'exception pour le cheval et le cavalier.",
+    "featuredTitle": "La sélection signature",
+    "featuredSubtitle": "Des pièces choisies pour leur excellence et leur confort.",
+    "whyTitle": "L'exigence Horse Haven",
+    "whySubtitle": "Trois piliers guident chacune de nos sélections : l'exigence, la connaissance, la passion.",
     "whyItems": {
       "quality": {
-        "title": "Qualité",
-        "text": "Produits sélectionnés avec soin auprès de marques renommées."
+        "title": "Exigence",
+        "text": "Chaque pièce est retenue pour la noblesse de ses matériaux et la rigueur de sa fabrication."
       },
       "advice": {
-        "title": "Conseil",
-        "text": "Un accompagnement personnalisé pour choisir le meilleur équipement."
+        "title": "Connaissance",
+        "text": "Des experts du cheval vous accompagnent dans chaque choix, avec précision et sincérité."
       },
       "eu": {
-        "title": "Origine UE",
-        "text": "Marques européennes de référence, importées sans droits de douane."
+        "title": "Origine européenne",
+        "text": "Des marques européennes de référence, importées avec soin et sans droits de douane."
       },
       "passion": {
         "title": "Passion",
-        "text": "Une équipe passionnée par le monde du cheval et de l'équitation."
+        "text": "Une équipe qui vit au rythme des chevaux et met ce savoir au service de vos ambitions."
       }
     },
-    "contactTitle": "Une question ?",
-    "contactText": "Notre équipe est à votre écoute pour vous conseiller dans vos choix.",
+    "contactTitle": "Un conseil, une envie ?",
+    "contactText": "Notre équipe vous répond avec exigence et bienveillance.",
     "contactCta": "Contacter Horse Haven",
     "categoriesEyebrow": "Explorez nos univers",
     "featuredEyebrow": "La sélection de la maison",
-    "whyEyebrow": "Notre engagement",
+    "whyEyebrow": "L'esprit de la Maison",
     "explore": "Explorer",
     "seeAll": "Voir toute la boutique",
     "whatsappCta": "Commander sur WhatsApp",
     "scroll": "Défiler",
     "valuesEyebrow": "Nos promesses",
     "values": [
-      "Qualité",
-      "Confort",
-      "Performance",
+      "Sélection",
+      "Savoir-faire",
+      "Exigence",
       "Passion"
     ],
-    "bestsellerEyebrow": "Le favori de la maison",
-    "bestsellerText": "La selle la plus demandée de la boutique. Confort optimal pour le cavalier et le cheval, fabrication soignée, prête pour tous vos objectifs.",
+    "bestsellerEyebrow": "La pièce maîtresse",
+    "bestsellerText": "Notre selle emblématique, plébiscitée par les cavaliers exigeants. Un confort d'exception pour le cheval comme pour le cavalier, une finition qui traverse les saisons.",
     "bestsellerBullets": [
-      "Cuir souple et résistant",
-      "Arçon adapté aux chevaux de travail",
-      "Livraison 48h — paiement à la livraison"
+      "Cuir noble, souple et durable",
+      "Arçon pensé pour les chevaux de travail",
+      "Livraison 48 h — paiement à la livraison"
     ],
     "bestsellerCta": "Découvrir la selle",
     "testimonialsEyebrow": "Ils nous font confiance",
     "testimonialsTitle": "Les cavaliers en parlent",
-    "testimonialsSubtitle": "Trois retours de clients, du Maroc à la France.",
+    "testimonialsSubtitle": "Du Maroc à la France, la confiance de nos cavaliers.",
     "testimonials": [
       {
         "name": "Yassine El Amrani",
@@ -102,22 +102,41 @@
     ],
     "instaEyebrow": "@horse_haven.store",
     "instaTitle": "Nos coulisses",
-    "instaSubtitle": "Astuces équitation, arrivages et coulisses du refuge, chaque semaine.",
+    "instaSubtitle": "L'excellence en coulisses : savoir-faire, arrivages et vie de la Maison.",
     "instaCta": "Suivre sur Instagram",
-    "heroAlt": "Cheval alezan sur fond noir"
+    "heroAlt": "Cheval alezan sur fond noir",
+    "maison": {
+      "eyebrow": "La Maison",
+      "title": "Une maison d'exigence et de passion",
+      "text": "Chez Horse Haven, chaque équipement est choisi comme une évidence : des matériaux nobles, des marques de référence, et cette attention au détail qui fait toute la différence — pour le cheval comme pour le cavalier.",
+      "pillars": [
+        {
+          "title": "Sélection experte",
+          "text": "Chaque référence est éprouvée par des cavaliers avant d'entrer dans la collection."
+        },
+        {
+          "title": "Matériaux nobles",
+          "text": "Cuirs, textiles techniques et finitions soignées, choisis pour durer."
+        },
+        {
+          "title": "Service sur mesure",
+          "text": "Conseil personnalisé, livraison rapide, paiement à la livraison."
+        }
+      ]
+    }
   },
   "categories": {
     "equipment": {
       "name": "Équipement du cheval",
-      "desc": "Tapis techniques, bridons ergonomiques, bottes et protections pour la performance et le confort."
+      "desc": "Tapis techniques, bridons ergonomiques et protections : l'exigence au service de la performance."
     },
     "materials": {
       "name": "Matériel pour le cheval",
-      "desc": "Selles adaptées à tous les profils, licols et accessoires de qualité, couvertures pour toutes les saisons, produits de soins et de pansage."
+      "desc": "Selles pour chaque discipline, licols raffinés, couvertures d'exception et soins d'orfèvre."
     },
     "rider": {
       "name": "Articles de cavalier et d'écurie",
-      "desc": "Tout le nécessaire pour l'équitation du quotidien, le bien-être de votre compagnon, vêtements et protection du cavalier."
+      "desc": "L'élégance du cavalier et le bien-être de l'écurie, du quotidien aux grandes occasions."
     }
   },
   "product": {
@@ -144,7 +163,8 @@
     "quantity": "Quantité",
     "waMessage": "Bonjour, je souhaite commander :",
     "qtyDecrease": "Diminuer la quantité",
-    "qtyIncrease": "Augmenter la quantité"
+    "qtyIncrease": "Augmenter la quantité",
+    "highlights": "Points forts"
   },
   "cart": {
     "title": "Mon panier",
@@ -264,7 +284,7 @@
   },
   "contact": {
     "title": "Contactez-nous",
-    "subtitle": "Notre équipe vous répond rapidement pour vous conseiller dans vos choix.",
+    "subtitle": "Notre équipe vous répond avec exigence et bienveillance pour vous conseiller dans vos choix.",
     "formTitle": "Envoyez-nous un message",
     "name": "Nom",
     "email": "Email",
@@ -321,10 +341,10 @@
     "allResults": "Voir tous les résultats"
   },
   "boutique": {
-    "subtitle": "Tout l'équipement pour le cheval, le cavalier et l'écurie — livré partout au Maroc, paiement à la livraison.",
+    "subtitle": "La collection complète pour le cheval, le cavalier et l'écurie — livrée partout au Maroc, avec paiement à la livraison.",
     "results": "{count, plural, one {# produit} other {# produits}}",
     "related": "Voir aussi",
     "title": "Boutique équestre",
-    "description": "Selles, tapis, bridons, licols, couvertures, soins et vêtements du cavalier. Livraison partout au Maroc et paiement à la livraison."
+    "description": "Selles, tapis, bridons, licols, couvertures, soins et tenues du cavalier : une sélection d'exception, livrée partout au Maroc avec paiement à la livraison."
   }
 }

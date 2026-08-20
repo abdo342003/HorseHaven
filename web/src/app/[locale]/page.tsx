@@ -39,6 +39,10 @@ export default async function HomePage({
   }[];
   const values = t.raw("home.values") as string[];
   const bullets = t.raw("home.bestsellerBullets") as string[];
+  const maisonPillars = t.raw("home.maison.pillars") as {
+    title: string;
+    text: string;
+  }[];
 
   return (
     <>
@@ -63,12 +67,18 @@ export default async function HomePage({
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:text-base">
                 {t("hero.tagline")}
               </p>
-              <h1 className="mt-3 font-display text-4xl font-semibold leading-tight tracking-[0.08em] text-white sm:text-5xl xl:text-6xl">
+              <h1 className="mt-3 font-display text-4xl font-semibold leading-tight tracking-[0.12em] text-white sm:text-5xl xl:text-6xl">
                 {t("hero.title")}
               </h1>
               <p className="mt-4 max-w-md text-lg text-white/80 sm:text-xl">
                 {t("hero.subtitle")}
               </p>
+
+              <div aria-hidden className="mt-6 flex items-center gap-2.5">
+                <span className="h-px w-10 bg-gradient-to-r from-transparent to-gold/80" />
+                <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
+                <span className="h-px w-10 bg-gradient-to-l from-transparent to-gold/80" />
+              </div>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -118,6 +128,10 @@ export default async function HomePage({
             <div
               aria-hidden
               className="pointer-events-none absolute inset-2 ring-1 ring-gold/40 sm:inset-3"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-3 ring-1 ring-white/15 sm:inset-4"
             />
           </div>
 
@@ -191,6 +205,48 @@ export default async function HomePage({
           </Container>
         </section>
 
+        <section className="relative overflow-hidden border-y border-gold/30 bg-white py-14 sm:py-16">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(212,197,169,0.10),transparent_55%)]"
+          />
+          <Container className="relative">
+            <Reveal>
+              <SectionHeading
+                number="03"
+                eyebrow={t("home.maison.eyebrow")}
+                title={t("home.maison.title")}
+                align="center"
+              />
+            </Reveal>
+            <Reveal delay={100}>
+              <p className="mx-auto max-w-2xl text-center leading-relaxed text-graytext">
+                {t("home.maison.text")}
+              </p>
+            </Reveal>
+            <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-gold/30 bg-gold/30 sm:grid-cols-3">
+              {maisonPillars.map((pillar, i) => (
+                <Reveal key={pillar.title} delay={i * 120}>
+                  <div className="flex h-full flex-col items-center bg-white p-8 text-center">
+                    <span
+                      aria-hidden
+                      className="flex h-10 w-10 rotate-45 items-center justify-center border border-gold/60 bg-lightblue"
+                    >
+                      <span className="h-2.5 w-2.5 bg-gold" />
+                    </span>
+                    <h3 className="mt-5 font-display text-xl font-semibold text-navy">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-graytext">
+                      {pillar.text}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </Container>
+        </section>
+
         {saddle && (
           <section className="relative overflow-hidden bg-navy py-14 sm:py-16">
             <div
@@ -222,7 +278,7 @@ export default async function HomePage({
                 </Reveal>
                 <Reveal delay={120}>
                   <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold">
-                    03 · {t("home.bestsellerEyebrow")}
+                    04 · {t("home.bestsellerEyebrow")}
                   </p>
                   <h2 className="mt-3 font-display text-3xl font-semibold text-white sm:text-4xl">
                     {saddle.name[locale]}
@@ -263,7 +319,7 @@ export default async function HomePage({
           <Container>
             <Reveal>
               <SectionHeading
-                number="04"
+                number="05"
                 eyebrow={t("home.featuredEyebrow")}
                 title={t("home.featuredTitle")}
                 subtitle={t("home.featuredSubtitle")}
@@ -289,7 +345,7 @@ export default async function HomePage({
           <Container>
             <Reveal>
               <SectionHeading
-                number="05"
+                number="06"
                 eyebrow={t("home.whyEyebrow")}
                 title={t("home.whyTitle")}
                 subtitle={t("home.whySubtitle")}
@@ -320,7 +376,7 @@ export default async function HomePage({
           <Container>
             <Reveal>
               <SectionHeading
-                number="06"
+                number="07"
                 eyebrow={t("home.testimonialsEyebrow")}
                 title={t("home.testimonialsTitle")}
                 subtitle={t("home.testimonialsSubtitle")}
@@ -364,7 +420,7 @@ export default async function HomePage({
           <Container>
             <Reveal>
               <SectionHeading
-                number="07"
+                number="08"
                 eyebrow={t("home.instaEyebrow")}
                 title={t("home.instaTitle")}
                 subtitle={t("home.instaSubtitle")}

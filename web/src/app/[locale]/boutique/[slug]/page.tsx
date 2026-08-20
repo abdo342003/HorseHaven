@@ -143,6 +143,26 @@ export default async function ProductPage({
                 {product.description[locale]}
               </p>
 
+              <div className="mt-6 border-t border-gold/30 pt-6">
+                <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+                  {t("product.highlights")}
+                </h2>
+                <ul className="mt-3 space-y-2.5">
+                  {product.highlights[locale].map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-start gap-3 text-sm leading-relaxed text-graytext"
+                    >
+                      <span
+                        aria-hidden
+                        className="mt-2 h-1 w-1 shrink-0 rotate-45 bg-gold"
+                      />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               <div className="my-7 border-t border-gold/30" />
 
               <ProductBuy product={product} locale={locale} />

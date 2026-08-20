@@ -12,7 +12,7 @@ export default function ProductCard({ product }: { product: Product }) {
   const locale = useLocale() as "fr" | "ar" | "en";
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 ease-luxury hover:-translate-y-1 hover:shadow-lg">
+    <div className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 ease-luxury hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-gold/60">
       <Link
         href={`/boutique/${product.slug}`}
         className="relative block aspect-square overflow-hidden bg-lightblue"
@@ -42,7 +42,7 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className="flex flex-1 flex-col p-4">
         <Link
           href={`/boutique/${product.slug}`}
-          className="line-clamp-1 font-semibold text-navy transition-colors hover:text-royalblue"
+          className="line-clamp-1 font-display font-semibold text-navy transition-colors hover:text-royalblue"
         >
           {product.name[locale]}
         </Link>

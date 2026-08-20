@@ -9,6 +9,7 @@ export type Product = {
   priceEur?: number;
   image: string;
   description: Record<"fr" | "ar" | "en", string>;
+  highlights: Record<"fr" | "ar" | "en", string[]>;
   badge?: "new" | "promo" | "eu";
   featured?: boolean;
   inStock: boolean;
@@ -40,9 +41,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 27,
     image: "/images/products/tapis-selle.jpg",
     description: {
-      fr: "Tapis de selle anti-glisse à fibres respirantes, adapté à l'entraînement quotidien et à la compétition.",
-      ar: "بردعة مانعة للانزلاق بألياف قابلة للتنفس، مناسبة للتدريب اليومي والمنافسات.",
-      en: "Non-slip saddle pad with breathable fibers, ideal for daily training and competition.",
+      fr: "Un tapis de selle technique qui conjugue stabilité et respiration. Ses fibres évacuent la transpiration, son anti-glisse fixe la selle sans compromettre le mouvement du cheval — aussi juste à l'entraînement qu'en compétition.",
+      ar: "بردعة تقنية تجمع بين الثبات والتهوية. أليافها تُبعد الرطوبة، ووجهها السفلي مانع للانزلاق يثبّت السرج دون أن يعيق حركة الحصان — مناسبة للتدريب والمنافسة على حد سواء.",
+      en: "A technical saddle pad that pairs stability with breathability. Its fibres wick away sweat, and its non-slip base keeps the saddle planted without hindering the horse's movement — as at home in training as in competition.",
+    },
+    highlights: {
+      fr: [
+        "Fibres respirantes qui évacuent la transpiration",
+        "Dessous anti-glisse pour une selle stable",
+        "Épaisseur calibrée pour le travail comme la compétition",
+      ],
+      ar: [
+        "ألياف قابلة للتنفس تُبعد العرق",
+        "وجه سفلي مانع للانزلاق يثبّت السرج",
+        "سماكة متوازنة للتدريب والمنافسة",
+      ],
+      en: [
+        "Breathable fibres that wick away sweat",
+        "Non-slip underside for a stable saddle",
+        "Calibrated thickness for training and competition",
+      ],
     },
     badge: EU,
     featured: true,
@@ -62,9 +80,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 42,
     image: "/images/products/bridon.jpg",
     description: {
-      fr: "Bridon ergonomique en cuir souple, montant anatomique pour un meilleur confort du cheval.",
-      ar: "لجام مريح من الجلد الناعم مع تاج تشريحي لراحة أفضل للحصان.",
-      en: "Ergonomic soft-leather bridle with anatomical headpiece for better horse comfort.",
+      fr: "Un bridon façonné dans un cuir souple, doté d'un montant anatomique qui épouse le contour de la tête du cheval. L'équilibre idéal entre précision de contact et douceur de port.",
+      ar: "لجام مُشكَّل من جلد ناعم، بتاج تشريحي يلائم محيط رأس الحصان. توازن مثالي بين دقة التلامس ونعومة الارتداء.",
+      en: "A bridle crafted from supple leather with an anatomical headpiece that follows the contours of the horse's head. The ideal balance between precision of contact and gentleness of wear.",
+    },
+    highlights: {
+      fr: [
+        "Cuir souple qui se patine avec le temps",
+        "Montant anatomique pour un meilleur confort",
+        "Boucles en inox et montages soignés",
+      ],
+      ar: [
+        "جلد ناعم يزداد جمالاً مع الاستخدام",
+        "تاج تشريحي لمزيد من الراحة",
+        "أبازيم من الستانلس ستيل بتشطيب دقيق",
+      ],
+      en: [
+        "Supple leather that develops a rich patina",
+        "Anatomical headpiece for greater comfort",
+        "Stainless steel buckles, refined stitching",
+      ],
     },
     badge: EU,
     featured: true,
@@ -84,9 +119,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 19,
     image: "/images/products/bottes.jpg",
     description: {
-      fr: "Paire de bottes de protection en néoprène avec coque renforcée, pour le travail et le transport.",
-      ar: "زوج من أحذية الحماية من النيوبرين بقشرة مقواة، للعمل والنقل.",
-      en: "Pair of neoprene protective boots with reinforced shell, for work and transport.",
+      fr: "Une paire de bottes de protection en néoprène respirant, avec coque renforcée qui absorbe les chocs. Pensées pour le travail quotidien comme pour les déplacements.",
+      ar: "زوج من أحذية الحماية من النيوبرين القابل للتنفس، بقشرة مقواة تمتص الصدمات. مصممة للعمل اليومي وللتنقل.",
+      en: "A pair of protective boots in breathable neoprene with a reinforced shell that absorbs shocks. Designed for daily work and travel alike.",
+    },
+    highlights: {
+      fr: [
+        "Néoprène respirant qui laisse passer l'air",
+        "Coque renforcée qui absorbe les chocs",
+        "Fermeture ajustable pour un maintien sûr",
+      ],
+      ar: [
+        "نيوبرين قابل للتنفس يسمح بمرور الهواء",
+        "قشرة مقواة تمتص الصدمات",
+        "إغلاق قابل للتعديل لثبات آمن",
+      ],
+      en: [
+        "Breathable neoprene that lets the skin breathe",
+        "Reinforced shell that absorbs shock",
+        "Adjustable fastening for a secure fit",
+      ],
     },
     badge: EU,
     inStock: true,
@@ -105,9 +157,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 24,
     image: "/images/products/guetres.jpg",
     description: {
-      fr: "Guêtres de transport matelassées, protègent les membres pendant le déplacement.",
-      ar: "أربطة حماية مبطنة تحمي الأرجل أثناء النقل.",
-      en: "Padded travel boots protecting the legs during transport.",
+      fr: "Guêtres de transport généreusement matelassées, qui enveloppent les membres d'une protection moelleuse pendant le déplacement. La sérénité du transport, du box au van.",
+      ar: "أربطة حماية للنقل ببطانة وافرة تلتف حول الأرجل بحماية ناعمة أثناء التنقل. راحة البال من الإسطبل إلى الشاحنة.",
+      en: "Generously padded travel boots that wrap the legs in plush protection during transit. Peace of mind from stall to trailer.",
+    },
+    highlights: {
+      fr: [
+        "Matelassage généreux sur toute la hauteur",
+        "Fermetures éclair résistantes et ajustables",
+        "Protection complète pendant le transport",
+      ],
+      ar: [
+        "بطانة وافرة على كامل الارتفاع",
+        "سحابات متينة وقابلة للتعديل",
+        "حماية كاملة أثناء النقل",
+      ],
+      en: [
+        "Generous padding over the full height",
+        "Durable, adjustable zips",
+        "Complete protection during travel",
+      ],
     },
     badge: EU,
     inStock: true,
@@ -126,9 +195,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 234,
     image: "/images/products/selle.jpg",
     description: {
-      fr: "Selle polyvalente d'entrée de gamme, arçon résistant et assise confortable pour cavaliers amateurs.",
-      ar: "سرج متعدد الاستعمالات للمبتدئين، هيكل متين ومقعد مريح للفرسان الهواة.",
-      en: "Versatile entry-level saddle, sturdy tree and comfortable seat for amateur riders.",
+      fr: "La selle polyvalente qui a fait la réputation de la Maison. Arçon résistant, assise profonde et cuir confortable : une alliée fidèle pour le travail, la balade et la détente.",
+      ar: "السرج متعدد الاستعمالات الذي صنع سمعة الدار. هيكل متين، مقعد عميق وجلد مريح: رفيق وفيّ للعمل والجولات والاسترخاء.",
+      en: "The versatile saddle that built the House's reputation. Robust tree, deep comfortable seat and supple leather: a faithful ally for work, rides and relaxation.",
+    },
+    highlights: {
+      fr: [
+        "Arçon robuste adapté aux chevaux de travail",
+        "Assise profonde et confortable pour le cavalier",
+        "Panneaux rembourrés pour le dos du cheval",
+      ],
+      ar: [
+        "هيكل قوي ملائم لخيول العمل",
+        "مقعد عميق ومريح للفارس",
+        "وسائد مبطنة لظهر الحصان",
+      ],
+      en: [
+        "Robust tree suited to working horses",
+        "Deep, comfortable seat for the rider",
+        "Padded panels for the horse's back",
+      ],
     },
     badge: "promo",
     featured: true,
@@ -148,9 +234,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 17,
     image: "/images/products/licol.jpg",
     description: {
-      fr: "Licol en cuir pleine fleur, boucles nickel, ajustable pour tous les gabarits.",
-      ar: "حبل رأس من الجلد الطبيعي، إبزيم نيكل قابل للتعديل لجميع الأحجام.",
-      en: "Full-grain leather halter, nickel buckles, adjustable for all sizes.",
+      fr: "Un licol en cuir pleine fleur, des boucles nickélées et un réglage précis : l'essentiel, dans sa forme la plus noble, pour accompagner votre cheval au quotidien.",
+      ar: "حبل رأس من الجلد الطبيعي، بأبازيم مطلية بالنيكل وضبط دقيق: الأساس في أسمى صوره لمرافقة حصانك يوميًا.",
+      en: "A full-grain leather halter with nickel buckles and precise adjustment: the essential, in its noblest form, for everyday companionship with your horse.",
+    },
+    highlights: {
+      fr: [
+        "Cuir pleine fleur, tannage de qualité",
+        "Boucles nickel et finitions soignées",
+        "Réglable pour tous les gabarits",
+      ],
+      ar: [
+        "جلد طبيعي بدباغة عالية الجودة",
+        "أبازيم نيكل وتشطيبات متقنة",
+        "قابل للضبط لجميع الأحجام",
+      ],
+      en: [
+        "Full-grain leather, quality tanning",
+        "Nickel buckles and refined finishing",
+        "Adjustable for all sizes",
+      ],
     },
     badge: EU,
     inStock: true,
@@ -169,9 +272,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 31,
     image: "/images/products/chemise.jpg",
     description: {
-      fr: "Chemise anti-mouches respirante, protection UV, idéale pour les climats chauds.",
-      ar: "غطاء مضاد للحشرات قابل للتنفس مع حماية من الأشعة فوق البنفسجية، مثالي للمناخات الحارة.",
-      en: "Breathable fly sheet with UV protection, ideal for hot climates.",
+      fr: "Une chemise anti-mouches respirante qui protège des insectes et des rayons UV, pensée pour les climats chauds. La légèreté d'un vêtement, la sécurité d'une protection.",
+      ar: "غطاء مضاد للحشرات قابل للتنفس يحمي من الحشرات والأشعة فوق البنفسجية، مصمم للمناخات الحارة. خفة الملابس وأمان الحماية.",
+      en: "A breathable fly sheet that protects against insects and UV rays, designed for hot climates. The lightness of clothing, the security of protection.",
+    },
+    highlights: {
+      fr: [
+        "Tissu respirant, protection UV intégrée",
+        "Coupe ajustée qui ne gêne pas le mouvement",
+        "Fermeture sûre pour une tenue parfaite",
+      ],
+      ar: [
+        "نسيج قابل للتنفس مع حماية UV مدمجة",
+        "قصّة ملائمة لا تعيق الحركة",
+        "إغلاق آمن لثبات مثالي",
+      ],
+      en: [
+        "Breathable fabric with built-in UV protection",
+        "Tailored cut that never hinders movement",
+        "Secure fastening for a perfect fit",
+      ],
     },
     badge: EU,
     featured: true,
@@ -191,9 +311,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 14,
     image: "/images/products/pansage.jpg",
     description: {
-      fr: "Kit de pansage : étrille, brosse douce, cure-pied et éponge, le nécessaire au quotidien.",
-      ar: "طقم تنظيف: فرشاة خشنة، فرشاة ناعمة، خطاف حوافر وإسفنجة، كل ما تحتاجه يومياً.",
-      en: "Grooming kit: curry comb, soft brush, hoof pick and sponge — everything for daily care.",
+      fr: "Le rituel du pansage, réuni dans un kit complet : étrille, brosse douce, cure-pied et éponge. Tout le nécessaire pour un soin méticuleux, chaque jour.",
+      ar: "طقس العناية بالحصان مجمّعًا في طقم كامل: فرشاة خشنة، فرشاة ناعمة، خطاف حوافر وإسفنجة. كل ما يلزم لعناية دقيقة يوميًا.",
+      en: "The grooming ritual, gathered into a complete kit: curry comb, soft brush, hoof pick and sponge. Everything needed for meticulous daily care.",
+    },
+    highlights: {
+      fr: [
+        "Quatre outils essentiels réunis",
+        "Poignées ergonomiques antidérapantes",
+        "Idéal pour une routine de soin quotidienne",
+      ],
+      ar: [
+        "أربع أدوات أساسية في طقم واحد",
+        "مقابض مريحة مانعة للانزلاق",
+        "مثالي لروتين عناية يومي",
+      ],
+      en: [
+        "Four essential tools in one kit",
+        "Ergonomic non-slip handles",
+        "Perfect for a daily care routine",
+      ],
     },
     inStock: true,
     createdAt: "2026-08-01",
@@ -211,9 +348,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 24,
     image: "/images/products/polaire.jpg",
     description: {
-      fr: "Couverture polaire douce, pour les soirées fraîches et l'après-pansage.",
-      ar: "غطاء صوفي ناعم للأمسيات الباردة وبعد التنظيف.",
-      en: "Soft fleece blanket for cool evenings and after grooming.",
+      fr: "Une couverture polaire d'une douceur rare, pour les soirées fraîches et l'après-pansage. Un cocon chaleureux, une finition qui respire la qualité.",
+      ar: "غطاء صوفي نادر النعومة، للأمسيات الباردة وبعد التنظيف. دفء مريح وتشطيب يوحي بالجودة.",
+      en: "A fleece blanket of rare softness, for cool evenings and after grooming. A warm cocoon with a finish that speaks of quality.",
+    },
+    highlights: {
+      fr: [
+        "Polaire ultra-douce et thermorégulante",
+        "Fini roulé et coutures résistantes",
+        "Parfaite après l'effort ou le pansage",
+      ],
+      ar: [
+        "صوف فائق النعومة ومنظِّم للحرارة",
+        "حواف مخيطة وخياطة متينة",
+        "مثالي بعد المجهود أو التنظيف",
+      ],
+      en: [
+        "Ultra-soft, thermo-regulating fleece",
+        "Rolled hem and durable stitching",
+        "Perfect after effort or grooming",
+      ],
     },
     badge: EU,
     inStock: true,
@@ -232,9 +386,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 56,
     image: "/images/products/casque.jpg",
     description: {
-      fr: "Casque d'équitation léger et ventilé, norme CE, tailles ajustables.",
-      ar: "خوذة فروسية خفيفة وجيدة التهوية، بمطابقة CE، بمقاسات قابلة للتعديل.",
-      en: "Lightweight ventilated riding helmet, CE certified, adjustable sizes.",
+      fr: "Un casque léger, ventilé et certifié CE, taillé pour le confort et la sécurité du cavalier moderne. Protection sans compromis, style sans effort.",
+      ar: "خوذة خفيفة جيدة التهوية بمطابقة CE، صُممت لراحة وسلامة الفارس العصري. حماية بلا مساومة وأناقة بلا جهد.",
+      en: "A lightweight, ventilated, CE-certified helmet designed for the comfort and safety of the modern rider. Protection without compromise, style without effort.",
+    },
+    highlights: {
+      fr: [
+        "Norme CE, sécurité certifiée",
+        "Léger et ventilé pour le confort",
+        "Réglage précis à l'arrière",
+      ],
+      ar: [
+        "مطابقة CE، أمان معتمد",
+        "خفيفة وجيدة التهوية للراحة",
+        "ضبط دقيق من الخلف",
+      ],
+      en: [
+        "CE certified, proven safety",
+        "Lightweight and ventilated for comfort",
+        "Precise rear adjustment",
+      ],
     },
     badge: "new",
     featured: true,
@@ -254,9 +425,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 75,
     image: "/images/products/bottes-cavalier.jpg",
     description: {
-      fr: "Bottes d'équitation en cuir, tige haute, semelle antidérapante et confort durable.",
-      ar: "أحذية فروسية من الجلد بساق عالية ونعل مانع للانزلاق وراحة تدوم.",
-      en: "Leather riding boots, tall shaft, non-slip sole and lasting comfort.",
+      fr: "Des bottes d'équitation en cuir, à tige haute, dont la semelle antidérapante et le maintien travaillé accompagnent chaque foulée. L'élégance du geste, la sûreté de l'assise.",
+      ar: "أحذية فروسية من الجلد بساق عالية، نعلها مانع للانزلاق وثباتها المدروس يرافقان كل خطوة. أناقة الحركة وأمان الثبات.",
+      en: "Leather riding boots with a tall shaft; their non-slip sole and worked support accompany every stride. The elegance of the gesture, the certainty of the seat.",
+    },
+    highlights: {
+      fr: [
+        "Cuir souple qui épouse la jambe",
+        "Semelle antidérapante et talon marqué",
+        "Tige haute pour un maintien parfait",
+      ],
+      ar: [
+        "جلد ناعم يلائم الساق",
+        "نعل مانع للانزلاق وكعب بارز",
+        "ساق عالية لثبات مثالي",
+      ],
+      en: [
+        "Supple leather that hugs the leg",
+        "Non-slip sole with defined heel",
+        "Tall shaft for perfect support",
+      ],
     },
     badge: EU,
     featured: true,
@@ -276,9 +464,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 33,
     image: "/images/products/chaps.jpg",
     description: {
-      fr: "Chaps en cuir avec fermeture éclair, protègent la jambe et améliorent la tenue en selle.",
-      ar: "أغطية ساق جلدية بسحاب، تحمي الساق وتحسن الثبات في السرج.",
-      en: "Leather chaps with zip, protecting the leg and improving seat grip.",
+      fr: "Des chaps en cuir, zippés sur le côté, qui protègent la jambe et affinent la tenue en selle. Un accessoire d'exigence pour le travail comme pour la présentation.",
+      ar: "أغطية ساق جلدية بسحاب جانبي، تحمي الساق وتحسّن الثبات في السرج. إكسسوار بالغ الدقة للعمل والعرض على السواء.",
+      en: "Zip-side leather chaps that protect the leg and refine the seat. An exacting accessory for work and for presentation alike.",
+    },
+    highlights: {
+      fr: [
+        "Cuir robuste, protection durable",
+        "Fermeture éclair sur le côté",
+        "Améliorent la prise en selle",
+      ],
+      ar: [
+        "جلد متين وحماية تدوم",
+        "سحاب جانبي",
+        "تحسّن الثبات في السرج",
+      ],
+      en: [
+        "Robust leather, lasting protection",
+        "Side zip fastening",
+        "Improves grip in the saddle",
+      ],
     },
     badge: EU,
     inStock: true,
@@ -297,9 +502,26 @@ export const PRODUCTS: Product[] = [
     priceEur: 8,
     image: "/images/products/brosse.jpg",
     description: {
-      fr: "Brosse double face : poils durs et poils doux, poignée ergonomique antidérapante.",
-      ar: "فرشاة ذات وجهين: شعر خشن وشعر ناعم، بمقبض مريح مانع للانزلاق.",
-      en: "Double-sided brush: hard and soft bristles, ergonomic non-slip handle.",
+      fr: "La brosse à double face qui simplifie le pansage : poils durs pour décoller, poils doux pour lustrer. Un geste précis, une seule brosse.",
+      ar: "الفرشاة ذات الوجهين التي تبسّط العناية: شعر خشن لإزالة الأوساخ وشعر ناعم للتلميع. لمسة دقيقة، فرشاة واحدة.",
+      en: "The double-sided brush that simplifies grooming: hard bristles to lift, soft bristles to polish. One precise gesture, one brush.",
+    },
+    highlights: {
+      fr: [
+        "Double face : poils durs et poils doux",
+        "Poignée ergonomique antidérapante",
+        "Compacte et facile à emporter",
+      ],
+      ar: [
+        "وجهان: خشن وناعم",
+        "مقبض مريح مانع للانزلاق",
+        "صغيرة الحجم وسهلة الحمل",
+      ],
+      en: [
+        "Two sides: firm and soft bristles",
+        "Ergonomic non-slip handle",
+        "Compact and easy to carry",
+      ],
     },
     inStock: true,
     createdAt: "2026-08-01",
@@ -317,16 +539,32 @@ export const PRODUCTS: Product[] = [
     priceEur: 12,
     image: "/images/products/porte-bouteille.svg",
     description: {
-      fr: "Porte-bouteille de selle en cuir, pratique pour les balades et le tourisme équestre.",
-      ar: "حامل زجاجة للسرج من الجلد، عملي للجولات والسياحة الفروسية.",
-      en: "Leather saddle bottle holder, handy for rides and equestrian tourism.",
+      fr: "Un porte-bouteille de selle en cuir, discrètement pensé pour les balades et le tourisme équestre. L'hydratation à portée de main, sans gêner le geste.",
+      ar: "حامل زجاجة للسرج من الجلد، مصمم بعناية للجولات والسياحة الفروسية. ترطيب في متناول اليد دون أن يعيق حركتك.",
+      en: "A leather saddle bottle holder, thoughtfully designed for rides and equestrian tourism. Hydration within reach, without hindering your movement.",
+    },
+    highlights: {
+      fr: [
+        "Cuir robuste et coutures renforcées",
+        "Se fixe solidement à la selle",
+        "Pratique pour les longues balades",
+      ],
+      ar: [
+        "جلد متين وخياطة معززة",
+        "يُثبَّت بإحكام على السرج",
+        "عملي للجولات الطويلة",
+      ],
+      en: [
+        "Robust leather with reinforced stitching",
+        "Secures firmly to the saddle",
+        "Handy for long rides",
+      ],
     },
     badge: EU,
     inStock: true,
     createdAt: "2026-08-01",
   },
 ];
-
 
 export const BADGE_COLOR: Record<string, "gold" | "green" | "red" | "royalblue"> = {
   new: "gold",

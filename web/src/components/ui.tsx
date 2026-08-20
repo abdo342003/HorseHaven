@@ -32,7 +32,14 @@ export function SectionHeading({
         </div>
       )}
       <h2 className="mt-2 font-display text-2xl font-semibold text-navy sm:text-3xl">{title}</h2>
-      {subtitle && <p className="mt-2 text-graytext">{subtitle}</p>}
+      {(subtitle || centered) && (
+        <div className={`mt-3 flex items-center gap-2.5 ${centered ? "justify-center" : ""}`}>
+          <span aria-hidden className="h-px w-8 bg-gradient-to-r from-transparent to-gold/70" />
+          <span aria-hidden className="h-1.5 w-1.5 rotate-45 bg-gold" />
+          <span aria-hidden className="h-px w-8 bg-gradient-to-l from-transparent to-gold/70" />
+        </div>
+      )}
+      {subtitle && <p className="mt-3 text-graytext">{subtitle}</p>}
     </div>
   );
 }
