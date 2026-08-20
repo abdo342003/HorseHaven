@@ -30,7 +30,7 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
-  const featured = PRODUCTS.filter((p) => p.featured).slice(0, 4);
+  const featured = PRODUCTS.filter((p) => p.featured).slice(0, 6);
   const saddle = PRODUCTS.find((p) => p.slug === "selle-entree-de-gamme");
   const testimonials = t.raw("home.testimonials") as {
     name: string;
@@ -47,13 +47,24 @@ export default async function HomePage({
   return (
     <>
         <section className="relative grid overflow-hidden bg-navy lg:grid-cols-2">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(212,197,169,0.14),transparent_55%)]"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(43,90,131,0.25),transparent_50%)]"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,transparent_97%,rgba(212,197,169,0.07)_97%)] bg-[length:64px_64px]"
+          />
           <div className="relative flex flex-col justify-center px-4 py-16 sm:px-10 lg:py-24 xl:px-16">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(212,197,169,0.10),transparent_55%)]"
-            />
             <div className="relative max-w-xl">
-              <div className="mb-8 inline-block rounded-2xl bg-white p-2.5 shadow-xl">
+              <div
+                style={{ animationDelay: "0ms" }}
+                className="mb-8 inline-block animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none rounded-2xl bg-white p-2.5 shadow-xl"
+              >
                 <Image
                   src="/images/logo-mark.png"
                   alt="Horse Haven"
@@ -64,38 +75,63 @@ export default async function HomePage({
                 />
               </div>
 
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:text-base">
-                {t("hero.tagline")}
-              </p>
-              <h1 className="mt-3 font-display text-4xl font-semibold leading-tight tracking-[0.12em] text-white sm:text-5xl xl:text-6xl">
+              <div
+                style={{ animationDelay: "80ms" }}
+                className="flex animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none items-center gap-3"
+              >
+                <span
+                  aria-hidden
+                  className="h-px w-8 bg-gradient-to-r from-transparent to-gold"
+                />
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:text-base">
+                  {t("hero.tagline")}
+                </p>
+              </div>
+              <h1
+                style={{ animationDelay: "160ms" }}
+                className="mt-4 animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none bg-gradient-to-r from-white via-[#efe7d8] to-gold bg-clip-text font-display text-4xl font-semibold leading-tight tracking-[0.12em] text-transparent sm:text-5xl xl:text-6xl"
+              >
                 {t("hero.title")}
               </h1>
-              <p className="mt-4 max-w-md text-lg text-white/80 sm:text-xl">
+              <p
+                style={{ animationDelay: "240ms" }}
+                className="mt-4 animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none max-w-md text-lg text-white/80 sm:text-xl"
+              >
                 {t("hero.subtitle")}
               </p>
 
-              <div aria-hidden className="mt-6 flex items-center gap-2.5">
+              <div
+                aria-hidden
+                style={{ animationDelay: "320ms" }}
+                className="mt-6 flex animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none items-center gap-2.5"
+              >
                 <span className="h-px w-10 bg-gradient-to-r from-transparent to-gold/80" />
                 <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
                 <span className="h-px w-10 bg-gradient-to-l from-transparent to-gold/80" />
               </div>
 
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <div
+                style={{ animationDelay: "400ms" }}
+                className="mt-10 flex animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none flex-col gap-4 sm:flex-row"
+              >
                 <Link
                   href="/boutique"
-                  className="inline-flex items-center justify-center rounded-lg bg-gold px-8 py-3.5 text-base font-bold text-navy shadow-lg transition-colors hover:bg-[#c2ae8d] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                  className="inline-flex items-center justify-center rounded-lg bg-gold px-8 py-3.5 text-base font-bold tracking-wide text-navy shadow-[0_0_28px_rgba(212,197,169,0.35)] transition-all duration-300 hover:bg-[#c2ae8d] hover:shadow-[0_0_36px_rgba(212,197,169,0.55)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 >
                   {t("hero.cta")}
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg border border-white/40 px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="inline-flex items-center justify-center rounded-lg border border-white/40 px-8 py-3.5 text-base font-semibold tracking-wide text-white transition-colors hover:border-gold/70 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   {t("hero.ctaSecondary")}
                 </Link>
               </div>
 
-              <div className="mt-12 flex items-center gap-4 border-t border-gold/30 pt-6 sm:gap-6">
+              <div
+                style={{ animationDelay: "480ms" }}
+                className="mt-12 flex animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none items-center gap-4 border-t border-gold/30 pt-6 sm:gap-6"
+              >
                 {HERO_STATS.map((key, i) => (
                   <div key={key} className="flex items-center gap-4 sm:gap-6">
                     {i > 0 && (
@@ -133,12 +169,52 @@ export default async function HomePage({
               aria-hidden
               className="pointer-events-none absolute inset-3 ring-1 ring-white/15 sm:inset-4"
             />
+            <div
+              aria-hidden
+              className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-navy/80 to-transparent"
+            />
+            {saddle && (
+              <Link
+                href="/boutique"
+                style={{ animationDelay: "560ms" }}
+                className="group absolute bottom-5 start-5 z-10 flex w-[calc(100%-2.5rem)] max-w-72 animate-[hero-up_0.8s_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none items-center gap-4 rounded-xl border border-gold/40 bg-navy/70 p-4 text-white shadow-2xl backdrop-blur-md transition-all duration-300 ease-luxury hover:border-gold/80 hover:bg-navy/85 sm:bottom-7 sm:start-7"
+              >
+                <span
+                  aria-hidden
+                  className="flex h-10 w-10 shrink-0 rotate-45 items-center justify-center border border-gold/60"
+                >
+                  <span className="h-2.5 w-2.5 bg-gold" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.25em] text-gold">
+                    {t("home.bestsellerEyebrow")}
+                  </span>
+                  <span className="mt-1 block truncate font-display text-sm font-semibold">
+                    {saddle.name[locale]}
+                  </span>
+                  <span className="mt-0.5 block text-sm font-bold text-gold">
+                    {formatPrice(saddle.price, locale)}{" "}
+                    <span className="text-xs font-semibold text-white/60">MAD</span>
+                  </span>
+                </span>
+                <svg
+                  aria-hidden
+                  className="ms-auto h-4 w-4 shrink-0 text-gold transition-transform duration-300 group-hover:-translate-x-1 rtl:rotate-180 rtl:group-hover:translate-x-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            )}
           </div>
 
           <a
             href="#univers"
             aria-label={t("home.scroll")}
-            className="absolute bottom-5 start-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-1.5 text-gold/70 transition-colors hover:text-gold rtl:translate-x-1/2"
+            className="absolute bottom-5 start-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1.5 text-gold/70 transition-colors hover:text-gold lg:flex rtl:translate-x-1/2"
           >
             <span className="text-[10px] font-semibold uppercase tracking-[0.3em]">
               {t("home.scroll")}
@@ -325,7 +401,7 @@ export default async function HomePage({
                 subtitle={t("home.featuredSubtitle")}
               />
             </Reveal>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}

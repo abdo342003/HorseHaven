@@ -4,9 +4,10 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import ProductBuy from "@/components/ProductBuy";
 import ProductCard from "@/components/ProductCard";
+import StickyBuyBar from "@/components/StickyBuyBar";
 import { Container, Badge, PriceTag } from "@/components/ui";
 import { PRODUCTS, getProductBySlug, getProductsByCategory, BADGE_COLOR } from "@/lib/products";
-import { SITE_URL } from "@/lib/config";
+import { SITE_URL, formatPrice } from "@/lib/config";
 import Image from "next/image";
 
 const HERO_TRUST = ["delivery", "cod", "eu"] as const;
@@ -60,7 +61,7 @@ export default async function ProductPage({
 
   const related = getProductsByCategory(product.category)
     .filter((p) => p.id !== product.id)
-    .slice(0, 4);
+    .slice(0, 3);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -183,7 +184,7 @@ export default async function ProductPage({
               <h2 className="mb-6 font-display text-xl font-semibold text-navy sm:text-2xl">
                 {t("boutique.related")}
               </h2>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {related.map((p) => (
                   <ProductCard key={p.id} product={p} />
                 ))}
@@ -192,6 +193,18 @@ export default async function ProductPage({
           )}
         </Container>
       </section>
+      <StickyBuyBar
+        item={{
+          id: product.id,
+          slug: product.slug,
+          name: product.name[locale],
+          price: product.price,
+          image: product.image,
+          qty: 1,
+        }}
+        priceText={`${formatPrice(product.price, locale)} MAD`}
+      />
+      <div aria-hidden className="h-16 lg:hidden" />
     </>
   );
 }
