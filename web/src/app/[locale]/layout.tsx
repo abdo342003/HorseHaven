@@ -5,6 +5,8 @@ import { setRequestLocale } from "next-intl/server";
 import localFont from "next/font/local";
 import { routing } from "@/i18n/routing";
 import { SITE_URL, EMAIL, PHONE_MAIN_TEL } from "@/lib/config";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import CartToast from "@/components/CartToast";
 import "../globals.css";
 
@@ -145,7 +147,9 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
           <CartToast />
         </NextIntlClientProvider>
       </body>

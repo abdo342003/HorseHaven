@@ -1,7 +1,5 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import ProductCard from "@/components/ProductCard";
 import { Container, SectionHeading } from "@/components/ui";
@@ -44,9 +42,6 @@ export default async function HomePage({
 
   return (
     <>
-      <Header />
-
-      <main>
         <section className="relative grid overflow-hidden bg-navy lg:grid-cols-2">
           <div className="relative flex flex-col justify-center px-4 py-16 sm:px-10 lg:py-24 xl:px-16">
             <div
@@ -455,9 +450,6 @@ export default async function HomePage({
             </div>
           </Container>
         </section>
-      </main>
-
-      <Footer />
     </>
   );
 }
