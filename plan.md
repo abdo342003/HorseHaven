@@ -67,7 +67,7 @@
 - [ ] 4.7 Route API `POST /api/orders` : validation serveur (zod), création `order` Sanity, numéro séquentiel
 - [x] 4.8 Page `/confirmation/[orderId]` : récap, numéro, lien WhatsApp, vidage panier
 - [ ] 4.9 Notification email Resend (optionnel) à `hhorsehaven@gmail.com`
-- [x] 4.10 Test bout-en-bout : ajout → commande COD → confirmation → ordre dans Studio
+- [~] 4.10 Test bout-en-bout : ajout → commande COD → confirmation → ordre dans **localStorage** (Studio en attente de Sanity)
 
 ## Phase 5 — Pages institutionnelles + SEO
 - [x] 5.1 Page `/a-propos` : mission, valeurs (Qualité, Conseil, Passion)
@@ -85,9 +85,9 @@
 - [x] 6.3 Test multi-locales : `/`, `/ar` (RTL), `/en`
 - [x] 6.4 Test panier/commande sur build de production (`npm run start`)
 - [x] 6.5 Pousser sur GitHub (repo `HorseHaven`)
-- [x] 6.6 Déployer sur Vercel (variables d'env Sanity)
+- [~] 6.6 Déployer sur Vercel (déployé — variables d'env Sanity en attente)
 - [ ] 6.7 Ajouter le domaine `horsehaven.store` (DNS → Vercel)
-- [x] 6.8 Vérifier prod : site live, Studio, HTTPS
+- [~] 6.8 Vérifier prod : site live + HTTPS ✓ — Studio en attente de Sanity
 - [x] 6.9 Checklist finale : 3 langues, panier, COD, SEO, mobile
 
 ## Plus tard (hors périmètre)
